@@ -5,11 +5,8 @@ from robot import Robot
 
 
 class ShuGuoWang_Robot(Robot):
-    def __init__(self, **kwargs):
-        super().__init__(**kwargs)
-
-    def __str__(self):
-        return '蔬果网'
+    def __init__(self, default_config, url):
+        super().__init__(default_config, url)
 
     def run_task(self):
         price_list = self.find_eles_xpath('//ul[@id="NongHuaZhuanYongFei1"]/li/a')

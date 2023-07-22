@@ -7,11 +7,8 @@ from robot import Robot
 
 
 class XinShiPu_Robot(Robot):
-    def __init__(self, **kwargs):
-        super().__init__(**kwargs)
-
-    def __str__(self):
-        return '心食谱'
+    def __init__(self, default_config, url):
+        super().__init__(default_config, url)
 
     def run_task(self):
         dessert_list = self.find_eles_xpath('//img')
