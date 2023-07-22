@@ -5,8 +5,12 @@ from unil import *
 
 
 class DongFangCaiFu_Robot(Robot):
-    def __init__(self, default_config, url):
-        super().__init__(default_config, url)
+    def __init__(self, **kwargs):
+
+        super().__init__(**kwargs)
+
+    def __str__(self):
+        return '东方财经'
 
     def run_task(self):
         rows = self.wait_eles_by_xpath('//div[@id="table_ls"]//tbody//tr')

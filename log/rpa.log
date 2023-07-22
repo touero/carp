@@ -1,0 +1,483 @@
+2023-05-14 21:58:05,398 - rpa - DEBUG - {'task_type': 1, 'is_debug': 1, 'sql_info': {'host': 'localhost', 'user': 'root', 'password': 'root', 'database': 'food', 'port': 3306}}
+2023-05-14 21:58:07,794 - rpa - DEBUG - 
+2023-05-14 21:58:45,486 - rpa - DEBUG - {'task_type': 4, 'is_debug': 1, 'sql_info': {'host': 'localhost', 'user': 'root', 'password': 'root', 'database': 'food', 'port': 3306}}
+2023-05-14 21:58:50,358 - rpa - DEBUG - {'task_type': 4, 'is_debug': 1, 'sql_info': {'host': 'localhost', 'user': 'root', 'password': 'root', 'database': 'food', 'port': 3306}}
+2023-05-14 21:59:28,587 - rpa - DEBUG - {'task_type': 4, 'is_debug': 1, 'sql_info': {'host': 'localhost', 'user': 'root', 'password': 'root', 'database': 'food', 'port': 3306}}
+2023-05-14 21:59:30,145 - rpa - DEBUG - 
+2023-05-14 22:00:39,988 - rpa - DEBUG - {'task_type': 4, 'is_debug': 1, 'sql_info': {'host': 'localhost', 'user': 'root', 'password': 'root', 'database': 'food', 'port': 3306}}
+2023-05-14 22:01:24,570 - rpa - DEBUG - 
+2023-06-14 21:45:40,476 - rpa - DEBUG - default_config = {'task_type': 4, 'is_debug': 1, 'sql_info': {'state': 0, 'host': 'localhost', 'user': 'root', 'password': 'root', 'database': 'food', 'port': 3306}}
+2023-06-14 21:45:44,222 - rpa - DEBUG - Message: session not created: This version of ChromeDriver only supports Chrome version 112
+Current browser version is 114.0.5735.110 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x0042DCE3+50899]
+	(No symbol) [0x003BE111]
+	(No symbol) [0x002C5588]
+	(No symbol) [0x002E570C]
+	(No symbol) [0x002E1471]
+	(No symbol) [0x002DF479]
+	(No symbol) [0x00311FFE]
+	(No symbol) [0x00311CEC]
+	(No symbol) [0x0030B6F6]
+	(No symbol) [0x002E7708]
+	(No symbol) [0x002E886D]
+	GetHandleVerifier [0x00693EAE+2566302]
+	GetHandleVerifier [0x006C92B1+2784417]
+	GetHandleVerifier [0x006C327C+2759788]
+	GetHandleVerifier [0x004C5740+672048]
+	(No symbol) [0x003C8872]
+	(No symbol) [0x003C41C8]
+	(No symbol) [0x003C42AB]
+	(No symbol) [0x003B71B7]
+	BaseThreadInitThunk [0x75CE00C9+25]
+	RtlGetAppContainerNamedObjectPath [0x77DA7B4E+286]
+	RtlGetAppContainerNamedObjectPath [0x77DA7B1E+238]
+
+2023-06-25 21:41:35,985 - rpa - DEBUG - default_config = {'task_type': 5, 'is_debug': 1, 'sql_info': {'state': 0, 'host': 'localhost', 'user': 'root', 'password': 'root', 'database': 'food', 'port': 3306}}
+2023-06-25 21:43:25,928 - rpa - DEBUG - default_config = {'task_type': 5, 'is_debug': 1, 'sql_info': {'state': 0, 'host': 'localhost', 'user': 'root', 'password': 'root', 'database': 'food', 'port': 3306}}
+2023-06-25 21:43:29,648 - rpa - DEBUG - Message: session not created: This version of ChromeDriver only supports Chrome version 112
+Current browser version is 114.0.5735.134 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x011BDCE3+50899]
+	(No symbol) [0x0114E111]
+	(No symbol) [0x01055588]
+	(No symbol) [0x0107570C]
+	(No symbol) [0x01071471]
+	(No symbol) [0x0106F479]
+	(No symbol) [0x010A1FFE]
+	(No symbol) [0x010A1CEC]
+	(No symbol) [0x0109B6F6]
+	(No symbol) [0x01077708]
+	(No symbol) [0x0107886D]
+	GetHandleVerifier [0x01423EAE+2566302]
+	GetHandleVerifier [0x014592B1+2784417]
+	GetHandleVerifier [0x0145327C+2759788]
+	GetHandleVerifier [0x01255740+672048]
+	(No symbol) [0x01158872]
+	(No symbol) [0x011541C8]
+	(No symbol) [0x011542AB]
+	(No symbol) [0x011471B7]
+	BaseThreadInitThunk [0x764100C9+25]
+	RtlGetAppContainerNamedObjectPath [0x76F37B4E+286]
+	RtlGetAppContainerNamedObjectPath [0x76F37B1E+238]
+
+2023-06-25 21:45:36,674 - rpa - DEBUG - default_config = {'task_type': 5, 'is_debug': 1, 'sql_info': {'state': 0, 'host': 'localhost', 'user': 'root', 'password': 'root', 'database': 'food', 'port': 3306}}
+2023-06-25 21:45:40,313 - rpa - DEBUG - Message: invalid argument: invalid locator
+  (Session info: chrome=114.0.5735.134)
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x00D5A813+48355]
+	(No symbol) [0x00CEC4B1]
+	(No symbol) [0x00BF5358]
+	(No symbol) [0x00C20A9F]
+	(No symbol) [0x00C20B3B]
+	(No symbol) [0x00C19AE1]
+	(No symbol) [0x00C3A784]
+	(No symbol) [0x00C19A36]
+	(No symbol) [0x00C3AA94]
+	(No symbol) [0x00C4C922]
+	(No symbol) [0x00C3A536]
+	(No symbol) [0x00C182DC]
+	(No symbol) [0x00C193DD]
+	GetHandleVerifier [0x00FBAABD+2539405]
+	GetHandleVerifier [0x00FFA78F+2800735]
+	GetHandleVerifier [0x00FF456C+2775612]
+	GetHandleVerifier [0x00DE51E0+616112]
+	(No symbol) [0x00CF5F8C]
+	(No symbol) [0x00CF2328]
+	(No symbol) [0x00CF240B]
+	(No symbol) [0x00CE4FF7]
+	BaseThreadInitThunk [0x764100C9+25]
+	RtlGetAppContainerNamedObjectPath [0x76F37B4E+286]
+	RtlGetAppContainerNamedObjectPath [0x76F37B1E+238]
+
+2023-06-25 21:46:06,227 - rpa - DEBUG - default_config = {'task_type': 5, 'is_debug': 1, 'sql_info': {'state': 0, 'host': 'localhost', 'user': 'root', 'password': 'root', 'database': 'food', 'port': 3306}}
+2023-06-25 21:46:09,313 - rpa - DEBUG - Message: invalid argument: invalid locator
+  (Session info: chrome=114.0.5735.134)
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x00D5A813+48355]
+	(No symbol) [0x00CEC4B1]
+	(No symbol) [0x00BF5358]
+	(No symbol) [0x00C20A9F]
+	(No symbol) [0x00C20B3B]
+	(No symbol) [0x00C19AE1]
+	(No symbol) [0x00C3A784]
+	(No symbol) [0x00C19A36]
+	(No symbol) [0x00C3AA94]
+	(No symbol) [0x00C4C922]
+	(No symbol) [0x00C3A536]
+	(No symbol) [0x00C182DC]
+	(No symbol) [0x00C193DD]
+	GetHandleVerifier [0x00FBAABD+2539405]
+	GetHandleVerifier [0x00FFA78F+2800735]
+	GetHandleVerifier [0x00FF456C+2775612]
+	GetHandleVerifier [0x00DE51E0+616112]
+	(No symbol) [0x00CF5F8C]
+	(No symbol) [0x00CF2328]
+	(No symbol) [0x00CF240B]
+	(No symbol) [0x00CE4FF7]
+	BaseThreadInitThunk [0x764100C9+25]
+	RtlGetAppContainerNamedObjectPath [0x76F37B4E+286]
+	RtlGetAppContainerNamedObjectPath [0x76F37B1E+238]
+
+2023-06-25 21:47:04,094 - rpa - DEBUG - default_config = {'task_type': 5, 'is_debug': 1, 'sql_info': {'state': 0, 'host': 'localhost', 'user': 'root', 'password': 'root', 'database': 'food', 'port': 3306}}
+2023-06-25 21:49:57,718 - rpa - DEBUG - default_config = {'task_type': 5, 'is_debug': 1, 'sql_info': {'state': 0, 'host': 'localhost', 'user': 'root', 'password': 'root', 'database': 'food', 'port': 3306}}
+2023-06-25 21:50:00,533 - rpa - DEBUG - default_config = {'task_type': 5, 'is_debug': 1, 'sql_info': {'state': 0, 'host': 'localhost', 'user': 'root', 'password': 'root', 'database': 'food', 'port': 3306}}
+2023-06-25 21:50:04,137 - rpa - DEBUG - openpyxl does not support  file format, please check you can open it with Excel first. Supported formats are: .xlsx,.xlsm,.xltx,.xltm
+2023-06-25 21:51:40,685 - rpa - DEBUG - default_config = {'task_type': 5, 'is_debug': 1, 'sql_info': {'state': 0, 'host': 'localhost', 'user': 'root', 'password': 'root', 'database': 'food', 'port': 3306}}
+2023-06-25 21:51:44,206 - rpa - DEBUG - openpyxl does not support  file format, please check you can open it with Excel first. Supported formats are: .xlsx,.xlsm,.xltx,.xltm
+2023-06-25 21:52:37,115 - rpa - DEBUG - default_config = {'task_type': 5, 'is_debug': 1, 'sql_info': {'state': 0, 'host': 'localhost', 'user': 'root', 'password': 'root', 'database': 'food', 'port': 3306}}
+2023-06-25 22:00:43,710 - rpa - DEBUG - default_config = {'task_type': 5, 'is_debug': 1, 'sql_info': {'state': 0, 'host': 'localhost', 'user': 'root', 'password': 'root', 'database': 'food', 'port': 3306}}
+2023-06-25 22:03:09,430 - rpa - DEBUG - default_config = {'task_type': 5, 'is_debug': 1, 'sql_info': {'state': 0, 'host': 'localhost', 'user': 'root', 'password': 'root', 'database': 'food', 'port': 3306}}
+2023-06-25 22:08:14,068 - rpa - DEBUG - default_config = {'task_type': 5, 'is_debug': 1, 'sql_info': {'state': 0, 'host': 'localhost', 'user': 'root', 'password': 'root', 'database': 'food', 'port': 3306}}
+2023-06-28 20:55:25,337 - rpa - DEBUG - default_config = {'task_type': 5, 'is_debug': 1, 'sql_info': {'state': 0, 'host': 'localhost', 'user': 'root', 'password': 'root', 'database': 'food', 'port': 3306}}
+2023-06-28 20:55:28,992 - rpa - DEBUG - 第1行
+2023-06-28 20:55:29,622 - rpa - DEBUG - 第2行
+2023-06-28 20:55:29,938 - rpa - DEBUG - 第3行
+2023-06-28 20:55:30,255 - rpa - DEBUG - 第4行
+2023-06-28 20:55:30,569 - rpa - DEBUG - 第5行
+2023-06-28 20:55:30,887 - rpa - DEBUG - 第6行
+2023-06-28 20:55:31,201 - rpa - DEBUG - 第7行
+2023-06-28 20:55:31,522 - rpa - DEBUG - 第8行
+2023-06-28 20:55:31,826 - rpa - DEBUG - 第9行
+2023-06-28 20:55:32,146 - rpa - DEBUG - 第10行
+2023-06-28 20:55:32,562 - rpa - DEBUG - 第11行
+2023-06-28 20:55:32,906 - rpa - DEBUG - 第12行
+2023-06-28 20:55:33,245 - rpa - DEBUG - 第13行
+2023-06-28 20:55:33,605 - rpa - DEBUG - 第14行
+2023-06-28 20:55:33,972 - rpa - DEBUG - 第15行
+2023-06-28 20:55:34,346 - rpa - DEBUG - 第16行
+2023-06-28 20:55:34,688 - rpa - DEBUG - 第17行
+2023-06-28 20:55:35,021 - rpa - DEBUG - 第18行
+2023-06-28 20:55:35,456 - rpa - DEBUG - 第19行
+2023-06-28 20:55:35,812 - rpa - DEBUG - 第20行
+2023-06-28 20:55:36,148 - rpa - DEBUG - 第21行
+2023-06-28 20:55:36,470 - rpa - DEBUG - 第22行
+2023-06-28 20:55:36,782 - rpa - DEBUG - 第23行
+2023-06-28 20:55:37,091 - rpa - DEBUG - 第24行
+2023-06-28 20:55:37,399 - rpa - DEBUG - 第25行
+2023-06-28 20:55:37,712 - rpa - DEBUG - 第26行
+2023-06-28 20:55:38,017 - rpa - DEBUG - 第27行
+2023-06-28 20:55:38,332 - rpa - DEBUG - 第28行
+2023-06-28 20:55:38,642 - rpa - DEBUG - 第29行
+2023-06-28 20:55:38,946 - rpa - DEBUG - 第30行
+2023-06-28 20:55:39,302 - rpa - DEBUG - 第31行
+2023-06-28 20:55:39,614 - rpa - DEBUG - 第32行
+2023-06-28 20:55:39,947 - rpa - DEBUG - 第33行
+2023-06-28 20:55:40,256 - rpa - DEBUG - 第34行
+2023-06-28 20:55:40,582 - rpa - DEBUG - 第35行
+2023-06-28 20:55:40,916 - rpa - DEBUG - 第36行
+2023-06-28 20:55:41,236 - rpa - DEBUG - 第37行
+2023-06-28 20:55:41,555 - rpa - DEBUG - 第38行
+2023-06-28 20:55:41,876 - rpa - DEBUG - 第39行
+2023-06-28 20:55:42,197 - rpa - DEBUG - 第40行
+2023-06-28 20:55:42,521 - rpa - DEBUG - 第41行
+2023-06-28 20:55:42,854 - rpa - DEBUG - 第42行
+2023-06-28 20:55:43,202 - rpa - DEBUG - 第43行
+2023-06-28 20:55:43,557 - rpa - DEBUG - 第44行
+2023-06-28 20:55:43,944 - rpa - DEBUG - 第45行
+2023-06-28 20:55:44,281 - rpa - DEBUG - 第46行
+2023-06-28 20:55:44,605 - rpa - DEBUG - 第47行
+2023-06-28 20:55:44,937 - rpa - DEBUG - 第48行
+2023-06-28 20:55:45,266 - rpa - DEBUG - 第49行
+2023-06-28 20:55:45,602 - rpa - DEBUG - 第50行
+2023-06-28 20:55:45,924 - rpa - DEBUG - 第51行
+2023-06-28 20:55:46,245 - rpa - DEBUG - 第52行
+2023-06-28 20:55:46,577 - rpa - DEBUG - 第53行
+2023-06-28 20:55:46,955 - rpa - DEBUG - 第54行
+2023-06-28 20:55:47,283 - rpa - DEBUG - 第55行
+2023-06-28 20:55:47,635 - rpa - DEBUG - 第56行
+2023-06-28 20:55:48,005 - rpa - DEBUG - 第57行
+2023-06-28 20:55:48,330 - rpa - DEBUG - 第58行
+2023-06-28 20:55:48,662 - rpa - DEBUG - 第59行
+2023-06-28 20:55:48,993 - rpa - DEBUG - 第60行
+2023-06-28 20:55:49,346 - rpa - DEBUG - 第61行
+2023-06-28 20:55:49,687 - rpa - DEBUG - 第62行
+2023-06-28 20:55:50,014 - rpa - DEBUG - 第63行
+2023-06-28 20:55:50,346 - rpa - DEBUG - 第64行
+2023-06-28 20:55:50,691 - rpa - DEBUG - 第65行
+2023-06-28 20:55:51,026 - rpa - DEBUG - 第66行
+2023-06-28 20:55:51,357 - rpa - DEBUG - 第67行
+2023-06-28 20:55:51,736 - rpa - DEBUG - 第68行
+2023-06-28 20:55:52,064 - rpa - DEBUG - 第69行
+2023-06-28 20:55:52,405 - rpa - DEBUG - 第70行
+2023-06-28 20:55:52,746 - rpa - DEBUG - 第71行
+2023-06-28 20:55:53,085 - rpa - DEBUG - 第72行
+2023-06-28 20:55:53,422 - rpa - DEBUG - 第73行
+2023-06-28 20:55:53,764 - rpa - DEBUG - 第74行
+2023-06-28 20:55:54,114 - rpa - DEBUG - 第75行
+2023-06-28 20:55:54,472 - rpa - DEBUG - 第76行
+2023-06-28 20:55:54,838 - rpa - DEBUG - 第77行
+2023-06-28 20:55:55,218 - rpa - DEBUG - 第78行
+2023-06-28 20:55:55,555 - rpa - DEBUG - 第79行
+2023-06-28 20:55:55,894 - rpa - DEBUG - 第80行
+2023-06-28 20:55:56,253 - rpa - DEBUG - 第81行
+2023-06-28 20:55:56,603 - rpa - DEBUG - 第82行
+2023-06-28 20:55:56,947 - rpa - DEBUG - 第83行
+2023-06-28 20:55:57,306 - rpa - DEBUG - 第84行
+2023-06-28 20:55:57,656 - rpa - DEBUG - 第85行
+2023-06-28 20:55:58,004 - rpa - DEBUG - 第86行
+2023-06-28 20:55:58,419 - rpa - DEBUG - 第87行
+2023-06-28 20:55:58,764 - rpa - DEBUG - 第88行
+2023-06-28 20:55:59,139 - rpa - DEBUG - 第89行
+2023-06-28 20:55:59,490 - rpa - DEBUG - 第90行
+2023-06-28 20:55:59,859 - rpa - DEBUG - 第91行
+2023-06-28 20:56:00,210 - rpa - DEBUG - 第92行
+2023-06-28 20:56:00,598 - rpa - DEBUG - 第93行
+2023-06-28 20:56:00,996 - rpa - DEBUG - 第94行
+2023-06-28 20:56:01,489 - rpa - DEBUG - 第95行
+2023-06-28 20:56:01,965 - rpa - DEBUG - 第96行
+2023-06-28 20:56:02,334 - rpa - DEBUG - 第97行
+2023-06-28 20:56:02,752 - rpa - DEBUG - 第98行
+2023-06-28 20:56:03,194 - rpa - DEBUG - 第99行
+2023-06-28 20:56:03,554 - rpa - DEBUG - 第100行
+2023-06-28 20:56:03,905 - rpa - DEBUG - 第101行
+2023-07-23 01:07:02,111 - rpa - DEBUG - default_config = {'task_type': 5, 'is_debug': 1, 'sql_info': {'state': 0, 'host': 'localhost', 'user': 'root', 'password': 'root', 'database': 'food', 'port': 3306}}
+2023-07-23 01:07:02,112 - rpa - DEBUG - __init__() takes 1 positional argument but 3 were given
+2023-07-23 01:07:46,952 - rpa - DEBUG - default_config = {'task_type': 5, 'is_debug': 1, 'sql_info': {'state': 0, 'host': 'localhost', 'user': 'root', 'password': 'root', 'database': 'food', 'port': 3306}}
+2023-07-23 01:07:46,952 - rpa - DEBUG - __init__() takes 1 positional argument but 3 were given
+2023-07-23 01:09:01,551 - rpa - DEBUG - default_config = {'task_type': 5, 'is_debug': 1, 'sql_info': {'state': 0, 'host': 'localhost', 'user': 'root', 'password': 'root', 'database': 'food', 'port': 3306}}
+2023-07-23 01:14:32,791 - rpa - DEBUG - default_config = {'task_type': 5, 'is_debug': 1, 'sql_info': {'state': 0, 'host': 'localhost', 'user': 'root', 'password': 'root', 'database': 'food', 'port': 3306}}
+2023-07-23 01:16:09,093 - rpa - DEBUG - default_config = {'task_type': 5, 'is_debug': 1, 'sql_info': {'state': 0, 'host': 'localhost', 'user': 'root', 'password': 'root', 'database': 'food', 'port': 3306}}
+2023-07-23 01:17:35,112 - rpa - DEBUG - default_config = {'task_type': 5, 'is_debug': 1, 'sql_info': {'state': 0, 'host': 'localhost', 'user': 'root', 'password': 'root', 'database': 'food', 'port': 3306}}
+2023-07-23 01:20:08,935 - rpa - DEBUG - default_config = {'task_type': 5, 'is_debug': 1, 'sql_info': {'state': 0, 'host': 'localhost', 'user': 'root', 'password': 'root', 'database': 'food', 'port': 3306}}
+2023-07-23 01:20:08,935 - rpa - DEBUG - descriptor '__str__' of 'object' object needs an argument
+2023-07-23 01:21:10,979 - rpa - DEBUG - default_config = {'task_type': 5, 'is_debug': 1, 'sql_info': {'state': 0, 'host': 'localhost', 'user': 'root', 'password': 'root', 'database': 'food', 'port': 3306}}
+2023-07-23 01:21:10,980 - rpa - DEBUG - <class 'rpa.dongfangcaifu_robot.DongFangCaiFu_Robot'>
+2023-07-23 01:21:14,039 - rpa - DEBUG - 第1行
+2023-07-23 01:21:15,199 - rpa - DEBUG - 第2行
+2023-07-23 01:21:15,784 - rpa - DEBUG - 第3行
+2023-07-23 01:21:16,414 - rpa - DEBUG - 第4行
+2023-07-23 01:21:17,046 - rpa - DEBUG - 第5行
+2023-07-23 01:23:05,005 - rpa - DEBUG - default_config = {'task_type': 5, 'is_debug': 1, 'sql_info': {'state': 0, 'host': 'localhost', 'user': 'root', 'password': 'root', 'database': 'food', 'port': 3306}}
+2023-07-23 01:23:07,975 - rpa - DEBUG - 东方财经
+2023-07-23 01:23:08,026 - rpa - DEBUG - 第1行
+2023-07-23 01:23:08,811 - rpa - DEBUG - 第2行
+2023-07-23 01:23:09,208 - rpa - DEBUG - 第3行
+2023-07-23 01:23:09,659 - rpa - DEBUG - 第4行
+2023-07-23 01:23:10,061 - rpa - DEBUG - 第5行
+2023-07-23 01:23:10,447 - rpa - DEBUG - 第6行
+2023-07-23 01:23:10,880 - rpa - DEBUG - 第7行
+2023-07-23 01:23:11,287 - rpa - DEBUG - 第8行
+2023-07-23 01:23:11,794 - rpa - DEBUG - 第9行
+2023-07-23 01:23:12,264 - rpa - DEBUG - 第10行
+2023-07-23 01:23:12,701 - rpa - DEBUG - 第11行
+2023-07-23 01:31:06,472 - rpa - DEBUG - default_config = {'task_type': 5, 'is_debug': 1, 'sql_info': {'state': 0, 'host': 'localhost', 'user': 'root', 'password': 'root', 'database': 'food', 'port': 3306}}
+2023-07-23 01:31:09,412 - rpa - DEBUG - 开始_东方财经
+2023-07-23 01:31:09,446 - rpa - DEBUG - 第1行
+2023-07-23 01:31:10,140 - rpa - DEBUG - 第2行
+2023-07-23 01:31:10,518 - rpa - DEBUG - 第3行
+2023-07-23 01:31:10,859 - rpa - DEBUG - 第4行
+2023-07-23 01:31:11,216 - rpa - DEBUG - 第5行
+2023-07-23 01:31:11,568 - rpa - DEBUG - 第6行
+2023-07-23 01:31:11,958 - rpa - DEBUG - 第7行
+2023-07-23 01:31:12,307 - rpa - DEBUG - 第8行
+2023-07-23 01:31:12,708 - rpa - DEBUG - 第9行
+2023-07-23 01:31:13,153 - rpa - DEBUG - 第10行
+2023-07-23 01:31:13,615 - rpa - DEBUG - 第11行
+2023-07-23 01:31:14,054 - rpa - DEBUG - 第12行
+2023-07-23 01:37:34,095 - rpa - DEBUG - default_config = {
+    "is_debug": 1,
+    "sql_info": {
+        "database": "food",
+        "host": "localhost",
+        "password": "root",
+        "port": 3306,
+        "state": 0,
+        "user": "root"
+    },
+    "task_type": 5
+}
+2023-07-23 01:37:37,094 - rpa - DEBUG - 开始_东方财经
+2023-07-23 01:37:37,149 - rpa - DEBUG - 第1行
+2023-07-23 01:37:37,931 - rpa - DEBUG - 第2行
+2023-07-23 01:37:38,327 - rpa - DEBUG - 第3行
+2023-07-23 01:37:38,726 - rpa - DEBUG - 第4行
+2023-07-23 01:37:39,117 - rpa - DEBUG - 第5行
+2023-07-23 01:37:39,509 - rpa - DEBUG - 第6行
+2023-07-23 01:37:39,946 - rpa - DEBUG - 第7行
+2023-07-23 01:37:40,350 - rpa - DEBUG - 第8行
+2023-07-23 01:37:41,983 - rpa - DEBUG - 第9行
+2023-07-23 01:37:42,422 - rpa - DEBUG - 第10行
+2023-07-23 01:37:42,908 - rpa - DEBUG - 第11行
+2023-07-23 01:37:43,353 - rpa - DEBUG - 第12行
+2023-07-23 01:37:43,825 - rpa - DEBUG - 第13行
+2023-07-23 01:37:44,314 - rpa - DEBUG - 第14行
+2023-07-23 01:37:44,856 - rpa - DEBUG - 第15行
+2023-07-23 01:37:45,408 - rpa - DEBUG - 第16行
+2023-07-23 01:37:45,828 - rpa - DEBUG - 第17行
+2023-07-23 01:37:46,201 - rpa - DEBUG - 第18行
+2023-07-23 01:37:46,618 - rpa - DEBUG - 第19行
+2023-07-23 01:37:47,000 - rpa - DEBUG - 第20行
+2023-07-23 01:37:47,375 - rpa - DEBUG - 第21行
+2023-07-23 01:37:47,727 - rpa - DEBUG - 第22行
+2023-07-23 01:37:48,087 - rpa - DEBUG - 第23行
+2023-07-23 01:37:48,447 - rpa - DEBUG - 第24行
+2023-07-23 01:37:48,841 - rpa - DEBUG - 第25行
+2023-07-23 01:37:49,204 - rpa - DEBUG - 第26行
+2023-07-23 01:37:49,564 - rpa - DEBUG - 第27行
+2023-07-23 01:37:49,918 - rpa - DEBUG - 第28行
+2023-07-23 01:37:50,350 - rpa - DEBUG - 第29行
+2023-07-23 01:37:50,715 - rpa - DEBUG - 第30行
+2023-07-23 01:37:51,080 - rpa - DEBUG - 第31行
+2023-07-23 01:37:51,493 - rpa - DEBUG - 第32行
+2023-07-23 01:37:51,865 - rpa - DEBUG - 第33行
+2023-07-23 01:37:52,230 - rpa - DEBUG - 第34行
+2023-07-23 01:37:52,591 - rpa - DEBUG - 第35行
+2023-07-23 01:37:52,955 - rpa - DEBUG - 第36行
+2023-07-23 01:37:53,352 - rpa - DEBUG - 第37行
+2023-07-23 01:37:53,735 - rpa - DEBUG - 第38行
+2023-07-23 01:37:54,100 - rpa - DEBUG - 第39行
+2023-07-23 01:37:54,474 - rpa - DEBUG - 第40行
+2023-07-23 01:37:54,853 - rpa - DEBUG - 第41行
+2023-07-23 01:37:55,235 - rpa - DEBUG - 第42行
+2023-07-23 01:37:55,637 - rpa - DEBUG - 第43行
+2023-07-23 01:37:56,005 - rpa - DEBUG - 第44行
+2023-07-23 01:37:56,399 - rpa - DEBUG - 第45行
+2023-07-23 01:37:56,769 - rpa - DEBUG - 第46行
+2023-07-23 01:37:57,145 - rpa - DEBUG - 第47行
+2023-07-23 01:37:57,570 - rpa - DEBUG - 第48行
+2023-07-23 01:37:57,961 - rpa - DEBUG - 第49行
+2023-07-23 01:37:58,332 - rpa - DEBUG - 第50行
+2023-07-23 01:37:58,718 - rpa - DEBUG - 第51行
+2023-07-23 01:37:59,103 - rpa - DEBUG - 第52行
+2023-07-23 01:37:59,485 - rpa - DEBUG - 第53行
+2023-07-23 01:37:59,899 - rpa - DEBUG - 第54行
+2023-07-23 01:38:00,288 - rpa - DEBUG - 第55行
+2023-07-23 01:38:00,670 - rpa - DEBUG - 第56行
+2023-07-23 01:38:01,049 - rpa - DEBUG - 第57行
+2023-07-23 01:38:01,433 - rpa - DEBUG - 第58行
+2023-07-23 01:38:01,844 - rpa - DEBUG - 第59行
+2023-07-23 01:38:02,237 - rpa - DEBUG - 第60行
+2023-07-23 01:38:02,618 - rpa - DEBUG - 第61行
+2023-07-23 01:38:03,001 - rpa - DEBUG - 第62行
+2023-07-23 01:38:03,392 - rpa - DEBUG - 第63行
+2023-07-23 01:38:03,828 - rpa - DEBUG - 第64行
+2023-07-23 01:38:04,214 - rpa - DEBUG - 第65行
+2023-07-23 01:38:04,607 - rpa - DEBUG - 第66行
+2023-07-23 01:38:05,022 - rpa - DEBUG - 第67行
+2023-07-23 01:38:05,414 - rpa - DEBUG - 第68行
+2023-07-23 01:38:05,851 - rpa - DEBUG - 第69行
+2023-07-23 01:38:06,235 - rpa - DEBUG - 第70行
+2023-07-23 01:38:06,639 - rpa - DEBUG - 第71行
+2023-07-23 01:38:07,043 - rpa - DEBUG - 第72行
+2023-07-23 01:38:07,509 - rpa - DEBUG - 第73行
+2023-07-23 01:38:07,956 - rpa - DEBUG - 第74行
+2023-07-23 01:38:08,355 - rpa - DEBUG - 第75行
+2023-07-23 01:38:08,761 - rpa - DEBUG - 第76行
+2023-07-23 01:38:09,244 - rpa - DEBUG - 第77行
+2023-07-23 01:38:09,674 - rpa - DEBUG - 第78行
+2023-07-23 01:38:10,172 - rpa - DEBUG - 第79行
+2023-07-23 01:38:10,631 - rpa - DEBUG - 第80行
+2023-07-23 01:38:11,083 - rpa - DEBUG - 第81行
+2023-07-23 01:38:11,502 - rpa - DEBUG - 第82行
+2023-07-23 01:38:11,908 - rpa - DEBUG - 第83行
+2023-07-23 01:38:12,379 - rpa - DEBUG - 第84行
+2023-07-23 01:38:12,812 - rpa - DEBUG - 第85行
+2023-07-23 01:38:13,243 - rpa - DEBUG - 第86行
+2023-07-23 01:38:13,652 - rpa - DEBUG - 第87行
+2023-07-23 01:38:14,087 - rpa - DEBUG - 第88行
+2023-07-23 01:38:14,555 - rpa - DEBUG - 第89行
+2023-07-23 01:38:15,000 - rpa - DEBUG - 第90行
+2023-07-23 01:38:15,422 - rpa - DEBUG - 第91行
+2023-07-23 01:38:15,874 - rpa - DEBUG - 第92行
+2023-07-23 01:38:16,360 - rpa - DEBUG - 第93行
+2023-07-23 01:38:16,815 - rpa - DEBUG - 第94行
+2023-07-23 01:38:17,220 - rpa - DEBUG - 第95行
+2023-07-23 01:38:17,627 - rpa - DEBUG - 第96行
+2023-07-23 01:38:18,074 - rpa - DEBUG - 第97行
+2023-07-23 01:38:18,706 - rpa - DEBUG - 第98行
+2023-07-23 01:38:19,135 - rpa - DEBUG - 第99行
+2023-07-23 01:38:19,633 - rpa - DEBUG - 第100行
+2023-07-23 01:38:20,079 - rpa - DEBUG - 第101行
+2023-07-23 01:38:34,182 - rpa - DEBUG - default_config =
+ {
+    "is_debug": 1,
+    "sql_info": {
+        "database": "food",
+        "host": "localhost",
+        "password": "root",
+        "port": 3306,
+        "state": 0,
+        "user": "root"
+    },
+    "task_type": 5
+}
+2023-07-23 01:38:37,367 - rpa - DEBUG - 开始_东方财经
+2023-07-23 01:38:37,413 - rpa - DEBUG - 第1行
+2023-07-23 01:38:38,290 - rpa - DEBUG - 第2行
+2023-07-23 01:38:38,711 - rpa - DEBUG - 第3行
+2023-07-23 01:38:39,201 - rpa - DEBUG - 第4行
+2023-07-23 01:38:39,643 - rpa - DEBUG - 第5行
+2023-07-23 01:38:40,109 - rpa - DEBUG - 第6行
+2023-07-23 01:38:40,548 - rpa - DEBUG - 第7行
+2023-07-23 01:38:41,088 - rpa - DEBUG - 第8行
+2023-07-23 01:38:41,617 - rpa - DEBUG - 第9行
+2023-07-23 01:38:42,108 - rpa - DEBUG - 第10行
+2023-07-23 01:38:42,596 - rpa - DEBUG - 第11行
+2023-07-23 01:38:43,084 - rpa - DEBUG - 第12行
+2023-07-23 01:38:43,613 - rpa - DEBUG - 第13行
+2023-07-23 01:38:44,073 - rpa - DEBUG - 第14行
+2023-07-23 01:38:44,495 - rpa - DEBUG - 第15行
+2023-07-23 01:38:44,918 - rpa - DEBUG - 第16行
+2023-07-23 01:38:45,431 - rpa - DEBUG - 第17行
+2023-07-23 01:38:45,858 - rpa - DEBUG - 第18行
+2023-07-23 01:38:46,285 - rpa - DEBUG - 第19行
+2023-07-23 01:38:46,717 - rpa - DEBUG - 第20行
+2023-07-23 01:38:47,192 - rpa - DEBUG - 第21行
+2023-07-23 01:38:47,629 - rpa - DEBUG - 第22行
+2023-07-23 01:38:48,079 - rpa - DEBUG - 第23行
+2023-07-23 01:38:48,522 - rpa - DEBUG - 第24行
+2023-07-23 01:38:49,010 - rpa - DEBUG - 第25行
+2023-07-23 01:38:49,450 - rpa - DEBUG - 第26行
+2023-07-23 01:38:49,904 - rpa - DEBUG - 第27行
+2023-07-23 01:38:50,397 - rpa - DEBUG - 第28行
+2023-07-23 01:38:50,882 - rpa - DEBUG - 第29行
+2023-07-23 01:38:51,393 - rpa - DEBUG - 第30行
+2023-07-23 01:39:33,170 - rpa - DEBUG - 开始_东方财经
+2023-07-23 01:39:33,171 - rpa - DEBUG - default_config =
+ {
+    "is_debug": 1,
+    "sql_info": {
+        "database": "food",
+        "host": "localhost",
+        "password": "root",
+        "port": 3306,
+        "state": 0,
+        "user": "root"
+    },
+    "task_type": 5
+}
+2023-07-23 01:39:33,215 - rpa - DEBUG - 第1行
+2023-07-23 01:39:34,092 - rpa - DEBUG - 第2行
+2023-07-23 01:39:34,579 - rpa - DEBUG - 第3行
+2023-07-23 01:39:35,072 - rpa - DEBUG - 第4行
+2023-07-23 01:39:35,627 - rpa - DEBUG - 第5行
+2023-07-23 01:39:36,090 - rpa - DEBUG - 第6行
+2023-07-23 01:39:36,531 - rpa - DEBUG - 第7行
+2023-07-23 01:39:37,099 - rpa - DEBUG - 第8行
+2023-07-23 01:39:37,606 - rpa - DEBUG - 第9行
+2023-07-23 01:39:38,099 - rpa - DEBUG - 第10行
+2023-07-23 01:39:38,591 - rpa - DEBUG - 第11行
+2023-07-23 01:39:39,133 - rpa - DEBUG - 第12行
+2023-07-23 01:39:39,646 - rpa - DEBUG - 第13行
+2023-07-23 01:39:40,120 - rpa - DEBUG - 第14行
+2023-07-23 01:39:40,564 - rpa - DEBUG - 第15行
+2023-07-23 01:39:41,043 - rpa - DEBUG - 第16行
+2023-07-23 01:39:41,496 - rpa - DEBUG - 第17行
+2023-07-23 01:39:41,940 - rpa - DEBUG - 第18行
+2023-07-23 01:39:42,379 - rpa - DEBUG - 第19行
+2023-07-23 01:39:42,851 - rpa - DEBUG - 第20行
+2023-07-23 01:39:43,307 - rpa - DEBUG - 第21行
+2023-07-23 01:39:43,751 - rpa - DEBUG - 第22行
+2023-07-23 01:39:44,205 - rpa - DEBUG - 第23行
+2023-07-23 01:39:44,687 - rpa - DEBUG - 第24行
+2023-07-23 01:39:45,140 - rpa - DEBUG - 第25行
+2023-07-23 01:39:45,585 - rpa - DEBUG - 第26行
+2023-07-23 01:39:46,065 - rpa - DEBUG - 第27行
+2023-07-23 01:39:46,540 - rpa - DEBUG - 第28行
+2023-07-23 01:39:47,068 - rpa - DEBUG - 第29行
+2023-07-23 01:39:47,532 - rpa - DEBUG - 第30行
