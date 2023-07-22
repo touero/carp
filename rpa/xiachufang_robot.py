@@ -6,8 +6,11 @@ from robot import Robot
 
 
 class XiaChuFang_Robot(Robot):
-    def __init__(self, default_config, url):
-        super().__init__(default_config, url)
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+
+    def __str__(self):
+        return '下厨房'
 
     def run_task(self):
         food_list = self.find_eles_xpath('//div[@class="info pure-u"]/p[@class="name"]/a')
@@ -47,16 +50,12 @@ class XiaChuFang_Robot(Robot):
             for i, food_ma in enumerate(food_matril):
                 food_kg_list.append(food_ma.find_element(By.XPATH, '//table//tr/td[2]').text)
             for i in range(0, len(food_ma_list)):
-                food_materials.append(food_ma_list[i]+food_kg_list[i])
+                food_materials.append(food_ma_list[i] + food_kg_list[i])
             # 生成菜品字典，并用于写入数据库
-            food_dict = {'food_name': food_name, 'food_img': food_img, 'food_materials': ' '.join(food_materials), 'food_url': food_urls_list[flag]}
+            food_dict = {'food_name': food_name, 'food_img': food_img, 'food_materials': ' '.join(food_materials),
+                         'food_url': food_urls_list[flag]}
             # print(food_dict)
             wtm(food_dict, 'xcf')
             flag = flag + 1
             self.close_window()
             self.switch_default_windows()
-
-
-
-
-
