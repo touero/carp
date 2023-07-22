@@ -10,14 +10,6 @@ task_type
 default_config = {
     "task_type": 5,
     "is_debug": 1,
-    "sql_info": {
-        "state": 0,
-        "host": "localhost",
-        "user": "root",
-        "password": "root",
-        "database": "food",
-        "port": 3306
-    }
 }
 
 if __name__ == '__main__':

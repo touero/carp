@@ -1,44 +1,11 @@
 import logging
 from datetime import datetime
 import openpyxl
-import pymysql
 import pytz
 import os
-
-
-class SqlMaster:
-    def __init__(self, default_config):
-        host = default_config['sql_info']['host']
-        user = default_config['sql_info']['user']
-        password = default_config['sql_info']['password']
-        port = default_config['sql_info']['port']
-        database = default_config['sql_info']['database']
-        self.conn = pymysql.connect(host=host, user=user, password=password, port=port, database=database)
-        self.cursor = self.conn.cursor()
-
-    def submit_sql_with_return(self, sql: str) -> tuple:
-        """
-        执行sql
-        :param sql: sql语句
-        :return: 元组，即有表的返回
-        """
-        log_t(sql)
-        self.cursor.execute(sql)
-        return self.cursor.fetchall()
-
-    def only_submit_sql(self, sql: str):
-        """
-        执行sql
-        :param sql: sql
-        :return: None，即几行受影响
-        """
-        log_t(sql)
-        self.cursor.execute(sql)
-        self.conn.commit()
-
-    def __del__(self):
-        self.conn.close()
-        self.cursor.close()
+from dataclasses import dataclass
+import pymysql
+import traceback
 
 
 def log_t(args):

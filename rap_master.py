@@ -1,5 +1,5 @@
 from rpa.xiachufang_robot import XiaChuFang_Robot
-from constants import TaskType, TaskUrl, SqlState
+from constants import TaskType, TaskUrl
 from rpa.xinshipu_robot import XinShiPu_Robot
 from rpa.meishitianxia_robot import MeiShiTianXia_Robot
 from rpa.shuguowang_robot import ShuGuoWang_Robot

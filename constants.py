@@ -25,7 +25,3 @@ class TaskUrl(Enum):
     DONG_FANG_CAI_FU = 'https://data.eastmoney.com/zjlx/600257.html'
 
 
-@unique
-class SqlState(IntEnum):
-    ON = 1
-    OFF = 0
