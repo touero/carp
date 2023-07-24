@@ -14,6 +14,8 @@ def log_t(args):
     :param args: 仅一个参数
     :return:
     """
+    if not args:
+        return
     logger = logging.getLogger('rpa')
     logger.setLevel(logging.DEBUG)
     console_handler = logging.StreamHandler()
