@@ -31,7 +31,6 @@ def log_t(args):
     logger.removeHandler(console_handler)
 
 
-@property
 def get_time_now() -> datetime:
     """
     获取当前日期
@@ -71,7 +70,9 @@ def write_to_excel(_list: list, path: str):
     :param path: 存储路径
     :return:
     """
+    log_t(' '.join(_list))
     wb = openpyxl.load_workbook(path) if os.path.exists(path) else openpyxl.Workbook()
     sheet = wb.active
     sheet.append(_list)
     wb.save(path)
+    log_t('write to xlsx success')

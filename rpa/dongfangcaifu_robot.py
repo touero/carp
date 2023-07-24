@@ -16,7 +16,6 @@ class DongFangCaiFu_Robot(Robot):
         rows = self.wait_eles_by_xpath('//div[@id="table_ls"]//tbody//tr')
         for index, row in enumerate(rows):
             self.scroll_to_element_safe(row)
-            log_t(f'第{index + 1}行')
             date = row.find_element(By.XPATH, './td[1]').text
             closing_price = row.find_element(By.XPATH, './td[2]').text
             fluctuation_range = row.find_element(By.XPATH, './td[3]').text
