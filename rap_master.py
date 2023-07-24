@@ -4,7 +4,7 @@ from rpa.xinshipu_robot import XinShiPu_Robot
 from rpa.meishitianxia_robot import MeiShiTianXia_Robot
 from rpa.shuguowang_robot import ShuGuoWang_Robot
 from rpa.dongfangcaifu_robot import DongFangCaiFu_Robot
-from unil import log_t
+from unil import *
 from abc import ABC
 import json
 
@@ -15,7 +15,6 @@ class RpaMaster(ABC):
         self.robot = None
         self.config = kwargs.get('default_config')
         self.task_type = self.config.get('task_type')
-        self.sql_state = self.config.get('sql_info').get('state')
 
         self.robots = {
             TaskType.XIA_CHU_FANG.value: XiaChuFang_Robot,
@@ -39,12 +38,16 @@ class RpaMaster(ABC):
 
     @property
     def robot_factory(self):
+        self.url = self.urls.get(self.task_type)
+        Robot = self.robots.get(self.task_type)
+        robot = Robot(default_config=self.config, url=self.url)
+        log_t(f'开始_{robot}')
+        log_t(f"default_config =\n {json.dumps(self.config, sort_keys=True, indent=4, separators=(',', ': '))}")
+        return robot
+
+    def start_task(self):
         try:
-            self.url = self.urls.get(self.task_type)
-            Robot = self.robots.get(self.task_type)
-            self.robot = Robot(default_config=self.config, url=self.url)
-            log_t(f'开始_{self.robot.__str__()}')
-            log_t(f"default_config =\n {json.dumps(self.config, sort_keys=True, indent=4, separators=(',', ': '))}")
-            return self.robot
+            self.robot = self.robot_factory
+            self.robot.run_task()
         except Exception as e:
-            log_t(e)
+            log_t(traceback.print_exc())

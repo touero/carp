@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Optional
 from selenium import webdriver
 from selenium.webdriver.remote.webelement import WebElement
 from selenium.webdriver.support.wait import WebDriverWait, TimeoutException
@@ -134,7 +134,7 @@ class DataBaseInfo:
 
 
 class SqlMaster:
-    def __init__(self, db_info: DataBaseInfo = None):
+    def __init__(self, db_info: Optional[DataBaseInfo] = None):
         self.conn = pymysql.connect(
             host=db_info.host,
             user=db_info.user,

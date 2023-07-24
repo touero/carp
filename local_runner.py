@@ -13,5 +13,5 @@ default_config = {
 }
 
 if __name__ == '__main__':
-    created_robot = RpaMaster(default_config=default_config).robot_factory
-    created_robot.run_task()
+    RpaMaster(default_config=default_config).start_task()
+
