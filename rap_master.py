@@ -31,10 +31,6 @@ class RpaMaster(ABC):
             TaskType.SHU_GUO_WANG.value: TaskUrl.SHU_GUO_WANG.value,
             TaskType.DONG_FANG_CAI_FU.value: TaskUrl.DONG_FANG_CAI_FU.value
         }
-        # todo 需要sql 最好写成装饰器
-        # self.sql_state = None
-        # if self.sql_state == SqlState.ON:
-        #     self.sql_master = SqlMaster(self.config)
 
     @property
     def robot_factory(self):
