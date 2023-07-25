@@ -1,12 +1,17 @@
-from typing import List, Optional
-from selenium import webdriver
-from selenium.webdriver.remote.webelement import WebElement
-from selenium.webdriver.support.wait import WebDriverWait, TimeoutException
-from selenium.webdriver.support import expected_conditions as ec
-from selenium.webdriver.common.by import By
-from unil import *
-from constants import *
+import pymysql
+import traceback
 from abc import ABC, abstractmethod
+from dataclasses import dataclass
+from typing import List, Optional
+
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.remote.webelement import WebElement
+from selenium.webdriver.support import expected_conditions as ec
+from selenium.webdriver.support.wait import WebDriverWait, TimeoutException
+
+from constants import DEBUG
+from unil import log_t
 
 
 class Robot(ABC):
@@ -16,7 +21,6 @@ class Robot(ABC):
         self.url = url
         self.task_type = default_config['task_type']
         self.is_debug = self.task['is_debug']
-        self.time = datetime.now().strftime("%Y_%m_%d_%H_%M_%S")
         self.options = webdriver.ChromeOptions()
         self.options.add_argument("disable-blink-features=AutomationControlled")
         self.options.add_experimental_option("excludeSwitches", ['enable-automation'])
@@ -74,7 +78,7 @@ class Robot(ABC):
         try:
             text = self.driver.find_element(By.XPATH, xpath).text
         except Exception as e:
-            ...
+            log_t(e)
         return text
 
     def input_clear_xpath(self, xpath: str):
@@ -92,7 +96,8 @@ class Robot(ABC):
             ele = self.driver.find_element(By.XPATH, xpath)
             if ele:
                 return True
-        except Exception:
+        except Exception as e:
+            log_t(e)
             return False
 
     def close_window(self):
@@ -120,8 +125,8 @@ class Robot(ABC):
         try:
             el = self.wait_ele_by_xpath(ele) if isinstance(ele, str) else ele
             self.driver.execute_script("arguments[0].scrollIntoView(true)", el)
-        except:
-            log_t(traceback.format_exc())
+        except Exception as e:
+            log_t(e)
 
 
 @dataclass

@@ -1,12 +1,15 @@
-from rpa.xiachufang_robot import XiaChuFang_Robot
+import traceback
+import json
+
+from abc import ABC
+
 from constants import TaskType, TaskUrl
+from rpa.xiachufang_robot import XiaChuFang_Robot
 from rpa.xinshipu_robot import XinShiPu_Robot
 from rpa.meishitianxia_robot import MeiShiTianXia_Robot
 from rpa.shuguowang_robot import ShuGuoWang_Robot
 from rpa.dongfangcaifu_robot import DongFangCaiFu_Robot
-from unil import *
-from abc import ABC
-import json
+from unil import get_time_now, log_t
 
 
 class RpaMaster(ABC):
@@ -50,6 +53,7 @@ class RpaMaster(ABC):
             task_state = True
         except Exception as e:
             task_state = False
+            log_t(e)
             log_t(traceback.print_exc())
         self.end_time = get_time_now()
         log_t(f'当前任务: {self.robot}')

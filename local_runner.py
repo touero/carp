@@ -1,4 +1,5 @@
 from rap_master import RpaMaster
+
 """
 task_type
     1:下厨房

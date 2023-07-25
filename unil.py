@@ -1,11 +1,10 @@
 import logging
-from datetime import datetime
 import openpyxl
 import pytz
 import os
-from dataclasses import dataclass
 import pymysql
-import traceback
+
+from datetime import datetime
 
 
 def log_t(args):
