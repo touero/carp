@@ -1,9 +1,5 @@
 # 封装了selenium的集成任务
-<img src="https://img.shields.io/badge/python_-%3E%3D3.8-green" alt="">
-<img src="https://img.shields.io/badge/license_-MIT-green" alt="">
-
-<img src="https://img.shields.io/badge/pymysql-blue" alt="">
-<img src="https://img.shields.io/badge/Selenium-blue" alt="">
+<img src="https://img.shields.io/badge/python_-%3E%3D3.8-green" alt=""><img src="https://img.shields.io/badge/license_-MIT-green" alt=""><img src="https://img.shields.io/badge/pymysql-blue" alt=""><img src="https://img.shields.io/badge/Selenium-blue" alt="">
 
 
 仓库介绍
