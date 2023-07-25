@@ -27,8 +27,9 @@ $ git https://github.com/weiensong/scrapySelenium.git
 ## 运行
 
 ```sh
-$ python3 ./local_runner.py
+$ pip install -r requriements.txt
 # local_runner.py中的default_config用以配置任务
+$ python3 ./local_runner.py
 ```
 
 ## 相关仓库
