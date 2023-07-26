@@ -21,7 +21,7 @@ Plus: 以上url并不一定为对应任务的url
 这个项目使用 [Python](https://www.python.org/) [Git](https://git-scm.com/) [Chrome](https://www.google.com/chrome/)。请确保你本地安装了它们。
 
 ```sh
-$ git https://github.com/weiensong/scrapySelenium.git
+$ git clone https://github.com/weiensong/scrapySelenium.git
 ```
 
 ## 运行
@@ -46,7 +46,11 @@ $ python3 ./local_runner.py
 
 - [FireFox](https://github.com/mozilla/geckodriver/releases)
 
+## 维护者
+
 [@weiensong](https://github.com/weiensong)
+
+
 
 ## 如何贡献
 
@@ -55,9 +59,12 @@ $ python3 ./local_runner.py
 
 标准 Python 遵循 [Python PEP-8](https://peps.python.org/pep-0008/) 行为规范。
 
+
+
 ### 贡献者
 
 感谢参与项目的所有人
+
 
 
 ## 使用许可
