@@ -122,12 +122,16 @@ class Robot(ABC):
             return []
 
     def scroll_to_element_safe(self, ele):
+        self.execute_scrip(script="arguments[0].scrollIntoView(true)", ele=ele)
+
+    def execute_script(self, **kwargs)
         try:
-            el = self.wait_ele_by_xpath(ele) if isinstance(ele, str) else ele
-            self.driver.execute_script("arguments[0].scrollIntoView(true)", el)
+            script = kwargs.get('script')
+            ele = kwargs.get('ele')
+            ele = self.wait_ele_by_xpath(ele) if isinstance(ele, str) else ele
+            self.driver.execute_script(script, el)
         except Exception as e:
             log_t(e)
-
 
 @dataclass
 class DataBaseInfo:
