@@ -1,8 +1,10 @@
-# 封装了selenium的集成任务
+<h1 align="center">封装了selenium的集成任务</h1>
+
+<p align="center">
 <img src="https://img.shields.io/badge/python_-%3E%3D3.8-green" alt=""> <img src="https://img.shields.io/badge/license_-MIT-green" alt=""> <img src="https://img.shields.io/badge/pymysql-blue" alt=""> <img src="https://img.shields.io/badge/Selenium-blue" alt="">
+</p>
 
-
-仓库介绍
+## 仓库介绍
 
 这是一个二次封装了selenium的集成任务, 它能使得我们能用一套封装好的代码爬取不同的网站而进行不同的任务类型.
 
