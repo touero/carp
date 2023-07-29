@@ -3,11 +3,11 @@
 <p align="center">
   <img src="https://img.shields.io/badge/python_-%3E%3D3.8-green" alt=""> 
   <img src="https://img.shields.io/badge/license_-MIT-green" alt=""> 
-  <img src="https://img.shields.io/badge/-Python-black?style=flat-square&logo=python"/> 
-  <img src="https://img.shields.io/badge/-Selenium-black?style=flat-square&logo=selenium"/>
-  <img src="https://img.shields.io/badge/-Git-black?style=flat-square&logo=git"/> 
-  <img src="https://img.shields.io/badge/-Pycharm-black?style=flat-square&logo=pycharm"/> 
-  <img src="https://img.shields.io/badge/-MySQL-black?style=flat-square&logo=mysql"/>
+  <img src="https://img.shields.io/badge/-Python-green?logo=python"/> 
+  <img src="https://img.shields.io/badge/-Selenium-green?logo=selenium"/>
+  <img src="https://img.shields.io/badge/Git-green?logo=git"/> 
+  <img src="https://img.shields.io/badge/-Pycharm-green?logo=pycharm"/> 
+  <img src="https://img.shields.io/badge/-MySQL-green?logo=mysql"/>
 </p>
 
 ## 仓库介绍
