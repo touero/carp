@@ -41,7 +41,7 @@ $ pip install -r requriements.txt
 $ python3 ./local_runner.py
 ```
 
-## Related Efforts
+## Related Repository
 
 - [Python](https://github.com/TheAlgorithms/Python) — All Algorithms implemented in Python.
 - [Selenium](https://github.com/SeleniumHQ/selenium) — A browser automation framework and ecosystem.
