@@ -1,4 +1,4 @@
-<h1 align="center">封装了selenium的集成任务</h1>
+<h1 align="center">Encapsulated selenium integration tasks</h1>
 
 <p align="center">
   <img src="https://img.shields.io/badge/python_-%3E%3D3.8-green" alt=""> 
@@ -10,11 +10,11 @@
   <img src="https://img.shields.io/badge/-MySQL-brown?style=plastic&logo=mysql"/>
 </p>
 
-## 仓库介绍
+## Repository Introduction
 
-&emsp;&emsp;这是一个二次封装了selenium的集成任务, 它能使得我们能用一套封装好的代码爬取不同的网站而进行不同的任务类型.
+&emsp;&emsp;This is an integration task that encapsulates selenium twice, which allows us to crawl different websites with a set of encapsulated code and perform different task types.
 
-本仓库包含以下内容的爬虫：
+This repository contains：
 
 1. [下厨房](https://www.xiachufang.com/) 
 2. [心食谱](https://www.xinshipu.com/) 
@@ -22,31 +22,31 @@
 4. [果蔬网](http://www.zggswmh.com/) 
 5. [东方财经](https://www.eastmoney.com/) 
 
-Plus: 以上url并不一定为对应任务的url
+Plus: The above URLs are not necessarily the URLs of the corresponding tasks.
 
-## 安装
+## Install
 
-这个项目使用 [Python](https://www.python.org/) [Git](https://git-scm.com/) [Chrome](https://www.google.com/chrome/)。请确保你本地安装了它们。
+This project uses [Python](https://www.python.org/) [Git](https://git-scm.com/) [Chrome](https://www.google.com/chrome/). Go check them out if you don't have them locally installed.
 
 ```sh
 $ git clone https://github.com/weiensong/scrapySelenium.git
 ```
 
-## 运行
+## Usage
 
 ```sh
 $ pip install -r requriements.txt
 
-# local_runner.py中的default_config用以配置任务
+# default_config is used to configure tasks in local_runner.py
 $ python3 ./local_runner.py
 ```
 
-## 相关仓库
+## Related Efforts
 
 - [Python](https://github.com/TheAlgorithms/Python) — All Algorithms implemented in Python.
 - [Selenium](https://github.com/SeleniumHQ/selenium) — A browser automation framework and ecosystem.
 
-## 相关Driver下载
+## Related Driver Download
 
 - [Chrome](https://chromedriver.chromium.org/downloads)
 
@@ -54,28 +54,27 @@ $ python3 ./local_runner.py
 
 - [FireFox](https://github.com/mozilla/geckodriver/releases)
 
-## 维护者
+## Maintainers
 
 [@weiensong](https://github.com/weiensong)
 
 
 
-## 如何贡献
+## Contributing
 
-非常欢迎你的加入！[提一个 Issue](https://github.com/weiensong/scrapySelenium/issues) 或者提交一个 Pull Request。
+Feel free to dive in! [Open an issue](https://github.com/weiensong/scrapySelenium/issues) or submit PRs.
 
-
-标准 Python 遵循 [Python PEP-8](https://peps.python.org/pep-0008/) 行为规范。
-
-
-
-### 贡献者
-
-感谢参与项目的所有人
+Standard Python follows the [Python PEP-8](https://peps.python.org/pep-0008/) Code of Conduct.。
 
 
 
-## 使用许可
+### Contributors
+
+This project exists thanks to all the people who contribute.
+
+
+
+## License
 
 [MIT](LICENSE) © weiensong
 
