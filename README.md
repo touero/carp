@@ -12,7 +12,7 @@
 
 ## Repository Introduction
 
-&emsp;&emsp;This is an integration task that encapsulates selenium twice, which allows us to crawl different websites with a set of encapsulated code and perform different task types.
+This is an integration task that encapsulates selenium twice, which allows us to crawl different websites with a set of encapsulated code and perform different task types.
 
 This repository contains：
 
