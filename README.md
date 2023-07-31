@@ -64,7 +64,7 @@ $ python3 ./local_runner.py
 
 Feel free to dive in! [Open an issue](https://github.com/weiensong/scrapySelenium/issues) or submit PRs.
 
-Standard Python follows the [Python PEP-8](https://peps.python.org/pep-0008/) Code of Conduct.。
+Standard Python follows the [Python PEP-8](https://peps.python.org/pep-0008/) Code of Conduct.
 
 
 
