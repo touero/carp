@@ -3,11 +3,11 @@
 <p align="center">
   <img src="https://img.shields.io/badge/python_-%3E%3D3.8-green" alt=""> 
   <img src="https://img.shields.io/badge/license_-MIT-green" alt=""> 
-  <img src="https://img.shields.io/badge/-Python-brown?style=plastic&logo=python"/> 
-  <img src="https://img.shields.io/badge/-Selenium-brown?style=plastic&logo=selenium"/>
-  <img src="https://img.shields.io/badge/Git-brown?style=plastic&logo=git"/> 
-  <img src="https://img.shields.io/badge/-Pycharm-brown?style=plastic&logo=pycharm"/> 
-  <img src="https://img.shields.io/badge/-MySQL-brown?style=plastic&logo=mysql"/>
+  <a href="https://www.python.org/" ><img src="https://img.shields.io/badge/-Python-brown?style=plastic&logo=python"/></a> 
+  <a href="https://www.selenium.dev/"><img src="https://img.shields.io/badge/-Selenium-brown?style=plastic&logo=selenium"/></a> 
+  <a href="https://git-scm.com/"><img src="https://img.shields.io/badge/Git-brown?style=plastic&logo=git"/></a> 
+  <a href="https://www.jetbrains.com/pycharm/"><img src="https://img.shields.io/badge/-Pycharm-brown?style=plastic&logo=pycharm"/></a> 
+  <a href="https://www.mysql.com/"><img src="https://img.shields.io/badge/-MySQL-brown?style=plastic&logo=mysql"/></a> 
 </p>
 
 ## Repository Introduction
