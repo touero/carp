@@ -44,7 +44,7 @@ class Robot(ABC):
         except TimeoutException:
             ...
 
-    def wait_ele_xpath_safe(self, xpath: str, timeout: int = 5):
+    def wait_ele_xpath_safe(self, xpath: str, timeout: int = 5) -> bool:
         try:
             WebDriverWait(self.driver, timeout).until(ec.visibility_of_element_located((By.XPATH, xpath)))
             if self.driver.find_element(By.XPATH, xpath):
@@ -88,7 +88,7 @@ class Robot(ABC):
         handle = self.driver.window_handles
         self.driver.switch_to.window(handle[-1])
 
-    def refresh(self):
+    def refresh(self) -> None:
         self.driver.refresh()
 
     def find_ele_xpath(self, xpath: str) -> bool:
@@ -100,7 +100,7 @@ class Robot(ABC):
             log_t(e)
             return False
 
-    def close_window(self):
+    def close_window(self) -> None:
         self.driver.close()
 
     def wait_ele_by_xpath(self, xpath, timeout=5):
@@ -110,7 +110,7 @@ class Robot(ABC):
         handle = self.driver.window_handles
         self.driver.switch_to.window(handle[0])
 
-    def wait_find_by_xpath(self, xpath, timeout=5):
+    def wait_find_by_xpath(self, xpath, timeout=5) -> WebElement:
         WebDriverWait(self.driver, timeout).until(ec.visibility_of_element_located((By.XPATH, xpath)))
         return self.driver.find_element(By.XPATH, xpath)
 
@@ -122,16 +122,17 @@ class Robot(ABC):
             return []
 
     def scroll_to_element_safe(self, ele):
-        self.execute_scrip(script="arguments[0].scrollIntoView(true)", ele=ele)
+        self.execute_script(script="arguments[0].scrollIntoView(true)", ele=ele)
 
-    def execute_script(self, **kwargs)
+    def execute_script(self, **kwargs):
         try:
             script = kwargs.get('script')
             ele = kwargs.get('ele')
             ele = self.wait_ele_by_xpath(ele) if isinstance(ele, str) else ele
-            self.driver.execute_script(script, el)
+            self.driver.execute_script(script, ele)
         except Exception as e:
             log_t(e)
+
 
 @dataclass
 class DataBaseInfo:
