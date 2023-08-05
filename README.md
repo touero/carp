@@ -35,10 +35,19 @@ $ git clone https://github.com/weiensong/scrapySelenium.git
 ## Usage
 
 ```sh
-$ pip install -r requriements.txt
+$ python 3 -m venv venv
 
-# default_config is used to configure tasks in local_runner.py
-$ python3 ./local_runner.py
+$ source ./venv/bin/activate # linux activate venv
+
+> .\venv\Scripts\activate.bat # windows activate venv
+
+$ pip install -r requriements.txt # install packagers in venv
+
+$ python ./local_runner.py # default_config is used to configure tasks in local_runner.py
+
+$ deactivate # linux quit venv
+
+> .\Scripts\deactivate.bat # windows quit venv
 ```
 
 ## Related Repository
