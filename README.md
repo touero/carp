@@ -85,5 +85,5 @@ This project exists thanks to all the people who contribute.
 
 ## License
 
-[MIT](https://github.com/weiensong/scrapySeleniumm/LICENSE) © weiensong
+[MIT](https://github.com/weiensong/scrapySelenium/blob/master/LICENSE) © weiensong
 
