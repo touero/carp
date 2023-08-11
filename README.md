@@ -1,8 +1,8 @@
 <h1 align="center">Encapsulated selenium integration tasks</h1>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/python_-%3E%3D3.8-green" alt=""> 
-  <img src="https://img.shields.io/badge/license_-GPL3.0-green" alt=""> 
+  <a href="https://www.python.org/" ><img src="https://img.shields.io/badge/python_-%3E%3D3.8-green" alt=""></a> 
+  <a href="https://www.gnu.org/licenses/gpl-3.0.html" ><img src="https://img.shields.io/badge/license_-GPL3.0-green" alt=""> 
   <a href="https://www.python.org/" ><img src="https://img.shields.io/badge/-Python-brown?style=plastic&logo=python"/></a> 
   <a href="https://www.selenium.dev/"><img src="https://img.shields.io/badge/-Selenium-brown?style=plastic&logo=selenium"/></a> 
   <a href="https://git-scm.com/"><img src="https://img.shields.io/badge/Git-brown?style=plastic&logo=git"/></a> 
