@@ -1,3 +1,6 @@
+import random
+import time
+
 import pymysql
 import traceback
 from abc import ABC, abstractmethod
@@ -5,6 +8,8 @@ from dataclasses import dataclass
 from typing import List, Optional
 
 from selenium import webdriver
+from selenium.common import StaleElementReferenceException
+from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webelement import WebElement
 from selenium.webdriver.support import expected_conditions as ec
@@ -132,6 +137,31 @@ class Robot(ABC):
             self.driver.execute_script(script, ele)
         except Exception as e:
             log_t(e)
+
+    def slide_to_right(self):
+        if not self.wait_ele_xpath_safe('//*[@class="handler animate" and last() ]'):
+            log_t('未发现滑块跳过')
+            return
+        for _ in range(3):
+            try:
+                if not self.wait_ele_xpath_safe('//*[@class="drag_text" and text()="验证通过"]'):
+                    button = self.find_ele_xpath('//*[@class="handler animate" and last() ]')
+                    ActionChains(self.driver).click_and_hold(button).perform()
+                    ActionChains(self.driver).move_by_offset(random.randint(60, 100), 0).perform()
+                    time.sleep(0.1)
+
+                    ActionChains(self.driver).click_and_hold(button).perform()
+                    ActionChains(self.driver).move_by_offset(random.randint(160, 200), 0).perform()
+                    time.sleep(0.1)
+
+                    ActionChains(self.driver).click_and_hold(button).perform()
+                    ActionChains(self.driver).move_by_offset(360, 0).perform()
+                    ActionChains(self.driver).release(button).perform()
+                    time.sleep(1)
+                else:
+                    break
+            except StaleElementReferenceException:
+                self.find_ele_click_xpath('//*[@id="dom_id"]/div/span/a')
 
 
 @dataclass
