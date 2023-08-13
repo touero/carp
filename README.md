@@ -39,7 +39,7 @@ $ python 3 -m venv venv
 
 $ source ./venv/bin/activate # linux activate venv
 
-> .\venv\Scripts\activate.bat # windows activate venv
+> .\venv\Scripts\activate # windows activate venv
 
 $ pip install -r requriements.txt # install packagers in venv
 
