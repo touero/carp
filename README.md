@@ -1,4 +1,4 @@
-<h1 align="center">Encapsulated selenium integration tasks</h1>
+<h1 align="center">carp</h1>
 
 <p align="center">
   <a href="https://www.python.org/" ><img src="https://img.shields.io/badge/python_-%3E%3D3.8-green" alt=""></a> 
