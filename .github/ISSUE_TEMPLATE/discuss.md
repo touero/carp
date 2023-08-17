@@ -1,6 +1,6 @@
 ---
 name: discuss
-about: Discussion template
+about: For discussion, please come here.
 title: ''
 labels: ''
 assignees: ''
