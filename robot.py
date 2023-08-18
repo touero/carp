@@ -22,10 +22,10 @@ from setting import *
 
 class Robot(ABC):
 
-    def __init__(self, default_config, url):
-        self.task = default_config
-        self.url = url
-        self.task_type = default_config['task_type']
+    def __init__(self, **kwargs):
+        self.task = kwargs.get('default_config')
+        self.url = kwargs.get('url')
+        self.task_type = kwargs.get('task_type')
 
         self.options = webdriver.ChromeOptions()
         self.options.add_argument("disable-blink-features=AutomationControlled")
