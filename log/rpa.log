@@ -1,0 +1,549 @@
+2023-08-05 14:21:03,326 - rpa - DEBUG - 开始 东方财经
+2023-08-05 14:21:03,327 - rpa - DEBUG - default_config =
+ {
+    "is_debug": 1,
+    "task_type": 5
+}
+2023-08-05 14:21:03,828 - rpa - DEBUG - 日期 收盘价 涨跌幅 主力净流入净额 主力净流入净占比 超大单净流入净额 超大单净流入净占比 大单净流入净额 大单净流入净占比 中单净流入净额 中单净流入净占比 小单净流入净额 小单净流入净占比
+2023-08-05 14:21:04,040 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:04,041 - rpa - DEBUG - 2023-08-04 6.58 0.00% -3118.30万 -7.86% -2538.50万 -6.40% -579.80万 -1.46% 1444.80万 3.64% 1673.50万 4.22%
+2023-08-05 14:21:04,223 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:04,451 - rpa - DEBUG - 2023-08-03 6.58 4.44% 1032.81万 2.58% 976.86万 2.44% 55.95万 0.14% -1258.24万 -3.15% 225.43万 0.56%
+2023-08-05 14:21:04,645 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:04,863 - rpa - DEBUG - 2023-08-02 6.30 -1.87% -1159.63万 -6.25% -248.31万 -1.34% -911.31万 -4.91% -231.11万 -1.25% 1390.74万 7.50%
+2023-08-05 14:21:05,044 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:05,250 - rpa - DEBUG - 2023-08-01 6.42 -1.68% -2350.07万 -11.60% -845.67万 -4.18% -1504.41万 -7.43% 246.89万 1.22% 2103.18万 10.38%
+2023-08-05 14:21:05,430 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:05,638 - rpa - DEBUG - 2023-07-31 6.53 1.71% -470.73万 -2.03% -677.38万 -2.93% 206.65万 0.89% 113.35万 0.49% 357.37万 1.54%
+2023-08-05 14:21:05,847 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:06,058 - rpa - DEBUG - 2023-07-28 6.42 -0.62% -1546.80万 -8.20% -974.41万 -5.17% -572.39万 -3.03% 484.35万 2.57% 1062.45万 5.63%
+2023-08-05 14:21:06,248 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:06,470 - rpa - DEBUG - 2023-07-27 6.46 0.31% -900.53万 -3.20% 262.83万 0.93% -1163.37万 -4.14% -584.64万 -2.08% 1485.17万 5.28%
+2023-08-05 14:21:06,660 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:07,007 - rpa - DEBUG - 2023-07-26 6.44 3.54% -2186.76万 -6.76% -307.40万 -0.95% -1879.36万 -5.81% -318.20万 -0.98% 2504.96万 7.75%
+2023-08-05 14:21:07,196 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:07,440 - rpa - DEBUG - 2023-07-25 6.22 0.81% -2795.54万 -9.21% -2676.35万 -8.82% -119.20万 -0.39% 158.07万 0.52% 2637.47万 8.69%
+2023-08-05 14:21:07,636 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:07,886 - rpa - DEBUG - 2023-07-24 6.17 -10.06% -7102.04万 -19.37% -5341.25万 -14.57% -1760.79万 -4.80% 1662.46万 4.54% 5439.58万 14.84%
+2023-08-05 14:21:08,110 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:08,366 - rpa - DEBUG - 2023-07-21 6.86 7.52% 3410.54万 5.50% 1327.41万 2.14% 2083.13万 3.36% -486.72万 -0.79% -2923.82万 -4.72%
+2023-08-05 14:21:08,575 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:08,863 - rpa - DEBUG - 2023-07-20 6.38 0.31% -465.65万 -2.09% -293.61万 -1.32% -172.05万 -0.77% 12.45万 0.06% 453.20万 2.03%
+2023-08-05 14:21:09,074 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:09,318 - rpa - DEBUG - 2023-07-19 6.36 0.00% -1113.95万 -8.81% -850.92万 -6.73% -263.02万 -2.08% 623.74万 4.93% 490.20万 3.88%
+2023-08-05 14:21:09,534 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:09,796 - rpa - DEBUG - 2023-07-18 6.36 0.16% -254.63万 -1.69% 3.04万 0.02% -257.67万 -1.71% 152.00万 1.01% 102.62万 0.68%
+2023-08-05 14:21:09,981 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:10,208 - rpa - DEBUG - 2023-07-17 6.35 -1.70% 513.24万 3.37% 390.19万 2.57% 123.05万 0.81% -313.11万 -2.06% -200.13万 -1.32%
+2023-08-05 14:21:10,392 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:10,594 - rpa - DEBUG - 2023-07-14 6.46 3.69% 2615.48万 10.00% 1741.71万 6.66% 873.76万 3.34% -911.56万 -3.48% -1703.92万 -6.51%
+2023-08-05 14:21:10,826 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:11,102 - rpa - DEBUG - 2023-07-13 6.23 -1.74% -1364.93万 -6.95% -573.35万 -2.92% -791.58万 -4.03% 9157.00 0.00% 1364.01万 6.94%
+2023-08-05 14:21:11,290 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:11,506 - rpa - DEBUG - 2023-07-12 6.34 -2.76% -2080.65万 -8.30% -707.74万 -2.82% -1372.91万 -5.47% -131.17万 -0.52% 2211.83万 8.82%
+2023-08-05 14:21:11,704 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:11,911 - rpa - DEBUG - 2023-07-11 6.52 -5.09% -5332.74万 -13.35% -3462.75万 -8.67% -1869.99万 -4.68% 2598.82万 6.51% 2733.92万 6.85%
+2023-08-05 14:21:12,096 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:12,309 - rpa - DEBUG - 2023-07-10 6.87 1.93% -960.76万 -1.30% -707.43万 -0.96% -253.33万 -0.34% -497.91万 -0.67% 1458.67万 1.97%
+2023-08-05 14:21:12,502 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:12,708 - rpa - DEBUG - 2023-07-07 6.74 9.95% 8093.77万 18.78% 8188.95万 19.00% -95.18万 -0.22% -4380.87万 -10.16% -3712.90万 -8.61%
+2023-08-05 14:21:12,936 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:13,157 - rpa - DEBUG - 2023-07-06 6.13 -0.33% -2294.79万 -11.61% -1477.17万 -7.47% -817.62万 -4.14% -999.74万 -5.06% 3294.53万 16.67%
+2023-08-05 14:21:13,339 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:13,552 - rpa - DEBUG - 2023-07-05 6.15 -3.30% -4982.31万 -15.72% -2280.05万 -7.20% -2702.26万 -8.53% 99.40万 0.31% 4882.91万 15.41%
+2023-08-05 14:21:13,739 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:13,942 - rpa - DEBUG - 2023-07-04 6.36 0.63% -144.26万 -0.57% -137.37万 -0.54% -6.89万 -0.03% -237.31万 -0.94% 381.57万 1.51%
+2023-08-05 14:21:14,129 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:14,377 - rpa - DEBUG - 2023-07-03 6.32 2.27% 1890.48万 6.65% 506.42万 1.78% 1384.06万 4.87% -299.77万 -1.05% -1590.70万 -5.60%
+2023-08-05 14:21:14,602 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:14,854 - rpa - DEBUG - 2023-06-30 6.18 0.49% -1162.04万 -4.60% -1820.38万 -7.21% 658.34万 2.61% -359.11万 -1.42% 1521.15万 6.02%
+2023-08-05 14:21:15,045 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:15,301 - rpa - DEBUG - 2023-06-29 6.15 -0.81% -4099.73万 -18.21% -2506.75万 -11.13% -1592.98万 -7.08% 1863.55万 8.28% 2236.19万 9.93%
+2023-08-05 14:21:15,497 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:15,730 - rpa - DEBUG - 2023-06-28 6.20 -0.80% -2061.01万 -8.32% -883.32万 -3.57% -1177.69万 -4.75% 834.64万 3.37% 1226.37万 4.95%
+2023-08-05 14:21:15,937 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:16,164 - rpa - DEBUG - 2023-06-27 6.25 1.30% -586.57万 -2.48% 123.88万 0.52% -710.45万 -3.00% -276.51万 -1.17% 863.08万 3.65%
+2023-08-05 14:21:16,358 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:16,573 - rpa - DEBUG - 2023-06-26 6.17 1.15% 598.63万 1.89% 1058.50万 3.34% -459.87万 -1.45% -603.36万 -1.90% 4.73万 0.01%
+2023-08-05 14:21:16,807 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:17,093 - rpa - DEBUG - 2023-06-21 6.10 -3.33% -2201.69万 -4.73% -916.18万 -1.97% -1285.51万 -2.76% 1964.94万 4.23% 236.75万 0.51%
+2023-08-05 14:21:17,294 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:17,516 - rpa - DEBUG - 2023-06-20 6.31 4.47% 3048.21万 6.21% 4638.68万 9.45% -1590.48万 -3.24% -1232.48万 -2.51% -1815.73万 -3.70%
+2023-08-05 14:21:17,708 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:17,940 - rpa - DEBUG - 2023-06-19 6.04 -5.48% -5434.84万 -11.40% -4424.88万 -9.28% -1009.97万 -2.12% 2293.57万 4.81% 3141.27万 6.59%
+2023-08-05 14:21:18,139 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:18,375 - rpa - DEBUG - 2023-06-16 6.39 -0.78% -1032.57万 -1.88% -479.56万 -0.87% -553.01万 -1.00% 333.34万 0.61% 699.23万 1.27%
+2023-08-05 14:21:18,574 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:18,856 - rpa - DEBUG - 2023-06-15 6.44 -3.74% -6505.98万 -8.34% -1515.63万 -1.94% -4990.34万 -6.40% -110.98万 -0.14% 6616.95万 8.49%
+2023-08-05 14:21:19,120 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:19,426 - rpa - DEBUG - 2023-06-14 6.69 10.03% 3342.55万 7.13% 6565.66万 14.00% -3223.11万 -6.87% -817.42万 -1.74% -2525.13万 -5.38%
+2023-08-05 14:21:19,654 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:20,010 - rpa - DEBUG - 2023-06-13 6.08 9.95% 5630.43万 15.33% 7678.03万 20.90% -2047.60万 -5.57% -3859.29万 -10.51% -1771.14万 -4.82%
+2023-08-05 14:21:20,226 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:20,471 - rpa - DEBUG - 2023-06-12 5.53 -0.36% -1098.74万 -4.04% -497.65万 -1.83% -601.10万 -2.21% 727.66万 2.67% 371.08万 1.36%
+2023-08-05 14:21:20,689 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:20,966 - rpa - DEBUG - 2023-06-09 5.55 0.18% -101.43万 -0.45% -303.12万 -1.33% 201.69万 0.89% 363.86万 1.60% -262.43万 -1.15%
+2023-08-05 14:21:21,195 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:21,421 - rpa - DEBUG - 2023-06-08 5.54 1.65% 1443.86万 5.37% -493.61万 -1.83% 1937.47万 7.20% 394.00万 1.46% -1837.87万 -6.83%
+2023-08-05 14:21:21,661 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:21,893 - rpa - DEBUG - 2023-06-07 5.45 1.11% -946.97万 -2.44% 1169.24万 3.01% -2116.21万 -5.45% 1681.30万 4.33% -734.33万 -1.89%
+2023-08-05 14:21:22,099 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:22,318 - rpa - DEBUG - 2023-06-06 5.39 10.00% 5026.84万 16.44% 3174.25万 10.38% 1852.59万 6.06% -7.34万 -0.02% -5019.51万 -16.42%
+2023-08-05 14:21:22,519 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:22,717 - rpa - DEBUG - 2023-06-05 4.90 0.41% 184.24万 9.52% 64.58万 3.34% 119.66万 6.18% -34.35万 -1.77% -149.88万 -7.74%
+2023-08-05 14:21:22,913 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:23,114 - rpa - DEBUG - 2023-06-02 4.88 -0.81% 22.23万 0.73% 33.74万 1.10% -11.51万 -0.38% 30.28万 0.99% -52.51万 -1.72%
+2023-08-05 14:21:23,312 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:23,520 - rpa - DEBUG - 2023-06-01 4.92 3.80% 167.21万 2.94% 67.56万 1.19% 99.65万 1.75% -520.58万 -9.16% 353.37万 6.22%
+2023-08-05 14:21:23,760 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:23,958 - rpa - DEBUG - 2023-05-31 4.74 0.00% -195.51万 -6.81% 7865.00 0.03% -196.29万 -6.83% -64.24万 -2.24% 259.75万 9.04%
+2023-08-05 14:21:24,173 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:24,373 - rpa - DEBUG - 2023-05-30 4.74 0.64% 22.51万 1.04% -125.47万 -5.82% 147.98万 6.87% 104.41万 4.85% -126.91万 -5.89%
+2023-08-05 14:21:24,594 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:24,793 - rpa - DEBUG - 2023-05-29 4.71 -1.67% -420.44万 -13.23% -226.62万 -7.13% -193.82万 -6.10% 328.22万 10.33% 92.22万 2.90%
+2023-08-05 14:21:24,999 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:25,201 - rpa - DEBUG - 2023-05-26 4.79 -0.62% -98.19万 -4.05% -12.47万 -0.51% -85.73万 -3.54% 51.11万 2.11% 47.09万 1.94%
+2023-08-05 14:21:25,409 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:25,607 - rpa - DEBUG - 2023-05-25 4.82 -1.63% 129.77万 3.60% 137.83万 3.82% -8.05万 -0.22% 42.21万 1.17% -171.98万 -4.76%
+2023-08-05 14:21:25,846 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:26,044 - rpa - DEBUG - 2023-05-24 4.90 -1.21% -215.45万 -8.64% -72.09万 -2.89% -143.36万 -5.75% -119.84万 -4.81% 335.30万 13.45%
+2023-08-05 14:21:26,252 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:26,460 - rpa - DEBUG - 2023-05-23 4.96 -1.59% -359.11万 -9.62% -278.88万 -7.47% -80.23万 -2.15% 244.97万 6.56% 114.13万 3.06%
+2023-08-05 14:21:26,668 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:26,867 - rpa - DEBUG - 2023-05-22 5.04 2.44% 695.58万 14.87% 256.30万 5.48% 439.27万 9.39% -112.65万 -2.41% -582.93万 -12.47%
+2023-08-05 14:21:27,070 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:27,269 - rpa - DEBUG - 2023-05-19 4.92 0.00% -346.06万 -12.51% 9.77万 0.35% -355.83万 -12.87% -232.24万 -8.40% 578.30万 20.91%
+2023-08-05 14:21:27,511 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:27,712 - rpa - DEBUG - 2023-05-18 4.92 -0.61% -342.04万 -12.58% 73.67万 2.71% -415.71万 -15.28% -4.33万 -0.16% 346.37万 12.73%
+2023-08-05 14:21:27,924 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:28,132 - rpa - DEBUG - 2023-05-17 4.95 1.85% 382.52万 10.73% 218.74万 6.13% 163.78万 4.59% -511.45万 -14.34% 128.93万 3.62%
+2023-08-05 14:21:28,334 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:28,534 - rpa - DEBUG - 2023-05-16 4.86 -1.02% 10.14万 0.45% -73.82万 -3.26% 83.96万 3.70% -26.93万 -1.19% 16.78万 0.74%
+2023-08-05 14:21:28,743 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:29,006 - rpa - DEBUG - 2023-05-15 4.91 -0.41% -102.76万 -4.39% -28.40万 -1.21% -74.37万 -3.17% -72.98万 -3.11% 175.75万 7.50%
+2023-08-05 14:21:29,215 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:29,476 - rpa - DEBUG - 2023-05-12 4.93 -0.20% -38.30万 -1.25% 12.70万 0.42% -51.00万 -1.67% 170.04万 5.57% -131.74万 -4.31%
+2023-08-05 14:21:29,727 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:29,937 - rpa - DEBUG - 2023-05-11 4.94 1.02% 262.72万 6.66% 185.21万 4.70% 77.52万 1.97% -329.53万 -8.36% 66.81万 1.69%
+2023-08-05 14:21:30,148 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:30,354 - rpa - DEBUG - 2023-05-10 4.89 0.62% 874.97万 23.30% 413.35万 11.01% 461.63万 12.29% -138.50万 -3.69% -736.47万 -19.61%
+2023-08-05 14:21:30,566 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:30,785 - rpa - DEBUG - 2023-05-09 4.86 0.83% 262.64万 5.55% 152.34万 3.22% 110.30万 2.33% 21.32万 0.45% -283.96万 -6.00%
+2023-08-05 14:21:30,993 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:31,278 - rpa - DEBUG - 2023-05-08 4.82 -0.82% -526.40万 -14.22% -375.90万 -10.15% -150.51万 -4.07% 592.68万 16.01% -66.28万 -1.79%
+2023-08-05 14:21:31,556 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:31,800 - rpa - DEBUG - 2023-05-05 4.86 -0.82% -70.56万 -1.75% -12.36万 -0.31% -58.20万 -1.45% 315.15万 7.83% -244.58万 -6.08%
+2023-08-05 14:21:32,060 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:32,316 - rpa - DEBUG - 2023-05-04 4.90 0.20% 38.61万 0.84% 20.25万 0.44% 18.35万 0.40% -3.37万 -0.07% -35.24万 -0.76%
+2023-08-05 14:21:32,550 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:32,783 - rpa - DEBUG - 2023-04-28 4.89 2.95% 116.30万 2.05% 60.35万 1.07% 55.96万 0.99% -658.96万 -11.64% 542.66万 9.58%
+2023-08-05 14:21:33,007 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:33,257 - rpa - DEBUG - 2023-04-27 4.75 -0.84% -14.80万 -0.38% 10.22万 0.26% -25.02万 -0.64% 91.80万 2.33% -77.00万 -1.96%
+2023-08-05 14:21:33,500 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:33,748 - rpa - DEBUG - 2023-04-26 4.79 1.27% 104.08万 1.99% -79.87万 -1.53% 183.95万 3.52% 275.66万 5.27% -379.73万 -7.26%
+2023-08-05 14:21:34,057 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:34,357 - rpa - DEBUG - 2023-04-25 4.73 -1.87% -610.60万 -13.99% -172.77万 -3.96% -437.83万 -10.03% 378.18万 8.66% 232.42万 5.32%
+2023-08-05 14:21:34,598 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:34,810 - rpa - DEBUG - 2023-04-24 4.82 -2.43% -1538.00万 -25.62% -175.82万 -2.93% -1362.18万 -22.69% 1082.73万 18.04% 455.28万 7.58%
+2023-08-05 14:21:35,032 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:35,244 - rpa - DEBUG - 2023-04-21 4.94 -1.59% -545.68万 -12.82% 2.20万 0.05% -547.89万 -12.87% 214.65万 5.04% 331.04万 7.78%
+2023-08-05 14:21:35,483 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:35,721 - rpa - DEBUG - 2023-04-20 5.02 -1.18% -738.33万 -12.75% -288.82万 -4.99% -449.51万 -7.76% 678.42万 11.72% 59.91万 1.03%
+2023-08-05 14:21:35,983 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:36,213 - rpa - DEBUG - 2023-04-19 5.08 -1.36% -456.36万 -9.62% -481.15万 -10.14% 24.78万 0.52% 603.14万 12.71% -146.78万 -3.09%
+2023-08-05 14:21:36,435 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:36,647 - rpa - DEBUG - 2023-04-18 5.15 -0.19% -58.82万 -1.67% -404.59万 -11.51% 345.77万 9.84% 81.73万 2.33% -22.91万 -0.65%
+2023-08-05 14:21:36,873 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:37,082 - rpa - DEBUG - 2023-04-17 5.16 0.58% -6.27万 -0.17% -269.77万 -7.53% 263.50万 7.36% 204.12万 5.70% -197.86万 -5.52%
+2023-08-05 14:21:37,304 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:37,508 - rpa - DEBUG - 2023-04-14 5.13 -1.16% -446.87万 -11.91% -137.71万 -3.67% -309.16万 -8.24% 265.01万 7.06% 181.85万 4.85%
+2023-08-05 14:21:37,759 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:37,964 - rpa - DEBUG - 2023-04-13 5.19 0.00% 9.85万 0.32% 45.12万 1.47% -35.27万 -1.15% -277.14万 -9.03% 267.29万 8.71%
+2023-08-05 14:21:38,189 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:38,405 - rpa - DEBUG - 2023-04-12 5.19 -0.38% -29.84万 -0.88% -32.48万 -0.96% 2.65万 0.08% -332.16万 -9.80% 362.00万 10.68%
+2023-08-05 14:21:38,641 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:38,875 - rpa - DEBUG - 2023-04-11 5.21 1.17% 112.06万 2.49% -69.28万 -1.54% 181.35万 4.02% 553.47万 12.28% -665.53万 -14.77%
+2023-08-05 14:21:39,095 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:39,340 - rpa - DEBUG - 2023-04-10 5.15 -3.01% -736.91万 -11.00% -268.88万 -4.01% -468.03万 -6.98% 665.27万 9.93% 71.63万 1.07%
+2023-08-05 14:21:39,592 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:39,828 - rpa - DEBUG - 2023-04-07 5.31 0.00% -74.69万 -2.10% -125.28万 -3.52% 50.60万 1.42% 395.17万 11.09% -320.49万 -9.00%
+2023-08-05 14:21:40,092 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:40,306 - rpa - DEBUG - 2023-04-06 5.31 -1.30% -411.83万 -7.64% -287.92万 -5.34% -123.91万 -2.30% 291.65万 5.41% 120.19万 2.23%
+2023-08-05 14:21:40,528 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:40,730 - rpa - DEBUG - 2023-04-04 5.38 -1.65% -45.51万 -1.00% -70.30万 -1.54% 24.79万 0.54% -15.04万 -0.33% 60.55万 1.32%
+2023-08-05 14:21:40,947 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:41,151 - rpa - DEBUG - 2023-04-03 5.47 0.37% 69.21万 1.43% 174.98万 3.63% -105.77万 -2.19% -518.38万 -10.74% 449.17万 9.31%
+2023-08-05 14:21:41,406 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:41,610 - rpa - DEBUG - 2023-03-31 5.45 2.25% -136.95万 -2.15% -95.95万 -1.51% -41.00万 -0.64% -390.74万 -6.14% 527.69万 8.29%
+2023-08-05 14:21:41,839 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:42,044 - rpa - DEBUG - 2023-03-30 5.33 -2.20% -1275.96万 -22.18% -1303.26万 -22.65% 27.30万 0.47% 624.76万 10.86% 651.20万 11.32%
+2023-08-05 14:21:42,272 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:42,476 - rpa - DEBUG - 2023-03-29 5.45 -0.55% -608.67万 -9.84% -580.06万 -9.38% -28.61万 -0.46% 710.91万 11.50% -102.23万 -1.65%
+2023-08-05 14:21:42,705 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:42,907 - rpa - DEBUG - 2023-03-28 5.48 -0.72% -57.27万 -1.31% 109.03万 2.50% -166.30万 -3.81% -206.59万 -4.73% 263.86万 6.04%
+2023-08-05 14:21:43,135 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:43,360 - rpa - DEBUG - 2023-03-27 5.52 -1.43% 41.58万 0.69% -40.41万 -0.67% 82.00万 1.37% 14.08万 0.23% -55.66万 -0.93%
+2023-08-05 14:21:43,622 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:43,822 - rpa - DEBUG - 2023-03-24 5.60 2.00% 222.88万 2.78% 361.99万 4.51% -139.11万 -1.73% -62.01万 -0.77% -160.87万 -2.01%
+2023-08-05 14:21:44,045 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:44,259 - rpa - DEBUG - 2023-03-23 5.49 -0.36% 274.55万 5.77% 236.84万 4.98% 37.71万 0.79% 91.00万 1.91% -365.55万 -7.68%
+2023-08-05 14:21:44,489 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:44,694 - rpa - DEBUG - 2023-03-22 5.51 0.92% 683.34万 9.43% 669.52万 9.24% 13.82万 0.19% 55.33万 0.76% -738.66万 -10.20%
+2023-08-05 14:21:44,951 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:45,155 - rpa - DEBUG - 2023-03-21 5.46 1.11% -29.52万 -0.64% -264.13万 -5.72% 234.60万 5.08% 133.42万 2.89% -103.90万 -2.25%
+2023-08-05 14:21:45,384 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:45,585 - rpa - DEBUG - 2023-03-20 5.40 0.19% -224.79万 -3.40% -33.15万 -0.50% -191.64万 -2.90% -847.05万 -12.82% 1071.84万 16.22%
+2023-08-05 14:21:45,827 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:46,029 - rpa - DEBUG - 2023-03-17 5.39 -1.10% -202.11万 -4.36% -145.06万 -3.13% -57.06万 -1.23% 343.11万 7.40% -140.99万 -3.04%
+2023-08-05 14:21:46,267 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:46,466 - rpa - DEBUG - 2023-03-16 5.45 -1.62% 42.87万 0.99% 12.46万 0.29% 30.40万 0.70% 68.07万 1.57% -110.94万 -2.56%
+2023-08-05 14:21:46,734 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:46,943 - rpa - DEBUG - 2023-03-15 5.54 0.36% -67.98万 -1.55% -75.03万 -1.71% 7.05万 0.16% 468.26万 10.69% -400.28万 -9.14%
+2023-08-05 14:21:47,167 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:47,371 - rpa - DEBUG - 2023-03-14 5.52 -2.82% -387.85万 -6.34% -126.63万 -2.07% -261.22万 -4.27% 101.60万 1.66% 286.25万 4.68%
+2023-08-05 14:21:47,604 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:47,824 - rpa - DEBUG - 2023-03-13 5.68 -0.35% 122.45万 2.04% 132.46万 2.21% -10.02万 -0.17% 47.52万 0.79% -169.96万 -2.83%
+2023-08-05 14:21:48,055 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:48,284 - rpa - DEBUG - 2023-03-10 5.70 -1.38% -704.45万 -14.69% -418.23万 -8.72% -286.22万 -5.97% -217.99万 -4.55% 922.44万 19.24%
+2023-08-05 14:21:48,559 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:48,782 - rpa - DEBUG - 2023-03-09 5.78 -0.86% -368.46万 -6.57% -318.27万 -5.68% -50.20万 -0.90% 159.14万 2.84% 209.33万 3.73%
+2023-08-05 14:21:49,014 - rpa - DEBUG - write to xlsx success
+2023-08-05 14:21:49,014 - rpa - DEBUG - 当前任务: 东方财经
+2023-08-05 14:21:49,014 - rpa - DEBUG - ### Task State: True, Task Cost 48s ###
+2023-08-18 23:18:36,334 - rpa - DEBUG - Message: session not created: This version of ChromeDriver only supports Chrome version 114
+Current browser version is 116.0.5845.96 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x003EA813+48355]
+	(No symbol) [0x0037C4B1]
+	(No symbol) [0x00285358]
+	(No symbol) [0x002A61AC]
+	(No symbol) [0x002A1EF3]
+	(No symbol) [0x002A0579]
+	(No symbol) [0x002D0C55]
+	(No symbol) [0x002D093C]
+	(No symbol) [0x002CA536]
+	(No symbol) [0x002A82DC]
+	(No symbol) [0x002A93DD]
+	GetHandleVerifier [0x0064AABD+2539405]
+	GetHandleVerifier [0x0068A78F+2800735]
+	GetHandleVerifier [0x0068456C+2775612]
+	GetHandleVerifier [0x004751E0+616112]
+	(No symbol) [0x00385F8C]
+	(No symbol) [0x00382328]
+	(No symbol) [0x0038240B]
+	(No symbol) [0x00374FF7]
+	BaseThreadInitThunk [0x763200C9+25]
+	RtlGetAppContainerNamedObjectPath [0x77967B1E+286]
+	RtlGetAppContainerNamedObjectPath [0x77967AEE+238]
+
+2023-08-18 23:18:36,388 - rpa - DEBUG - 当前任务: None
+2023-08-18 23:18:36,389 - rpa - DEBUG - ### Task State: False, Task Cost 4s ###
+2023-08-18 23:25:54,655 - rpa - DEBUG - 开始 12306
+2023-08-18 23:25:54,656 - rpa - DEBUG - default_config =
+ {
+    "12306_info": {
+        "seat": "F",
+        "start_station": "",
+        "start_time": "17:40",
+        "to_station": "",
+        "to_time": "18:47",
+        "travel_date": "2023-02-31",
+        "travel_person": ""
+    },
+    "is_debug": 1,
+    "task_type": 6
+}
+2023-08-18 23:25:55,504 - rpa - DEBUG - Message: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="ERROR"]"}
+  (Session info: chrome=116.0.5845.96)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6E37C52A2+57122]
+	(No symbol) [0x00007FF6E373EA92]
+	(No symbol) [0x00007FF6E360E3AB]
+	(No symbol) [0x00007FF6E3647D3E]
+	(No symbol) [0x00007FF6E3647E2C]
+	(No symbol) [0x00007FF6E3680B67]
+	(No symbol) [0x00007FF6E366701F]
+	(No symbol) [0x00007FF6E367EB82]
+	(No symbol) [0x00007FF6E3666DB3]
+	(No symbol) [0x00007FF6E363D2B1]
+	(No symbol) [0x00007FF6E363E494]
+	GetHandleVerifier [0x00007FF6E3A6EF82+2849794]
+	GetHandleVerifier [0x00007FF6E3AC1D24+3189156]
+	GetHandleVerifier [0x00007FF6E3ABACAF+3160367]
+	GetHandleVerifier [0x00007FF6E3856D06+653702]
+	(No symbol) [0x00007FF6E374A208]
+	(No symbol) [0x00007FF6E37462C4]
+	(No symbol) [0x00007FF6E37463F6]
+	(No symbol) [0x00007FF6E37367A3]
+	BaseThreadInitThunk [0x00007FFE8ADB7614+20]
+	RtlUserThreadStart [0x00007FFE8BC426B1+33]
+
+2023-08-18 23:25:59,205 - rpa - DEBUG - login false:Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=116.0.5845.96)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6E37C52A2+57122]
+	(No symbol) [0x00007FF6E373EA92]
+	(No symbol) [0x00007FF6E360E3AB]
+	(No symbol) [0x00007FF6E35EE1B9]
+	(No symbol) [0x00007FF6E366B417]
+	(No symbol) [0x00007FF6E367E24F]
+	(No symbol) [0x00007FF6E3666DB3]
+	(No symbol) [0x00007FF6E363D2B1]
+	(No symbol) [0x00007FF6E363E494]
+	GetHandleVerifier [0x00007FF6E3A6EF82+2849794]
+	GetHandleVerifier [0x00007FF6E3AC1D24+3189156]
+	GetHandleVerifier [0x00007FF6E3ABACAF+3160367]
+	GetHandleVerifier [0x00007FF6E3856D06+653702]
+	(No symbol) [0x00007FF6E374A208]
+	(No symbol) [0x00007FF6E37462C4]
+	(No symbol) [0x00007FF6E37463F6]
+	(No symbol) [0x00007FF6E37367A3]
+	BaseThreadInitThunk [0x00007FFE8ADB7614+20]
+	RtlUserThreadStart [0x00007FFE8BC426B1+33]
+
+2023-08-18 23:25:59,207 - rpa - DEBUG - Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=116.0.5845.96)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6E37C52A2+57122]
+	(No symbol) [0x00007FF6E373EA92]
+	(No symbol) [0x00007FF6E360E3AB]
+	(No symbol) [0x00007FF6E35EE1B9]
+	(No symbol) [0x00007FF6E366B417]
+	(No symbol) [0x00007FF6E367E24F]
+	(No symbol) [0x00007FF6E3666DB3]
+	(No symbol) [0x00007FF6E363D2B1]
+	(No symbol) [0x00007FF6E363E494]
+	GetHandleVerifier [0x00007FF6E3A6EF82+2849794]
+	GetHandleVerifier [0x00007FF6E3AC1D24+3189156]
+	GetHandleVerifier [0x00007FF6E3ABACAF+3160367]
+	GetHandleVerifier [0x00007FF6E3856D06+653702]
+	(No symbol) [0x00007FF6E374A208]
+	(No symbol) [0x00007FF6E37462C4]
+	(No symbol) [0x00007FF6E37463F6]
+	(No symbol) [0x00007FF6E37367A3]
+	BaseThreadInitThunk [0x00007FFE8ADB7614+20]
+	RtlUserThreadStart [0x00007FFE8BC426B1+33]
+
+2023-08-18 23:25:59,229 - rpa - DEBUG - 当前任务: 12306
+2023-08-18 23:25:59,230 - rpa - DEBUG - ### Task State: False, Task Cost 6s ###
+2023-08-18 23:33:13,669 - rpa - DEBUG - 开始 12306
+2023-08-18 23:33:13,671 - rpa - DEBUG - default_config =
+ {
+    "12306_info": {
+        "seat": "F",
+        "start_station": "",
+        "start_time": "17:40",
+        "to_station": "",
+        "to_time": "18:47",
+        "travel_date": "2023-02-31",
+        "travel_person": ""
+    },
+    "task_type": 6
+}
+2023-08-18 23:33:14,548 - rpa - DEBUG - Message: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="ERROR"]"}
+  (Session info: chrome=116.0.5845.96)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6E37C52A2+57122]
+	(No symbol) [0x00007FF6E373EA92]
+	(No symbol) [0x00007FF6E360E3AB]
+	(No symbol) [0x00007FF6E3647D3E]
+	(No symbol) [0x00007FF6E3647E2C]
+	(No symbol) [0x00007FF6E3680B67]
+	(No symbol) [0x00007FF6E366701F]
+	(No symbol) [0x00007FF6E367EB82]
+	(No symbol) [0x00007FF6E3666DB3]
+	(No symbol) [0x00007FF6E363D2B1]
+	(No symbol) [0x00007FF6E363E494]
+	GetHandleVerifier [0x00007FF6E3A6EF82+2849794]
+	GetHandleVerifier [0x00007FF6E3AC1D24+3189156]
+	GetHandleVerifier [0x00007FF6E3ABACAF+3160367]
+	GetHandleVerifier [0x00007FF6E3856D06+653702]
+	(No symbol) [0x00007FF6E374A208]
+	(No symbol) [0x00007FF6E37462C4]
+	(No symbol) [0x00007FF6E37463F6]
+	(No symbol) [0x00007FF6E37367A3]
+	BaseThreadInitThunk [0x00007FFE8ADB7614+20]
+	RtlUserThreadStart [0x00007FFE8BC426B1+33]
+
+2023-08-18 23:33:44,373 - rpa - DEBUG - 开始 12306
+2023-08-18 23:33:44,374 - rpa - DEBUG - default_config =
+ {
+    "12306_info": {
+        "seat": "F",
+        "start_station": "",
+        "start_time": "17:40",
+        "to_station": "",
+        "to_time": "18:47",
+        "travel_date": "2023-02-31",
+        "travel_person": ""
+    },
+    "task_type": 6
+}
+2023-08-18 23:33:45,317 - rpa - DEBUG - Message: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="ERROR"]"}
+  (Session info: chrome=116.0.5845.96)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6E37C52A2+57122]
+	(No symbol) [0x00007FF6E373EA92]
+	(No symbol) [0x00007FF6E360E3AB]
+	(No symbol) [0x00007FF6E3647D3E]
+	(No symbol) [0x00007FF6E3647E2C]
+	(No symbol) [0x00007FF6E3680B67]
+	(No symbol) [0x00007FF6E366701F]
+	(No symbol) [0x00007FF6E367EB82]
+	(No symbol) [0x00007FF6E3666DB3]
+	(No symbol) [0x00007FF6E363D2B1]
+	(No symbol) [0x00007FF6E363E494]
+	GetHandleVerifier [0x00007FF6E3A6EF82+2849794]
+	GetHandleVerifier [0x00007FF6E3AC1D24+3189156]
+	GetHandleVerifier [0x00007FF6E3ABACAF+3160367]
+	GetHandleVerifier [0x00007FF6E3856D06+653702]
+	(No symbol) [0x00007FF6E374A208]
+	(No symbol) [0x00007FF6E37462C4]
+	(No symbol) [0x00007FF6E37463F6]
+	(No symbol) [0x00007FF6E37367A3]
+	BaseThreadInitThunk [0x00007FFE8ADB7614+20]
+	RtlUserThreadStart [0x00007FFE8BC426B1+33]
+
+2023-08-18 23:35:03,460 - rpa - DEBUG - 开始 12306
+2023-08-18 23:35:03,461 - rpa - DEBUG - default_config =
+ {
+    "12306_info": {
+        "seat": "F",
+        "start_station": "",
+        "start_time": "17:40",
+        "to_station": "",
+        "to_time": "18:47",
+        "travel_date": "2023-02-31",
+        "travel_person": ""
+    },
+    "task_type": 6
+}
+2023-08-18 23:35:04,506 - rpa - DEBUG - Message: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="ERROR"]"}
+  (Session info: chrome=116.0.5845.96)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6E37C52A2+57122]
+	(No symbol) [0x00007FF6E373EA92]
+	(No symbol) [0x00007FF6E360E3AB]
+	(No symbol) [0x00007FF6E3647D3E]
+	(No symbol) [0x00007FF6E3647E2C]
+	(No symbol) [0x00007FF6E3680B67]
+	(No symbol) [0x00007FF6E366701F]
+	(No symbol) [0x00007FF6E367EB82]
+	(No symbol) [0x00007FF6E3666DB3]
+	(No symbol) [0x00007FF6E363D2B1]
+	(No symbol) [0x00007FF6E363E494]
+	GetHandleVerifier [0x00007FF6E3A6EF82+2849794]
+	GetHandleVerifier [0x00007FF6E3AC1D24+3189156]
+	GetHandleVerifier [0x00007FF6E3ABACAF+3160367]
+	GetHandleVerifier [0x00007FF6E3856D06+653702]
+	(No symbol) [0x00007FF6E374A208]
+	(No symbol) [0x00007FF6E37462C4]
+	(No symbol) [0x00007FF6E37463F6]
+	(No symbol) [0x00007FF6E37367A3]
+	BaseThreadInitThunk [0x00007FFE8ADB7614+20]
+	RtlUserThreadStart [0x00007FFE8BC426B1+33]
+
+2023-08-18 23:35:12,370 - rpa - DEBUG - login false:'NoneType' object has no attribute 'is_displayed'
+2023-08-18 23:35:12,374 - rpa - DEBUG - Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=116.0.5845.96)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6E37C52A2+57122]
+	(No symbol) [0x00007FF6E373EA92]
+	(No symbol) [0x00007FF6E360E3AB]
+	(No symbol) [0x00007FF6E35EE1B9]
+	(No symbol) [0x00007FF6E366B417]
+	(No symbol) [0x00007FF6E367E24F]
+	(No symbol) [0x00007FF6E3666DB3]
+	(No symbol) [0x00007FF6E363D2B1]
+	(No symbol) [0x00007FF6E363E494]
+	GetHandleVerifier [0x00007FF6E3A6EF82+2849794]
+	GetHandleVerifier [0x00007FF6E3AC1D24+3189156]
+	GetHandleVerifier [0x00007FF6E3ABACAF+3160367]
+	GetHandleVerifier [0x00007FF6E3856D06+653702]
+	(No symbol) [0x00007FF6E374A208]
+	(No symbol) [0x00007FF6E37462C4]
+	(No symbol) [0x00007FF6E37463F6]
+	(No symbol) [0x00007FF6E37367A3]
+	BaseThreadInitThunk [0x00007FFE8ADB7614+20]
+	RtlUserThreadStart [0x00007FFE8BC426B1+33]
+
+2023-08-18 23:35:12,379 - rpa - DEBUG - 当前任务: 12306
+2023-08-18 23:35:12,380 - rpa - DEBUG - ### Task State: False, Task Cost 11s ###
+2023-08-18 23:36:30,374 - rpa - DEBUG - 开始 12306
+2023-08-18 23:36:30,376 - rpa - DEBUG - default_config =
+ {
+    "12306_info": {
+        "seat": "F",
+        "start_station": "",
+        "start_time": "17:40",
+        "to_station": "",
+        "to_time": "18:47",
+        "travel_date": "2023-02-31",
+        "travel_person": ""
+    },
+    "task_type": 6
+}
+2023-08-18 23:36:31,238 - rpa - DEBUG - Invalid format specifier
+2023-08-18 23:36:31,240 - rpa - DEBUG - 当前任务: 12306
+2023-08-18 23:36:31,241 - rpa - DEBUG - ### Task State: False, Task Cost 3s ###
+2023-08-18 23:37:07,595 - rpa - DEBUG - 开始 12306
+2023-08-18 23:37:07,596 - rpa - DEBUG - default_config =
+ {
+    "12306_info": {
+        "seat": "F",
+        "start_station": "",
+        "start_time": "17:40",
+        "to_station": "",
+        "to_time": "18:47",
+        "travel_date": "2023-02-31",
+        "travel_person": ""
+    },
+    "task_type": 6
+}
+2023-08-18 23:37:08,625 - rpa - DEBUG - Unable to locate element by xpath: //*[@id="ERROR"]
+2023-08-19 00:07:21,324 - rpa - DEBUG - 开始 12306
+2023-08-19 00:07:21,325 - rpa - DEBUG - default_config =
+ {
+    "12306_info": {
+        "seat": "F",
+        "start_station": "",
+        "start_time": "17:40",
+        "to_station": "",
+        "to_time": "18:47",
+        "travel_date": "2023-02-31",
+        "travel_person": ""
+    },
+    "task_type": 6
+}
+2023-08-19 00:07:22,116 - rpa - DEBUG - Unable to locate element by xpath: //*[@id="ERROR"]
+2023-08-19 00:07:25,333 - rpa - DEBUG - login false:'NoneType' object has no attribute 'is_displayed'
+2023-08-19 00:07:25,336 - rpa - DEBUG - Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=116.0.5845.96)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6E37C52A2+57122]
+	(No symbol) [0x00007FF6E373EA92]
+	(No symbol) [0x00007FF6E360E3AB]
+	(No symbol) [0x00007FF6E35EE1B9]
+	(No symbol) [0x00007FF6E366B417]
+	(No symbol) [0x00007FF6E367E24F]
+	(No symbol) [0x00007FF6E3666DB3]
+	(No symbol) [0x00007FF6E363D2B1]
+	(No symbol) [0x00007FF6E363E494]
+	GetHandleVerifier [0x00007FF6E3A6EF82+2849794]
+	GetHandleVerifier [0x00007FF6E3AC1D24+3189156]
+	GetHandleVerifier [0x00007FF6E3ABACAF+3160367]
+	GetHandleVerifier [0x00007FF6E3856D06+653702]
+	(No symbol) [0x00007FF6E374A208]
+	(No symbol) [0x00007FF6E37462C4]
+	(No symbol) [0x00007FF6E37463F6]
+	(No symbol) [0x00007FF6E37367A3]
+	BaseThreadInitThunk [0x00007FFE8ADB7614+20]
+	RtlUserThreadStart [0x00007FFE8BC426B1+33]
+
+2023-08-19 00:07:25,341 - rpa - DEBUG - 当前任务: 12306
+2023-08-19 00:07:25,342 - rpa - DEBUG - ### Task State: False, Task Cost 6s ###
