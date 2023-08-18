@@ -14,6 +14,7 @@ class TaskType(IntEnum):
     MEI_SHI_TIAN_XIA = 3  # 美食天下
     SHU_GUO_WANG = 4  # 蔬果网
     DONG_FANG_CAI_FU = 5  # 东方财富
+    RAIL_WAY = 6  # 12306订票
 
 
 @unique
@@ -23,5 +24,6 @@ class TaskUrl(Enum):
     MEI_SHI_TIAN_XIA = 'https://home.meishichina.com/recipe/guangdongxiaochi/'
     SHU_GUO_WANG = 'http://www.vegnet.com.cn/Market/477.html?page=1'
     DONG_FANG_CAI_FU = 'https://data.eastmoney.com/zjlx/600257.html'
+    RAIL_WAT = 'https://kyfw.12306.cn/otn/resources/login.html'
 
 

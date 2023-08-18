@@ -9,6 +9,7 @@ from rpa.xinshipu_robot import XinShiPu_Robot
 from rpa.meishitianxia_robot import MeiShiTianXia_Robot
 from rpa.shuguowang_robot import ShuGuoWang_Robot
 from rpa.dongfangcaifu_robot import DongFangCaiFu_Robot
+from rpa.railway_robot import Railway_Robot
 from unil import get_time_now, log_t
 
 
@@ -26,7 +27,8 @@ class RpaMaster(ABC):
             TaskType.XIN_SHI_PU.value: XinShiPu_Robot,
             TaskType.MEI_SHI_TIAN_XIA.value: MeiShiTianXia_Robot,
             TaskType.SHU_GUO_WANG.value: ShuGuoWang_Robot,
-            TaskType.DONG_FANG_CAI_FU.value: DongFangCaiFu_Robot
+            TaskType.DONG_FANG_CAI_FU.value: DongFangCaiFu_Robot,
+            TaskType.RAIL_WAY.RAIL_WAY: Railway_Robot
         }
 
         self.urls = {
@@ -34,7 +36,8 @@ class RpaMaster(ABC):
             TaskType.XIN_SHI_PU.value: TaskUrl.XIN_SHI_PU.value,
             TaskType.MEI_SHI_TIAN_XIA.value: TaskUrl.MEI_SHI_TIAN_XIA.value,
             TaskType.SHU_GUO_WANG.value: TaskUrl.SHU_GUO_WANG.value,
-            TaskType.DONG_FANG_CAI_FU.value: TaskUrl.DONG_FANG_CAI_FU.value
+            TaskType.DONG_FANG_CAI_FU.value: TaskUrl.DONG_FANG_CAI_FU.value,
+            TaskType.RAIL_WAY.value: TaskUrl.RAIL_WAT.value
         }
 
     @property

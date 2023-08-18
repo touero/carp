@@ -2,13 +2,13 @@ import random
 import time
 
 import pymysql
-import traceback
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
 from typing import List, Optional
 
 from selenium import webdriver
-from selenium.common import StaleElementReferenceException
+from selenium.common.exceptions import StaleElementReferenceException, NoSuchElementException
+from selenium.webdriver.chrome.service import Service
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webelement import WebElement
@@ -17,6 +17,7 @@ from selenium.webdriver.support.wait import WebDriverWait, TimeoutException
 
 from constants import DEBUG
 from unil import log_t
+from setting import *
 
 
 class Robot(ABC):
@@ -25,13 +26,15 @@ class Robot(ABC):
         self.task = default_config
         self.url = url
         self.task_type = default_config['task_type']
-        self.is_debug = self.task['is_debug']
+
         self.options = webdriver.ChromeOptions()
         self.options.add_argument("disable-blink-features=AutomationControlled")
         self.options.add_experimental_option("excludeSwitches", ['enable-automation'])
-        self.options.add_experimental_option('detach', True) if self.is_debug == DEBUG.IS.value else ...
-        self.driver = webdriver.Chrome(options=self.options,
-                                       executable_path='./webdriver/chromedriver_windows_114.exe')
+        self.options.add_experimental_option('detach', True) if IS_DOCKER == DEBUG.IS.value else ...
+
+        self.service = Service(executable_path=f'./webdriver/chromedriver_windows_{DRIVER_VERSION}.exe')
+        self.driver = webdriver.Chrome(options=self.options, service=self.service)
+
         self.driver.get(self.url)
         self.driver.maximize_window()
 
@@ -47,7 +50,7 @@ class Robot(ABC):
             WebDriverWait(self.driver, timeout).until(ec.visibility_of_element_located((By.XPATH, xpath)))
             self.driver.find_element(By.XPATH, xpath).click()
         except TimeoutException:
-            ...
+            log_t(f'Not waiting until: {xpath}')
 
     def wait_ele_xpath_safe(self, xpath: str, timeout: int = 5) -> bool:
         try:
@@ -96,14 +99,17 @@ class Robot(ABC):
     def refresh(self) -> None:
         self.driver.refresh()
 
-    def find_ele_xpath(self, xpath: str) -> bool:
+    def find_ele_xpath_safe(self, xpath: str) -> bool:
         try:
             ele = self.driver.find_element(By.XPATH, xpath)
             if ele:
                 return True
-        except Exception as e:
-            log_t(e)
+        except NoSuchElementException as e:
+            log_t(f'Unable to locate element by xpath: {xpath}')
             return False
+
+    def find_ele_xpath(self, xpath: str):
+        return self.driver.find_element(By.XPATH, xpath)
 
     def close_window(self) -> None:
         self.driver.close()

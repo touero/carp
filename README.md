@@ -21,6 +21,7 @@ This repository contains：
 3. [美食天下](https://www.meishichina.com/) 
 4. [果蔬网](http://www.zggswmh.com/) 
 5. [东方财经](https://www.eastmoney.com/) 
+6. [12306](https://kyfw.12306.cn/otn/resources/login.html)
 
 Plus: The above URLs are not necessarily the URLs of the corresponding tasks.
 
