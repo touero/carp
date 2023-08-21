@@ -80,7 +80,11 @@ Standard Python follows the [Python PEP-8](https://peps.python.org/pep-0008/) Co
 
 ### Contributors
 
-This project exists thanks to all the people who contribute.
+This project exists thanks to all the people who contribute.  
+  
+<a href="https://github.com/weiensong/carp/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=weiensong/carp" />
+</a>
 
 
 
