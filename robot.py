@@ -104,8 +104,8 @@ class Robot(ABC):
             ele = self.driver.find_element(By.XPATH, xpath)
             if ele:
                 return True
-        except NoSuchElementException as e:
-            log_t(f'Unable to locate element by xpath: {xpath}')
+        except NoSuchElementException:
+            log_t(f'Message: no such element: "method":"xpath","selector":"{xpath}"')
             return False
 
     def find_ele_xpath(self, xpath: str):
