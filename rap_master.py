@@ -45,7 +45,7 @@ class RpaMaster(ABC):
         self.url = self.urls.get(self.task_type)
         Robot = self.robots.get(self.task_type)
         robot = Robot(default_config=self.config, url=self.url)
-        log_t(f'开始 {robot}')
+        log_t(f'当前任务: 开始 {robot}')
         log_t(f"default_config =\n {json.dumps(self.config, sort_keys=True, indent=4, separators=(',', ': '))}")
         return robot
 
@@ -53,11 +53,10 @@ class RpaMaster(ABC):
         try:
             self.robot = self.robot_factory
             self.robot.run_task()
-            task_state = True
+            task_state = 'Success'
         except Exception as e:
-            task_state = False
+            task_state = 'Fail'
             log_t(e)
             log_t(traceback.print_exc())
         self.end_time = get_time_now()
-        log_t(f'当前任务: {self.robot}')
         log_t(f'### Task State: {task_state}, Task Cost {(self.end_time - self.start_time).seconds}s ###')

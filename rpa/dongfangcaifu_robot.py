@@ -16,7 +16,7 @@ class DongFangCaiFu_Robot(Robot):
         header_line = ['日期', '收盘价', '涨跌幅', '主力净流入净额', '主力净流入净占比', '超大单净流入净额',
                        '超大单净流入净占比', '大单净流入净额', '大单净流入净占比', '中单净流入净额', '中单净流入净占比',
                        '小单净流入净额', '小单净流入净占比']
-        write_to_excel(header_line, './output/dongfangcaiwu_data.xlsx')
+        self.need_save_list.append(header_line)
         for row in rows:
             self.scroll_to_element_safe(row)
 
@@ -40,4 +40,6 @@ class DongFangCaiFu_Robot(Robot):
                             large_order_net_inflow_proportion, net_inflow_of_intermediate_orders_amount,
                             net_inflow_of_intermediate_orders_proportion, net_inflow_of_small_orders_amount,
                             net_inflow_of_small_orders_proportion]
-            write_to_excel(row_in_excel, './output/dongfangcaiwu_data.xlsx')
+            self.need_save_list.append(row_in_excel)
+
+        write_to_excel(self.need_save_list, './output/dongfangcaiwu_data.xlsx')

@@ -1,7 +1,7 @@
 import pymysql
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
-from typing import Optional
+from typing import Optional, List
 
 from webdriverRe import WebDriverRe
 
@@ -10,6 +10,7 @@ class Robot(ABC, WebDriverRe):
 
     def __init__(self, **kwargs):
         super().__init__()
+        self.need_save_list = []
         self.task = kwargs.get('default_config')
         self.url = kwargs.get('url')
         self.task_type = kwargs.get('task_type')

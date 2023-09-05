@@ -1,4 +1,6 @@
 import logging
+from typing import List
+
 import openpyxl
 import pytz
 import os
@@ -62,16 +64,16 @@ def write_tolocal_mysql(dc, table):
     conn.close()
 
 
-def write_to_excel(_list: list, path: str):
+def write_to_excel(_list: List[list], path: str):
     """
     将列表数据写入本Excel文件
-    :param _list: 列表
+    :param _list: 列表list[list]
     :param path: 存储路径
     :return:
     """
-    log_t(' '.join(_list))
     wb = openpyxl.load_workbook(path) if os.path.exists(path) else openpyxl.Workbook()
     sheet = wb.active
-    sheet.append(_list)
+    for item in _list:
+        sheet.append(item)
     wb.save(path)
-    log_t('write to xlsx success')
+    log_t(f'[need_save_list]: {_list}')
