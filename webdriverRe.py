@@ -17,7 +17,7 @@ class WebDriverRe:
     def __init__(self):
         self.driver = DriverFactory().driver
 
-    def kill_robot(self):
+    def kill_driver(self):
         self.driver.quit()
 
     def wait_ele_click_xpath_safe(self, xpath: str, timeout: int = 5):
@@ -96,18 +96,18 @@ class WebDriverRe:
         handle = self.driver.window_handles
         self.driver.switch_to.window(handle[0])
 
-    def wait_find_by_xpath(self, xpath, timeout=5) -> WebElement:
+    def wait_find_by_xpath(self, xpath, timeout: int = 5) -> WebElement:
         WebDriverWait(self.driver, timeout).until(ec.visibility_of_element_located((By.XPATH, xpath)))
         return self.driver.find_element(By.XPATH, xpath)
 
-    def wait_eles_by_xpath(self, xpath, timeout=10) -> List[WebElement]:
+    def wait_eles_by_xpath(self, xpath: str, timeout: int = 5) -> List[WebElement]:
         try:
             return WebDriverWait(self.driver, timeout).until(
                 ec.presence_of_all_elements_located((By.XPATH, xpath)))
         except TimeoutException:
             return []
 
-    def scroll_to_element_safe(self, ele):
+    def scroll_to_element_safe(self, ele: WebElement):
         self.execute_script(script="arguments[0].scrollIntoView(true)", ele=ele)
 
     def execute_script(self, **kwargs):
