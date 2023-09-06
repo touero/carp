@@ -28,7 +28,7 @@ This is an integration task that encapsulates selenium twice, which allows us to
 This project uses [Python](https://www.python.org/) [Git](https://git-scm.com/) [Chrome](https://www.google.com/chrome/). Go check them out if you don't have them locally installed.
 
 ```sh
-$ git clone https://github.com/weiensong/scrapySelenium.git
+$ git clone https://github.com/weiensong/carp.git
 ```
 
 ## Usage
