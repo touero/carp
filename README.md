@@ -71,6 +71,8 @@ As you can see, there are relatively few crawling parts. But, contribute to this
 
 - [FireFox](https://github.com/mozilla/geckodriver/releases)
 
+Currently, there is only Chrome driver, if you have a feat with other driver please submit PRs
+
 ## Maintainers
 
 [@weiensong](https://github.com/weiensong)
