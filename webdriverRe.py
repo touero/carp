@@ -143,3 +143,14 @@ class WebDriverRe:
                     break
             except StaleElementReferenceException:
                 self.find_ele_click_xpath('//*[@id="dom_id"]/div/span/a')
+
+    def wait_frame_by_xpath(self, xpath: str, timeout: int = 5):
+        WebDriverWait(self.driver, timeout).until(ec.visibility_of_element_located((By.XPATH, xpath)))
+        self.driver.switch_to.frame(By.XPATH, xpath)
+
+    def wait_frame_by_id(self, frame_id: str, timeout: int = 5):
+        WebDriverWait(self.driver, timeout).until(ec.visibility_of_element_located((By.ID, frame_id)))
+        self.driver.switch_to.frame(By.ID, frame_id)
+
+    def switch_default_content(self):
+        self.driver.switch_to.default_content()
