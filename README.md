@@ -50,7 +50,14 @@ $ deactivate # linux quit venv
 
 > .\Scripts\deactivate.bat # windows quit venv
 ```
+As you can see, there are relatively few crawling parts. But, contribute to this under [Python PEP-8](https://peps.python.org/pep-0008/)  
 
+>> If you want to increase your robot following: 
+> 1. please creat ***_robot.py in dir of name rpa.
+> 2. Adding task's type and task's url in constants.py.
+> 3. Adding 1&2 in robots and urls in RpaMaster.
+> 4. Over writer your \__str\__'s and run_task's func in your robot.
+> 5. Fixing task_type in local_runner and run it.
 ## Related Repository
 
 - [Python](https://github.com/TheAlgorithms/Python) — All Algorithms implemented in Python.
@@ -71,15 +78,6 @@ $ deactivate # linux quit venv
 
 
 ## Contributing
-
-As you can see, there are relatively few crawling parts. But, contribute to this under [Python PEP-8](https://peps.python.org/pep-0008/)  
-
->> If you want to increase your robot following: 
-> 1. please creat ***_robot.py in dir of name rpa.
-> 2. Adding task's type and task's url in constants.py.
-> 3. Adding 1&2 in robots and urls in RpaMaster.
-> 4. Over writer your \__str\__'s and run_task's func in your robot.
-> 5. Fixing task_type in local_runner and run it.
 
 How I wish I could add more content in this repo !
 
