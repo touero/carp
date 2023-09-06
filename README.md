@@ -14,14 +14,13 @@
 
 This is an integration task that encapsulates selenium twice, which allows us to crawl different websites with a set of encapsulated code and perform different task types.
 
-This repository contains：
-
-1. [下厨房](https://www.xiachufang.com/) 
-2. [心食谱](https://www.xinshipu.com/) 
-3. [美食天下](https://www.meishichina.com/) 
-4. [果蔬网](http://www.zggswmh.com/) 
-5. [东方财经](https://www.eastmoney.com/) 
-6. [12306](https://kyfw.12306.cn/otn/resources/login.html)
+> So Far, this repository contains：
+>> 1. [下厨房](https://www.xiachufang.com/) 
+>> 2. [心食谱](https://www.xinshipu.com/) 
+>> 3. [美食天下](https://www.meishichina.com/) 
+>> 4. [果蔬网](http://www.zggswmh.com/) 
+>> 5. [东方财经](https://www.eastmoney.com/) 
+>> 6. [12306](https://kyfw.12306.cn/otn/resources/login.html)
 
 Plus: The above URLs are not necessarily the URLs of the corresponding tasks.
 
