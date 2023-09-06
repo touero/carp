@@ -53,7 +53,7 @@ $ deactivate # linux quit venv
 As you can see, there are relatively few crawling parts. But, contribute to this under [Python PEP-8](https://peps.python.org/pep-0008/)  
 
 >> If you want to increase your robot following: 
-> 1. please creat ***_robot.py in dir of name rpa.
+> 1. please creat ***_robot.py in dir of name is rpa.
 > 2. Adding task's type and task's url in constants.py.
 > 3. Adding 1&2 in robots and urls in RpaMaster.
 > 4. Over writer your \__str\__'s and run_task's func in your robot.
