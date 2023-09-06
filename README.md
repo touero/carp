@@ -13,7 +13,7 @@
 ## Repository Introduction
 
 This is an integration task that encapsulates selenium twice, which allows us to crawl different websites with a set of encapsulated code and perform different task types.  
-💕 If it's helpful to you, please star it. 💕
+💕 If it's helpful to you or cloning it, please star it. This is maximum encouragement for open-source contributors💕
 > Currently, this repository contains：
 >> 1. [下厨房](https://www.xiachufang.com/) 
 >> 2. [心食谱](https://www.xinshipu.com/) 
