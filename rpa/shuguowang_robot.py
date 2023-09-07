@@ -12,7 +12,7 @@ class ShuGuoWang_Robot(Robot):
         return '蔬果网'
 
     def run_task(self):
-        price_list = self.find_eles_xpath('//ul[@id="NongHuaZhuanYongFei1"]/li/a')
+        price_list = self.find_elements_by_xpath('//ul[@id="NongHuaZhuanYongFei1"]/li/a')
         for price in price_list:
             price.click()
             self.switch_last_window()
@@ -31,7 +31,7 @@ class ShuGuoWang_Robot(Robot):
         for i in range(0, 23):
             if number % 40 == 0:
                 self.find_ele_click_xpath('//a[text()="下一页"]')
-            price_list = self.find_eles_xpath(f'//ul[@id="NongHuaZhuanYongFei1"]//li[@tag="show_{i + 1}"]/a')
+            price_list = self.find_elements_by_xpath(f'//ul[@id="NongHuaZhuanYongFei1"]//li[@tag="show_{i + 1}"]/a')
             number = 0
             for price in price_list:
                 price.click()
@@ -56,7 +56,7 @@ class ShuGuoWang_Robot(Robot):
         self.switch_last_window()
 
     def get_xigua_xianggu(self):
-        rows = self.find_eles_xpath('//div[@class="pri_k"]/p')
+        rows = self.find_elements_by_xpath('//div[@class="pri_k"]/p')
         for row in rows:
             if '西瓜' in row.text:
                 return row.text

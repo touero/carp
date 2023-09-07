@@ -45,13 +45,13 @@ class Railway_Robot(Robot):
         self.wait_click_xpath('//*[@id="megamenu-9"]/div[1]/ul/li[5]/a')
         # todo 查询车票放票时间
         self.input_clear_xpath('//*[@id="sale_time_date"]')
-        self.send_keys_xpath('//*[@id="sale_time_date"]', self.info['travel_date'])
+        self.send_keys_by_xpath('//*[@id="sale_time_date"]', self.info['travel_date'])
         self.find_ele_click_xpath('//*[@id="saleText"]')
-        self.send_keys_xpath('//*[@id="saleText"]', self.info['start_station'])
+        self.send_keys_by_xpath('//*[@id="saleText"]', self.info['start_station'])
         self.find_ele_click_xpath('//*[@id="citem_0"]')
         check_time = ''
         self.wait_ele_xpath_safe('//*[@id="sale-time1"]/div[1]/ul/li')
-        rows = self.find_eles_xpath('//*[@id="sale-time1"]/div[1]/ul/li')
+        rows = self.find_elements_by_xpath('//*[@id="sale-time1"]/div[1]/ul/li')
         for row in rows:
             station = row.find_element_by_xpath('.//div[@class="sale-station-name"]').text
             if self.info['start_station'] + '站' in station:
@@ -63,11 +63,11 @@ class Railway_Robot(Robot):
         log_t('开始订票')
         self.find_ele_click_xpath('//li[@class="nav-item nav-item-w1"]')
         self.wait_ele_click_xpath_safe('//*[@id="fromStationText"]')
-        self.send_keys_xpath('//*[@id="fromStationText"]', self.info['start_station'])
+        self.send_keys_by_xpath('//*[@id="fromStationText"]', self.info['start_station'])
         self.find_ele_click_xpath('//*[@id="citem_0"]')
-        self.send_keys_xpath('//*[@id="toStationText"]', self.info['to_station'])
+        self.send_keys_by_xpath('//*[@id="toStationText"]', self.info['to_station'])
         self.find_ele_click_xpath('//*[@id="citem_0"]')
-        self.send_keys_xpath('//*[@id="train_date"]', self.info['travel_date'])
+        self.send_keys_by_xpath('//*[@id="train_date"]', self.info['travel_date'])
         self.click_to_last_window_xpath('//*[@id="search_one"]')
         # todo 检查起售时间才能继续
         if self.find_ele_xpath_safe('//*[@id="no_filter_ticket_6"]/p'):
@@ -76,7 +76,7 @@ class Railway_Robot(Robot):
             return
         table = '/html/body/div[2]/div[8]/div[8]/table/tbody/tr'
         self.wait_ele_xpath_safe(table)
-        rows = self.find_eles_xpath(table)
+        rows = self.find_elements_by_xpath(table)
         for row in rows:
             if row.get_attribute('style') == 'display: none;':
                 continue
@@ -103,7 +103,7 @@ class Railway_Robot(Robot):
                     self.close_window()
                     raise Exception(hint)
 
-                choices = self.wait_eles_by_xpath('//*[@id="normal_passenger_id"]/li', 10)
+                choices = self.wait_elements_by_xpath('//*[@id="normal_passenger_id"]/li', 10)
                 for choice in choices:
                     person = choice.find_element('./label').text
                     if self.info['travel_person'] in person:

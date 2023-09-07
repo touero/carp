@@ -13,7 +13,7 @@ class XiaChuFang_Robot(Robot):
         return '下厨房'
 
     def run_task(self):
-        food_list = self.find_eles_xpath('//div[@class="info pure-u"]/p[@class="name"]/a')
+        food_list = self.find_elements_by_xpath('//div[@class="info pure-u"]/p[@class="name"]/a')
         # 获取做法链接的url列表
         food_urls = self.driver.find_elements(By.XPATH, '//div/p[1]/a')
         food_urls_list = []
@@ -40,13 +40,13 @@ class XiaChuFang_Robot(Robot):
             food_ma_list = []
             food_kg_list = []
             food_materials = []
-            food_matril = self.find_eles_xpath('//table//tr/td[1]')
+            food_matril = self.find_elements_by_xpath('//table//tr/td[1]')
             for i, food_ma in enumerate(food_matril):
                 if food_ma.text == '':
                     food_ma_list.append(self.get_ele_text(f'//table//tr[{i}]/td[1]/a'))
                 else:
                     food_ma_list.append(food_ma.text)
-            food_matril = self.find_eles_xpath('//table//tr/td[2]')
+            food_matril = self.find_elements_by_xpath('//table//tr/td[2]')
             for i, food_ma in enumerate(food_matril):
                 food_kg_list.append(food_ma.find_element(By.XPATH, '//table//tr/td[2]').text)
             for i in range(0, len(food_ma_list)):

@@ -14,7 +14,7 @@ class XinShiPu_Robot(Robot):
         return '心食谱'
 
     def run_task(self):
-        dessert_list = self.find_eles_xpath('//img')
+        dessert_list = self.find_elements_by_xpath('//img')
         # 获取甜品图片
         dessert_imgs = self.driver.find_elements(By.XPATH, '//div[@class="v-pw"]/img')
         # 用于最后字典生成时的标志，用来取出做法链接与甜点图片

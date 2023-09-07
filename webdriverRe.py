@@ -25,7 +25,7 @@ class WebDriverRe:
             WebDriverWait(self.driver, timeout).until(ec.visibility_of_element_located((By.XPATH, xpath)))
             self.driver.find_element(By.XPATH, xpath).click()
         except TimeoutException:
-            log_t(f'Not waiting until: {xpath}')
+            log_t(f'Message: wait xpath timeout: "method":"xpath","selector":"{xpath}"')
 
     def wait_ele_xpath_safe(self, xpath: str, timeout: int = 5) -> bool:
         try:
@@ -33,6 +33,7 @@ class WebDriverRe:
             if self.driver.find_element(By.XPATH, xpath):
                 return True
         except TimeoutException:
+            log_t(f'Message: wait xpath timeout: "method":"xpath","selector":"{xpath}"')
             return False
 
     def wait_click_xpath(self, xpath: str, timeout: int = 5):
@@ -42,11 +43,11 @@ class WebDriverRe:
     def find_ele_click_xpath(self, xpath: str):
         self.driver.find_element(By.XPATH, xpath).click()
 
-    def send_keys_xpath(self, xpath: str, keys: str):
+    def send_keys_by_xpath(self, xpath: str, keys: str):
         self.driver.find_element(By.XPATH, xpath).clear()
         self.driver.find_element(By.XPATH, xpath).send_keys(keys)
 
-    def find_eles_xpath(self, xpath: str) -> list:
+    def find_elements_by_xpath(self, xpath: str) -> list:
         if self.driver.find_elements(By.XPATH, xpath):
             return self.driver.find_elements(By.XPATH, xpath)
         return []
@@ -100,11 +101,11 @@ class WebDriverRe:
         WebDriverWait(self.driver, timeout).until(ec.visibility_of_element_located((By.XPATH, xpath)))
         return self.driver.find_element(By.XPATH, xpath)
 
-    def wait_eles_by_xpath(self, xpath: str, timeout: int = 5) -> List[WebElement]:
+    def wait_elements_by_xpath(self, xpath: str, timeout: int = 5) -> List[WebElement]:
         try:
-            return WebDriverWait(self.driver, timeout).until(
-                ec.presence_of_all_elements_located((By.XPATH, xpath)))
+            return WebDriverWait(self.driver, timeout).until(ec.presence_of_all_elements_located((By.XPATH, xpath)))
         except TimeoutException:
+            log_t(f'Message: wait xpath timeout: "method":"xpath","selector":"{xpath}"')
             return []
 
     def scroll_to_element_safe(self, ele: WebElement):
@@ -144,13 +145,27 @@ class WebDriverRe:
             except StaleElementReferenceException:
                 self.find_ele_click_xpath('//*[@id="dom_id"]/div/span/a')
 
-    def wait_frame_by_xpath(self, xpath: str, timeout: int = 5):
-        WebDriverWait(self.driver, timeout).until(ec.visibility_of_element_located((By.XPATH, xpath)))
-        self.driver.switch_to.frame(By.XPATH, xpath)
+    def wait_frame_by_xpath(self, xpath: str, timeout: int = 5, must: bool = False):
+        try:
+            WebDriverWait(self.driver, timeout).until(ec.visibility_of_element_located((By.XPATH, xpath)))
+            self.driver.switch_to.frame(By.XPATH, xpath)
+        except TimeoutException as e:
+            log_t(f'Message: wait xpath timeout: "method":"xpath","selector":"{xpath}"')
+            if must:
+                raise e
+            else:
+                ...
 
-    def wait_frame_by_id(self, frame_id: str, timeout: int = 5):
-        WebDriverWait(self.driver, timeout).until(ec.visibility_of_element_located((By.ID, frame_id)))
-        self.driver.switch_to.frame(By.ID, frame_id)
+    def wait_frame_by_id(self, frame_id: str, timeout: int = 5, must: bool = False):
+        try:
+            WebDriverWait(self.driver, timeout).until(ec.visibility_of_element_located((By.ID, frame_id)))
+            self.driver.switch_to.frame(By.ID, frame_id)
+        except TimeoutException as e:
+            log_t(f'Message: wait id timeout: "method":"xpath","selector":"{frame_id}"')
+            if must:
+                raise e
+            else:
+                ...
 
     def switch_default_content(self):
         self.driver.switch_to.default_content()

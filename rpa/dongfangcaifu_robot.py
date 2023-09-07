@@ -12,7 +12,7 @@ class DongFangCaiFu_Robot(Robot):
         return '东方财经'
 
     def run_task(self):
-        rows = self.wait_eles_by_xpath('//div[@id="table_ls"]//tbody//tr')
+        rows = self.wait_elements_by_xpath('//div[@id="table_ls"]//tbody//tr')
         header_line = ['日期', '收盘价', '涨跌幅', '主力净流入净额', '主力净流入净占比', '超大单净流入净额',
                        '超大单净流入净占比', '大单净流入净额', '大单净流入净占比', '中单净流入净额', '中单净流入净占比',
                        '小单净流入净额', '小单净流入净占比']
