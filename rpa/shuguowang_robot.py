@@ -1,6 +1,4 @@
-from abc import ABC
-from unil import *
-import unil
+from unil import log_t, write_to_excel
 from robot import Robot
 
 
@@ -12,7 +10,7 @@ class ShuGuoWang_Robot(Robot):
         return '蔬果网'
 
     def run_task(self):
-        price_list = self.find_elements_by_xpath('//ul[@id="NongHuaZhuanYongFei1"]/li/a')
+        price_list = self.wait_elements_by_xpath('//ul[@id="NongHuaZhuanYongFei1"]/li/a')
         for price in price_list:
             price.click()
             self.switch_last_window()
@@ -22,8 +20,8 @@ class ShuGuoWang_Robot(Robot):
                 data = self.get_xigua_xianggu().split("\n")
                 self.close_window()
                 self.switch_last_window()
-                write_to_excel(data, './output/guoshuwang_data.xlsx')
-                print(data)
+                self.need_save_list.append(data)
+                log_t(data)
             else:
                 self.close_window()
                 self.switch_last_window()
@@ -41,8 +39,8 @@ class ShuGuoWang_Robot(Robot):
                     self.find_ele_click_xpath('//a[text()="下一页"]')
                     if self.get_xigua_xianggu():
                         data = self.get_xigua_xianggu().split("\n")
-                        unil.write_to_excel(data, './output/guoshuwang_data.xlsx')
-                        unil.log_t(data)
+                        self.need_save_list.append(data)
+                        log_t(data)
                         self.last_win()
                     else:
                         self.last_win()
@@ -50,6 +48,7 @@ class ShuGuoWang_Robot(Robot):
                 else:
                     self.last_win()
                     number += 1
+        write_to_excel(self.need_save_list, './output/guoshuwang_data.xlsx')
 
     def last_win(self):
         self.close_window()
