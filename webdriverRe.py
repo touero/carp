@@ -156,9 +156,10 @@ class WebDriverRe:
         self.driver.switch_to.default_content()
 
     def wait_click_xpath_open_window(self, xpath: str, timeout: int = 5):
-        window_handles = self.driver.window_handles
+        before_handles = self.driver.window_handles
         self.wait_click_xpath(xpath, timeout)
-        new_window = AssistDriver.wait_for_new_window(self.driver, window_handles)
+        after_handles = self.driver.window_handles
+        new_window = list(set(after_handles).difference(set(before_handles)))
         self.driver.switch_to.window(new_window)
         return new_window
         
