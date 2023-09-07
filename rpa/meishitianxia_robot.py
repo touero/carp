@@ -1,5 +1,5 @@
 from abc import ABC
-from unil import write_tolocal_mysql as wtm
+from unil import write_tolocal_mysql as wtm, log_t
 from selenium.webdriver.support.wait import TimeoutException
 from selenium.webdriver.common.by import By
 
@@ -14,13 +14,14 @@ class MeiShiTianXia_Robot(Robot, ABC):
         return '美食天下'
 
     def run_task(self):
-        home_cook_list = self.find_elements_by_xpath('//h2')
+        home_cook_list = self.wait_elements_by_xpath('//h2')
         home_cook_img_list = []
-        flag = 0
+
         # 获取图片信息
         home_cook_imgs = self.find_elements_by_xpath('//div[@class="pic"]//img')
         for home_cook_img in home_cook_imgs:
             home_cook_img_list.append(home_cook_img.get_attribute('src'))
+
         # 获取用料
         home_cook_materials = self.find_elements_by_xpath('//ul/li/div[2]/p[2]')
         home_cook_materials_list = []
@@ -32,7 +33,7 @@ class MeiShiTianXia_Robot(Robot, ABC):
         home_cook_url_list = []
         for home_cook in home_cook_list:
             home_cook_name_list.append(home_cook.text)
-            home_cook_url_list.append(home_cook.find_element(By.XPATH, '//h2/a').get_attribute('href'))
+            home_cook_url_list.append(home_cook.find_element('//h2/a').get_attribute('href'))
 
         # 制作家常菜字典
         for i in range(0, len(home_cook_name_list)):
@@ -41,8 +42,5 @@ class MeiShiTianXia_Robot(Robot, ABC):
                                   'home_cook_materials': home_cook_materials_list[i],
                                   'home_cook_url': home_cook_url_list[i]}
                 wtm(home_cook_dict, 'mstx')
-            except:
-                print("数据丢失")
-            # print(home_cook_dict)
-
-            # print(home_cook)
+            except Exception as e:
+                log_t(e)
