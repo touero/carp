@@ -177,4 +177,7 @@ class WebDriverRe:
         new_window = list(set(after_handles).difference(set(before_handles)))
         self.driver.switch_to.window(new_window)
         return new_window
+
+    def get_attribute_by_xpath(self, xpath: str, attribute: str) -> str:
+        return self.find_ele_xpath(xpath).get_attribute(attribute)
         
