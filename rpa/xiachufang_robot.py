@@ -38,6 +38,7 @@ class XiaChuFang_Robot(Robot):
             # 获取食物名称
             food_name = self.get_ele_text('//h1')
             food_img = self.find_ele_xpath('//div[1]/img').get_attribute('src')
+            food_img = self.get_attribute_by_xpath('//div[1]/img', 'src')
 
             # 获取用料列表并合并
             food_ma_list = []
