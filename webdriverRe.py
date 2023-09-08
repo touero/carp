@@ -175,8 +175,9 @@ class WebDriverRe:
         self.wait_click_xpath(xpath, timeout)
         after_handles = self.driver.window_handles
         new_window = list(set(after_handles).difference(set(before_handles)))
+        if not new_window:
+            return
         self.driver.switch_to.window(new_window)
-        return new_window
 
     def get_attribute_by_xpath(self, xpath: str, attribute: str) -> str:
         return self.find_ele_xpath(xpath).get_attribute(attribute)
