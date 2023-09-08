@@ -3,6 +3,7 @@ from abc import ABC, abstractmethod
 from dataclasses import dataclass
 from typing import Optional, List
 
+from unil import log_t
 from webdriverRe import WebDriverRe
 
 
@@ -14,7 +15,7 @@ class Robot(ABC, WebDriverRe):
         self.task = kwargs.get('default_config')
         self.url = kwargs.get('url')
         self.task_type = kwargs.get('task_type')
-
+        log_t(f'[start_url]: {self.url}')
         self.driver.get(self.url)
         self.driver.maximize_window()
 
