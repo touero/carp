@@ -4,7 +4,7 @@ from dataclasses import dataclass
 from typing import Optional, List
 
 from unil import log_t
-from webdriverRe import WebDriverRe
+from webdriver_re import WebDriverRe
 
 
 class Robot(ABC, WebDriverRe):

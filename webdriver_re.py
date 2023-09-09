@@ -12,10 +12,12 @@ from selenium.webdriver.support.wait import WebDriverWait, TimeoutException
 
 from driver_factory import DriverFactory
 from unil import log_t
+from driver_func import DriverFunc
 
 
-class WebDriverRe:
+class WebDriverRe(DriverFunc):
     def __init__(self):
+        super().__init__()
         self.driver = DriverFactory().driver
 
     def kill_driver(self):
