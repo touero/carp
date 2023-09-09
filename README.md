@@ -10,6 +10,10 @@
   <a href="https://www.mysql.com/"><img src="https://img.shields.io/badge/-MySQL-brown?style=plastic&logo=mysql" alt=""/></a>  
 </p>
 
+<p align="center">
+    <img src=.img/carp.png height="200" width="200" alt="">
+</p>
+
 ## Repository Introduction
 
 This is an integration task that encapsulates selenium twice, which allows us to crawl different websites with a set of encapsulated code and perform different task types.  
