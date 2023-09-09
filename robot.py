@@ -7,7 +7,7 @@ from unil import log_t
 from webdriver_re import WebDriverRe
 
 
-class Robot(ABC, WebDriverRe):
+class Robot(WebDriverRe):
 
     def __init__(self, **kwargs):
         super().__init__()
