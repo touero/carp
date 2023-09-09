@@ -1,11 +1,10 @@
-from _typeshed import Incomplete
 from selenium.webdriver.remote.webelement import WebElement as WebElement
 from typing import List
 from abc import ABC, abstractmethod
 
 
 class DriverFunc(ABC):
-    driver: Incomplete
+    driver: None
     @abstractmethod
     def __init__(self) -> None: ...
 
