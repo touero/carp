@@ -1,7 +1,5 @@
 from abc import ABC
 from unil import write_tolocal_mysql as wtm, log_t
-from selenium.webdriver.support.wait import TimeoutException
-from selenium.webdriver.common.by import By
 
 from robot import Robot
 

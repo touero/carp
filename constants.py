@@ -2,12 +2,6 @@ from enum import unique, IntEnum, Enum
 
 
 @unique
-class DEBUG(IntEnum):
-    NOT = 0
-    IS = 1
-
-
-@unique
 class TaskType(IntEnum):
     XIA_CHU_FANG = 1  # 下厨房
     XIN_SHI_PU = 2  # 心食谱
@@ -25,5 +19,3 @@ class TaskUrl(Enum):
     SHU_GUO_WANG = 'http://www.vegnet.com.cn/Market/477.html?page=1'
     DONG_FANG_CAI_FU = 'https://data.eastmoney.com/zjlx/600257.html'
     RAIL_WAT = 'https://kyfw.12306.cn/otn/resources/login.html'
-
-
