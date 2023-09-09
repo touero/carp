@@ -2,6 +2,7 @@ import random
 import time
 from typing import List
 
+from selenium.common import NoAlertPresentException
 from selenium.common.exceptions import NoSuchElementException, StaleElementReferenceException
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
@@ -185,7 +186,7 @@ class WebDriverRe:
     def wait_alert_handle(self, timeout: int = 5, must: bool = False, accept: bool = True):
         try:
             WebDriverWait(self.driver, timeout).until(expected_conditions.alert_is_present())
-        except TimeoutException as e:
+        except TimeoutException or NoAlertPresentException as e:
             log_t(f'Message: wait timeout: alert')
             if must:
                 raise e
