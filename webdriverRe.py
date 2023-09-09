@@ -6,7 +6,7 @@ from selenium.common.exceptions import NoSuchElementException, StaleElementRefer
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webelement import WebElement
-from selenium.webdriver.support import expected_conditions as ec
+from selenium.webdriver.support import expected_conditions as ec, expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait, TimeoutException
 
 from driver_factory import DriverFactory
@@ -153,8 +153,6 @@ class WebDriverRe:
             log_t(f'Message: wait xpath timeout: "method":"xpath","selector":"{xpath}"')
             if must:
                 raise e
-            else:
-                ...
 
     def wait_frame_by_id(self, frame_id: str, timeout: int = 5, must: bool = False):
         try:
@@ -164,11 +162,13 @@ class WebDriverRe:
             log_t(f'Message: wait id timeout: "method":"xpath","selector":"{frame_id}"')
             if must:
                 raise e
-            else:
-                ...
 
     def switch_default_content(self):
         self.driver.switch_to.default_content()
+
+    def switch_default(self):
+        self.switch_default_windows()
+        self.switch_default_content()
 
     def wait_click_xpath_open_window(self, xpath: str, timeout: int = 5):
         before_handles = self.driver.window_handles
@@ -181,4 +181,17 @@ class WebDriverRe:
 
     def get_attribute_by_xpath(self, xpath: str, attribute: str) -> str:
         return self.find_ele_xpath(xpath).get_attribute(attribute)
-        
+
+    def wait_alert_handle(self, timeout: int = 5, must: bool = False, accept: bool = True):
+        try:
+            WebDriverWait(self.driver, timeout).until(expected_conditions.alert_is_present())
+        except TimeoutException as e:
+            log_t(f'Message: wait timeout: alert')
+            if must:
+                raise e
+        alert = self.driver.switch_to.alert
+        log_t(alert.text)
+        if accept:
+            alert.accept()
+        else:
+            alert.dismiss()
