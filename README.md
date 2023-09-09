@@ -14,6 +14,12 @@
 
 This is an integration task that encapsulates selenium twice, which allows us to crawl different websites with a set of encapsulated code and perform different task types.  
   
+> Now, it has some functions:
+>> 1. log 
+>> 2. debug 
+>> 3. can need not webdriver 
+>> 4. just need to implement a func
+  
 💕 If it's helpful to you or cloning it, please star it. This is maximum encouragement for open-source contributors💕
 > Currently, this repository contains：
 >> 1. [下厨房](https://www.xiachufang.com/) 
