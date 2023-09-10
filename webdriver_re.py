@@ -1,19 +1,17 @@
 import random
 import time
-from typing import List, Optional, Tuple
+from typing import List
 
 from selenium.common import NoAlertPresentException
 from selenium.common.exceptions import NoSuchElementException, StaleElementReferenceException
 from selenium.webdriver import ActionChains
-from selenium.webdriver.common.alert import Alert
 from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webelement import WebElement
 from selenium.webdriver.support import expected_conditions as ec, expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait, TimeoutException
 
 from driver_factory import DriverFactory
-from setting import SCREENSHOT_DIR
-from unil import log_t, get_time_now
+from unil import log_t
 from driver_func import DriverFunc
 
 
@@ -214,27 +212,3 @@ class WebDriverRe(DriverFunc):
                 return ''
         alert = self.driver.switch_to.alert
         return alert.text
-
-    def get_alert_text(self, timeout: int = 5, must: bool = False) -> Tuple[Optional[Alert], str]:
-        try:
-            WebDriverWait(self.driver, timeout).until(expected_conditions.alert_is_present())
-        except TimeoutException or NoAlertPresentException as e:
-            log_t(f'Message: wait timeout: alert')
-            if must:
-                raise e
-            else:
-                return None, ''
-        alert = self.driver.switch_to.alert
-        return alert, alert.text
-
-    def screenshot_full_png(self, name: str) -> str:
-        now_time = get_time_now().strftime('%Y%m%d%H%M%S')
-        path = f'{SCREENSHOT_DIR}{now_time}_{name}'
-        self.driver.get_screenshot_as_file(path)
-        return path
-
-    def find_ele_screenshot(self, xpath: str, name: str) -> str:
-        now_time = get_time_now().strftime('%Y%m%d%H%M%S')
-        path = f'{SCREENSHOT_DIR}{now_time}_{name}'
-        self.find_ele_xpath(xpath).screenshot(path)
-        return path
