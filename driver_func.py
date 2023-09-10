@@ -94,3 +94,7 @@ class DriverFunc(ABC):
 
     @abstractmethod
     def wait_alert_handle(self, timeout: int = ..., must: bool = ..., accept: bool = ...): ...
+
+    @abstractmethod
+    def get_alert_text(self, timeout: int = ..., must: bool = ...) -> str: ...
+
