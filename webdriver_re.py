@@ -203,6 +203,18 @@ class WebDriverRe(DriverFunc):
         else:
             alert.dismiss()
 
+    def get_alert_text(self, timeout: int = 5, must: bool = False) -> str:
+        try:
+            WebDriverWait(self.driver, timeout).until(expected_conditions.alert_is_present())
+        except TimeoutException or NoAlertPresentException as e:
+            log_t(f'Message: wait timeout: alert')
+            if must:
+                raise e
+            else:
+                return ''
+        alert = self.driver.switch_to.alert
+        return alert.text
+
     def get_alert_text(self, timeout: int = 5, must: bool = False) -> Tuple[Optional[Alert], str]:
         try:
             WebDriverWait(self.driver, timeout).until(expected_conditions.alert_is_present())
