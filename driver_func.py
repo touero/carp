@@ -1,5 +1,6 @@
+from selenium.webdriver.common.alert import Alert
 from selenium.webdriver.remote.webelement import WebElement as WebElement
-from typing import List
+from typing import List, Tuple, Optional
 from abc import ABC, abstractmethod
 
 
@@ -96,5 +97,5 @@ class DriverFunc(ABC):
     def wait_alert_handle(self, timeout: int = ..., must: bool = ..., accept: bool = ...): ...
 
     @abstractmethod
-    def get_alert_text(self, timeout: int = ..., must: bool = ...) -> str: ...
+    def get_alert_text(self, timeout: int = ..., must: bool = ...) -> Tuple[Optional[Alert], str]: ...
 
