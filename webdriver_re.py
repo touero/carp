@@ -1,10 +1,11 @@
 import random
 import time
-from typing import List
+from typing import List, Optional, Tuple
 
 from selenium.common import NoAlertPresentException
 from selenium.common.exceptions import NoSuchElementException, StaleElementReferenceException
 from selenium.webdriver import ActionChains
+from selenium.webdriver.common.alert import Alert
 from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webelement import WebElement
 from selenium.webdriver.support import expected_conditions as ec, expected_conditions
@@ -201,7 +202,7 @@ class WebDriverRe(DriverFunc):
         else:
             alert.dismiss()
 
-    def get_alert_text(self, timeout: int = 5, must: bool = False) -> str:
+    def get_alert_text(self, timeout: int = 5, must: bool = False) -> Tuple[Optional[Alert], str]:
         try:
             WebDriverWait(self.driver, timeout).until(expected_conditions.alert_is_present())
         except TimeoutException or NoAlertPresentException as e:
@@ -209,6 +210,6 @@ class WebDriverRe(DriverFunc):
             if must:
                 raise e
             else:
-                return ''
+                return None, ''
         alert = self.driver.switch_to.alert
-        return alert.text
+        return alert, alert.text
