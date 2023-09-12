@@ -1,10 +1,16 @@
 import logging
-from typing import List
+from email.mime.image import MIMEImage
+from email.mime.multipart import MIMEMultipart
 
 import openpyxl
 import pytz
 import os
 import pymysql
+
+from typing import List
+import smtplib
+from email.mime.text import MIMEText
+from email.header import Header
 
 from datetime import datetime
 
@@ -77,3 +83,44 @@ def write_to_excel(_list: List[list], path: str):
         sheet.append(item)
     wb.save(path)
     log_t(f'[need_save_list]: {_list}')
+
+
+def send_email(**kwargs):
+    email_host = kwargs.get('mail_host')
+    email_user = kwargs.get('mail_user')
+    email_pass = kwargs.get('mail_pass')
+    sender = kwargs.get('sender')
+    # receivers = ['@.com']
+    receivers = kwargs.get('receivers')
+    msg = kwargs.get('msg')
+    from_where = kwargs.get('from_where')
+    to_where = kwargs.get('to_where')
+    subject = kwargs.get('subject')
+    port = kwargs.get('port')
+    path = kwargs.get('path', '')
+
+    if path:
+        mail_msg = """
+        <html><body><p>Crap</p>
+        <p><img src="cid:image1"></p></body></html>
+        """
+        msg_robot = MIMEMultipart('related')
+        msg_alternative = MIMEMultipart('alternative')
+        msg_robot.attach(msg_alternative)
+        msg_alternative.attach(MIMEText(mail_msg, 'html', 'utf-8'))
+        with open(path, 'rb') as file:
+            message = MIMEImage(file.read())
+        msg_robot.add_header('Content-ID', '<image1>')
+        msg_robot.attach(message)
+    else:
+        msg_robot = MIMEText(msg, 'plain', 'utf-8')
+        msg_robot['From'] = Header(from_where, 'utf-8')
+        msg_robot['To'] = Header(to_where, 'utf-8')
+
+        # subject = 'Python SMTP testing'
+        msg_robot['Subject'] = Header(subject, 'utf-8')
+
+    smtp = smtplib.SMTP()
+    smtp.connect(email_host, port)
+    smtp.login(email_user, email_pass)
+    smtp.sendmail(sender, receivers, msg_robot.as_string())

@@ -27,14 +27,22 @@ class Railway_Robot(Robot):
             raise Exception('config缺少或不存在')
 
     def login(self):
-        if self.find_ele_xpath_safe('//*[@id="ERROR"]'):
-            self.wait_ele_click_xpath_safe('//a[@id="login_user"]')
-        self.wait_ele_click_xpath_safe('//li[@class="login-hd-account"]')
+        for count in range(1, 11):
+
+            if not self.wait_ele_xpath_safe('//a[@login-type="personal"]'):
+                if self.find_ele_xpath_safe('//*[@id="ERROR"]'):
+                    self.wait_ele_click_xpath_safe('//a[@id="login_user"]')
+                self.wait_ele_click_xpath_safe('//li[@class="login-hd-account"]')
+                self.wait_ele_xpath_safe('//div[@class="login-panel"]//div[@class="login-box"]')
+                self.find_ele_screenshot('//div[@class="login-panel"]//div[@class="login-box"]', f'login_qrcode.png')
+                self.wait_ele_xpath_safe('//a[@login-type="personal"]', 180)
+                log_t(f'等待扫码180s, 剩余等待次数: {count}')
+            else:
+                break
+
         try:
             if self.wait_ele_xpath_safe('//li[@class="nav-item nav-item-w1"]', timeout=60):
                 log_t('登录成功')
-                session_id = self.driver.session_id
-                self.driver.session_id = session_id
         except TimeoutError as e:
             log_t(f'login timeout: {e}')
         except Exception as e:
