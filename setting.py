@@ -14,3 +14,6 @@ DRISSION = False
 # Drission chrome address
 CHROME_ADDRESS = '127.0.0.1:9333'
 
+# screenshot dir
+SCREENSHOT_DIR = 'screenshot/'
+
