@@ -99,3 +99,9 @@ class DriverFunc(ABC):
     @abstractmethod
     def get_alert_text(self, timeout: int = ..., must: bool = ...) -> Tuple[Optional[Alert], str]: ...
 
+    @abstractmethod
+    def screenshot_full_png(self, name: str) -> str: ...
+
+    @abstractmethod
+    def find_ele_screenshot(self, xpath: str, name: str) -> str: ...
+

@@ -12,7 +12,8 @@ from selenium.webdriver.support import expected_conditions as ec, expected_condi
 from selenium.webdriver.support.wait import WebDriverWait, TimeoutException
 
 from driver_factory import DriverFactory
-from unil import log_t
+from setting import SCREENSHOT_DIR
+from unil import log_t, get_time_now
 from driver_func import DriverFunc
 
 
@@ -213,3 +214,15 @@ class WebDriverRe(DriverFunc):
                 return None, ''
         alert = self.driver.switch_to.alert
         return alert, alert.text
+
+    def screenshot_full_png(self, name: str) -> str:
+        now_time = get_time_now().strftime('%Y%m%d%H%M%S')
+        path = f'{SCREENSHOT_DIR}{now_time}_{name}'
+        self.driver.get_screenshot_as_file(path)
+        return path
+
+    def find_ele_screenshot(self, xpath: str, name: str) -> str:
+        now_time = get_time_now().strftime('%Y%m%d%H%M%S')
+        path = f'{SCREENSHOT_DIR}{now_time}_{name}'
+        self.find_ele_xpath(xpath).screenshot(path)
+        return path

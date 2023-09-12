@@ -58,5 +58,7 @@ class RpaMaster(ABC):
             task_state = 'Fail'
             log_t(e)
             log_t(traceback.print_exc())
+            path = self.robot.screenshot_full_png(f'task_error.png')
+            log_t(f'任务失败保存截图: {path}')
         self.end_time = get_time_now()
         log_t(f'### Task State: {task_state}, Task Cost {(self.end_time - self.start_time).seconds}s ###')
