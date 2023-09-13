@@ -112,5 +112,5 @@ This project exists thanks to all the people who contribute.
 
 ## License
 
-[MIT](https://github.com/weiensong/scrapySelenium/blob/master/LICENSE) © weiensong
+[GNU General Public License v3.0](https://github.com/weiensong/carp/blob/master/LICENSE) © weiensong
 
