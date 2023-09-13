@@ -1,3 +1,6 @@
+import yaml
+
+from argparse import ArgumentParser
 from rap_master import RpaMaster
 """
 task_type
@@ -21,7 +24,11 @@ default_config = {
             'to_time': '18:47'
         }
 }
-
+parser = ArgumentParser()
+parser.add_argument('--smtp_config', '-y', default='smtp_config.yaml', help='smtp config')
+smtp_args = parser.parse_args()
+smtp_config = yaml.load(open(smtp_args.smtp_config, encoding='utf-8'), yaml.FullLoader)
+default_config['smtp_config'] = smtp_config
 if __name__ == '__main__':
     RpaMaster(default_config=default_config).start_task()
 
