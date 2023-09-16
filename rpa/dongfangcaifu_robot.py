@@ -1,7 +1,7 @@
 from selenium.webdriver.common.by import By
 
-from robot import Robot
-from unil import *
+from src.robot import Robot
+from src.unil import *
 
 
 class DongFangCaiFu_Robot(Robot):

@@ -1,7 +1,7 @@
 import yaml
 
 from argparse import ArgumentParser
-from rap_master import RpaMaster
+from src.rap_master import RpaMaster
 """
 task_type
     [1]:下厨房 [2]:心食谱 [3]:美食天下 [4]:蔬果网 [5]:东方财务 [6]:12306

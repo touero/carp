@@ -102,24 +102,25 @@ def send_email(smtp_config, msg=None, path=None):
     subject = content.get('subject')
 
     if path is not None:
-        mail_msg = """
-        <html><body><p>Crap</p>
-        <p><img src="cid:image1"></p></body></html>
-        """
+        with open('src/email_content.html', encoding='utf-8') as file:
+            email_msg = file.read()
         msg_robot = MIMEMultipart('related')
         msg_alternative = MIMEMultipart('alternative')
         msg_robot.attach(msg_alternative)
-        msg_alternative.attach(MIMEText(mail_msg, 'html', 'utf-8'))
+        msg_alternative.attach(MIMEText(email_msg, 'html', 'utf-8'))
         with open(path, 'rb') as file:
-            message = MIMEImage(file.read())
+            message = file.read()
+        image_part = MIMEImage(message, name='image.png')
         msg_robot.add_header('Content-ID', '<image1>')
-        msg_robot.attach(message)
+        msg_robot.attach(image_part)
+
     elif msg is not None:
         msg_robot = MIMEText(msg, 'plain', 'utf-8')
 
     else:
         log_t('sending email failed')
         return
+
     msg_robot['From'] = Header(from_where)
     msg_robot['To'] = Header(', '.join(to_where), 'utf-8')
     msg_robot['Subject'] = Header(subject, 'utf-8')

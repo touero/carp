@@ -19,11 +19,13 @@ smtp:
 """
 
 smtp:
+
   smtp service:
     host: smtp.qq.com
     user: xxxxxx@qq.com
     pass: your_key
     port: 587
+
   content:
     sender: xxxxxx@qq.com
     receivers:

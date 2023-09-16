@@ -3,8 +3,8 @@ from abc import abstractmethod
 from dataclasses import dataclass
 from typing import Optional
 
-from unil import log_t, send_email
-from webdriver_re import WebDriverRe
+from src.unil import log_t, send_email
+from src.webdriver_re import WebDriverRe
 
 
 class Robot(WebDriverRe):

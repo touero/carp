@@ -2,7 +2,7 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver import ChromeOptions, Chrome
 from DrissionPage import ChromiumPage
 
-from setting import DRIVER_VERSION, DEBUG, DRISSION, CHROME_ADDRESS
+from src.setting import DRIVER_VERSION, DEBUG, DRISSION, CHROME_ADDRESS
 
 
 class DriverFactory:
