@@ -61,7 +61,8 @@ $ source ./venv/bin/activate
 $ pip install -r requriements.txt 
 
 # default_config is used to configure tasks in local_runner.py
-# defualt yaml is config/smtp.yaml if you want use email api
+# default email config is in config/smtp.yaml
+# if you want to use it please build a new yaml
 $ python ./local_runner.py -y smtp.yaml
 
 # linux quit venv
@@ -73,12 +74,12 @@ $ deactivate
 As you can see, there are relatively few crawling parts. But, contribute to this under [Python PEP-8](https://peps.python.org/pep-0008/)  
 
 > If you want to increase your robot following: 
->> 1. please creat ***_robot.py in dir of name is rpa.
->> 2. Adding task's type and task's url in constants.py.
->> 3. Adding 1&2 in robots and urls in RpaMaster.
->> 4. Over writer your \__str\__'s and run_task's func in your robot.
->> 5. if you want to use email api [email=True] in local_runner and set your config/smtp.yaml
->> 6. Fixing task_type in local_runner and run it.
+- please creat ***_robot.py in dir of name is rpa.
+- Adding task's type and task's url in constants.py.
+- Adding 1&2 in robots and urls in RpaMaster.
+- Over writer your \__str\__'s and run_task's func in your robot.
+- if you want to use email api [email=True] in local_runner and set your config/smtp.yaml
+- Fixing task_type in local_runner and run it.
 ## Related Repository
 
 - [Python](https://github.com/TheAlgorithms/Python) — All Algorithms implemented in Python.
