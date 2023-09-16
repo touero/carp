@@ -24,7 +24,7 @@ default_config = {
             'to_time': '18:47'
         },
 }
-email: bool = True
+email: bool = False
 parser = ArgumentParser()
 parser.add_argument('--smtp_config', '-y', default='config/smtp.yaml', help='smtp config')
 if __name__ == '__main__':

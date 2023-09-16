@@ -23,6 +23,8 @@ This is an integration task that encapsulates selenium twice, which allows us to
 >> 2. debug 
 >> 3. can need not webdriver 
 >> 4. just need to implement a func
+>> 5. exception screenshot
+>> 6. email api send to yourself
   
 💕 If it's helpful to you or cloning it, please star it. This is maximum encouragement for open-source contributors💕
 > Currently, this repository contains：
@@ -49,17 +51,24 @@ Recommend using Python's virtual environment
 ```sh
 $ python 3 -m venv venv
 
-$ source ./venv/bin/activate # linux activate venv
+# linux activate venv
+$ source ./venv/bin/activate 
 
-> .\venv\Scripts\activate # windows activate venv
+# windows activate venv
+> .\venv\Scripts\activate 
 
-$ pip install -r requriements.txt # install packagers in venv
+# install packagers in venv
+$ pip install -r requriements.txt 
 
-$ python ./local_runner.py # default_config is used to configure tasks in local_runner.py
+# default_config is used to configure tasks in local_runner.py
+# defualt yaml is config/smtp.yaml if you want use email api
+$ python ./local_runner.py -y smtp.yaml
 
-$ deactivate # linux quit venv
+# linux quit venv
+$ deactivate 
 
-> .\Scripts\deactivate.bat # windows quit venv
+# windows quit venv
+> .\Scripts\deactivate.bat 
 ```
 As you can see, there are relatively few crawling parts. But, contribute to this under [Python PEP-8](https://peps.python.org/pep-0008/)  
 
@@ -68,7 +77,8 @@ As you can see, there are relatively few crawling parts. But, contribute to this
 >> 2. Adding task's type and task's url in constants.py.
 >> 3. Adding 1&2 in robots and urls in RpaMaster.
 >> 4. Over writer your \__str\__'s and run_task's func in your robot.
->> 5. Fixing task_type in local_runner and run it.
+>> 5. if you want to use email api [email=True] in local_runner and set your config/smtp.yaml
+>> 6. Fixing task_type in local_runner and run it.
 ## Related Repository
 
 - [Python](https://github.com/TheAlgorithms/Python) — All Algorithms implemented in Python.
