@@ -80,6 +80,12 @@ As you can see, there are relatively few crawling parts. But, contribute to this
 - Over writer your \__str\__'s and run_task's func in your robot.
 - if you want to use email api [email=True] in local_runner and set your config/smtp.yaml
 - Fixing task_type in local_runner and run it.
+
+Real running instructions if use email api example:
+```sh
+$ python local_runner.py -y config/smtp_weiensong.yaml
+```
+
 ## Related Repository
 
 - [Python](https://github.com/TheAlgorithms/Python) — All Algorithms implemented in Python.
