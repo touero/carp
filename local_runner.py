@@ -22,13 +22,16 @@ default_config = {
             'travel_date': '2023-02-31',
             'start_time': '17:40',
             'to_time': '18:47'
-        }
+        },
 }
+email: bool = True
 parser = ArgumentParser()
-parser.add_argument('--smtp_config', '-y', default='smtp_config.yaml', help='smtp config')
-smtp_args = parser.parse_args()
-smtp_config = yaml.load(open(smtp_args.smtp_config, encoding='utf-8'), yaml.FullLoader)
-default_config['smtp_config'] = smtp_config
+parser.add_argument('--smtp_config', '-y', default='config/smtp.yaml', help='smtp config')
 if __name__ == '__main__':
+    if email:
+        smtp_args = parser.parse_args()
+        smtp_config = yaml.load(open(smtp_args.smtp_config, encoding='utf8'), yaml.FullLoader)
+        default_config['smtp_config'] = smtp_config
+
     RpaMaster(default_config=default_config).start_task()
 

@@ -85,21 +85,23 @@ def write_to_excel(_list: List[list], path: str):
     log_t(f'[need_save_list]: {_list}')
 
 
-def send_email(**kwargs):
-    email_host = kwargs.get('mail_host')
-    email_user = kwargs.get('mail_user')
-    email_pass = kwargs.get('mail_pass')
-    sender = kwargs.get('sender')
-    # receivers = ['@.com']
-    receivers = kwargs.get('receivers')
-    msg = kwargs.get('msg')
-    from_where = kwargs.get('from_where')
-    to_where = kwargs.get('to_where')
-    subject = kwargs.get('subject')
-    port = kwargs.get('port')
-    path = kwargs.get('path', '')
+def send_email(smtp_config, msg=None, path=None):
+    smtp_config = smtp_config['smtp']
+    smtp_service = smtp_config.get('smtp service')
+    content = smtp_config.get('content')
 
-    if path:
+    host = smtp_service.get('host')
+    user = smtp_service.get('user')
+    pwd = smtp_service.get('pass')
+    port = smtp_service.get('port')
+
+    sender = content.get('sender')
+    receivers = content.get('receivers')
+    from_where = content.get('from_where')
+    to_where = content.get('to_where')
+    subject = content.get('subject')
+
+    if path is not None:
         mail_msg = """
         <html><body><p>Crap</p>
         <p><img src="cid:image1"></p></body></html>
@@ -112,15 +114,19 @@ def send_email(**kwargs):
             message = MIMEImage(file.read())
         msg_robot.add_header('Content-ID', '<image1>')
         msg_robot.attach(message)
-    else:
+    elif msg is not None:
         msg_robot = MIMEText(msg, 'plain', 'utf-8')
-        msg_robot['From'] = Header(from_where, 'utf-8')
-        msg_robot['To'] = Header(to_where, 'utf-8')
 
-        # subject = 'Python SMTP testing'
-        msg_robot['Subject'] = Header(subject, 'utf-8')
+    else:
+        log_t('sending email failed')
+        return
+    msg_robot['From'] = Header(from_where)
+    msg_robot['To'] = Header(', '.join(to_where), 'utf-8')
+    msg_robot['Subject'] = Header(subject, 'utf-8')
 
-    smtp = smtplib.SMTP()
-    smtp.connect(email_host, port)
-    smtp.login(email_user, email_pass)
+    smtp = smtplib.SMTP(host, port)
+    smtp.starttls()
+    smtp.login(user, pwd)
     smtp.sendmail(sender, receivers, msg_robot.as_string())
+    result = path if path else msg
+    log_t(f'[sending email success: {result}]')
