@@ -43,8 +43,8 @@ class RpaMaster(ABC):
     @property
     def robot_factory(self):
         self.url = self.urls.get(self.task_type)
-        Robot = self.robots.get(self.task_type)
-        robot = Robot(default_config=self.config, url=self.url)
+        create_robot = self.robots.get(self.task_type)
+        robot = create_robot(default_config=self.config, url=self.url)
         log_t(f'当前任务: 开始 {robot}')
         log_t(f"default_config =\n {json.dumps(self.config, sort_keys=True, indent=4, separators=(',', ': '))}")
         return robot
