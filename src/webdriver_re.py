@@ -11,10 +11,10 @@ from selenium.webdriver.remote.webelement import WebElement
 from selenium.webdriver.support import expected_conditions as ec, expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait, TimeoutException
 
-from driver_factory import DriverFactory
-from setting import SCREENSHOT_DIR
-from unil import log_t, get_time_now
-from driver_func import DriverFunc
+from src.driver_factory import DriverFactory
+from src.setting import SCREENSHOT_DIR
+from src.unil import log_t, get_time_now
+from src.driver_func import DriverFunc
 
 
 class WebDriverRe(DriverFunc):
