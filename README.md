@@ -40,7 +40,7 @@ This is an integration task that encapsulates selenium twice, which allows us to
 
 This project uses [Python](https://www.python.org/) [Git](https://git-scm.com/) [Chrome](https://www.google.com/chrome/). Go check them out if you don't have them locally installed.
 
-```sh
+```shell
 $ git clone https://github.com/weiensong/carp.git
 ```
 
@@ -48,27 +48,41 @@ $ git clone https://github.com/weiensong/carp.git
 
 Recommend using Python's virtual environment
 
-```sh
+ - powershell, shell build a virtual environment
+
+```shell
 $ python 3 -m venv venv
-
-# linux activate venv
+```
+ - activate virtual environment
+ - - shell
+```shell
 $ source ./venv/bin/activate 
-
-# windows activate venv
+```
+- - powershell
+```powershell
 > .\venv\Scripts\activate 
-
-# install packagers in venv
+```
+ - install packagers
+```shell
 $ pip install -r requriements.txt 
+```
 
-# default_config is used to configure tasks in local_runner.py
-# default email config is in config/smtp.yaml
-# if you want to use it please build a new yaml
+
+ - default_config is used to configure tasks in local_runner.py
+ - default email config is in config/smtp.yaml
+ - if you want to use it please build a new yaml
+
+```shell
 $ python ./local_runner.py -y smtp.yaml
+```
 
-# linux quit venv
+ - quiting from virtual environment
+ - - shell
+```shell
 $ deactivate 
-
-# windows quit venv
+```
+ - - powershell
+```powershell
 > .\Scripts\deactivate.bat 
 ```
 As you can see, there are relatively few crawling parts. But, contribute to this under [Python PEP-8](https://peps.python.org/pep-0008/)  
@@ -81,8 +95,8 @@ As you can see, there are relatively few crawling parts. But, contribute to this
 - if you want to use email api [email=True] in local_runner and set your config/smtp.yaml
 - Fixing task_type in local_runner and run it.
 
-Real running instructions if use email api example:
-```sh
+Real running instructions if using email api example:
+```shell
 $ python local_runner.py -y config/smtp_weiensong.yaml
 ```
 
