@@ -14,10 +14,6 @@
     <img src=.img/carp.png height="200" width="200" alt="">
 </p>
 
-<p align="center">
-    <img src=.img/carp.png height="200" width="200" alt="">
-</p>
-
 ## Repository Introduction
 
 This is an integration task that encapsulates selenium twice, which allows us to crawl different websites with a set of encapsulated code and perform different task types.  
