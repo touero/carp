@@ -1,9 +1,9 @@
 import pymysql
-from abc import ABC, abstractmethod
+from abc import abstractmethod
 from dataclasses import dataclass
-from typing import Optional, List
+from typing import Optional
 
-from unil import log_t
+from unil import log_t, send_email
 from webdriver_re import WebDriverRe
 
 
@@ -15,13 +15,24 @@ class Robot(WebDriverRe):
         self.task = kwargs.get('default_config')
         self.url = kwargs.get('url')
         self.task_type = kwargs.get('task_type')
-        log_t(f'[start_url]: {self.url}')
+        self.task['url'] = self.url
+        print(f'[start_url]: {self.url}')
         self.driver.get(self.url)
         self.driver.maximize_window()
 
     @abstractmethod
     def run_task(self):
         raise NotImplementedError
+
+    def update_info_by_email(self, **kwargs):
+        path = kwargs.get('path', None)
+        msg = kwargs.get('msg', None)
+        if self.task.get('smtp_config', None) is not None:
+            log_t('[Update_info_by_email]')
+            smtp_config = self.task['smtp_config']
+            send_email(smtp_config, msg, path)
+        else:
+            log_t('email: False')
 
 
 @dataclass

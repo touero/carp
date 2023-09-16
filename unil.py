@@ -1,10 +1,16 @@
 import logging
-from typing import List
+from email.mime.image import MIMEImage
+from email.mime.multipart import MIMEMultipart
 
 import openpyxl
 import pytz
 import os
 import pymysql
+
+from typing import List
+import smtplib
+from email.mime.text import MIMEText
+from email.header import Header
 
 from datetime import datetime
 
@@ -77,3 +83,50 @@ def write_to_excel(_list: List[list], path: str):
         sheet.append(item)
     wb.save(path)
     log_t(f'[need_save_list]: {_list}')
+
+
+def send_email(smtp_config, msg=None, path=None):
+    smtp_config = smtp_config['smtp']
+    smtp_service = smtp_config.get('smtp service')
+    content = smtp_config.get('content')
+
+    host = smtp_service.get('host')
+    user = smtp_service.get('user')
+    pwd = smtp_service.get('pass')
+    port = smtp_service.get('port')
+
+    sender = content.get('sender')
+    receivers = content.get('receivers')
+    from_where = content.get('from_where')
+    to_where = content.get('to_where')
+    subject = content.get('subject')
+
+    if path is not None:
+        mail_msg = """
+        <html><body><p>Crap</p>
+        <p><img src="cid:image1"></p></body></html>
+        """
+        msg_robot = MIMEMultipart('related')
+        msg_alternative = MIMEMultipart('alternative')
+        msg_robot.attach(msg_alternative)
+        msg_alternative.attach(MIMEText(mail_msg, 'html', 'utf-8'))
+        with open(path, 'rb') as file:
+            message = MIMEImage(file.read())
+        msg_robot.add_header('Content-ID', '<image1>')
+        msg_robot.attach(message)
+    elif msg is not None:
+        msg_robot = MIMEText(msg, 'plain', 'utf-8')
+
+    else:
+        log_t('sending email failed')
+        return
+    msg_robot['From'] = Header(from_where)
+    msg_robot['To'] = Header(', '.join(to_where), 'utf-8')
+    msg_robot['Subject'] = Header(subject, 'utf-8')
+
+    smtp = smtplib.SMTP(host, port)
+    smtp.starttls()
+    smtp.login(user, pwd)
+    smtp.sendmail(sender, receivers, msg_robot.as_string())
+    result = path if path else msg
+    log_t(f'[sending email success: {result}]')

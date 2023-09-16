@@ -1,0 +1,34 @@
+"""
+    email setting 邮箱smtp设置 
+    qq email example:
+
+smtp:
+  smtp service:
+    host: smtp_host
+    user: your_send_email
+    pass: your_key
+    port: 587
+  content:
+    sender: your_send_email
+    receivers:
+      - xxxxxxx@gmail.com
+    from_where: carp <your_send_email>
+    to_where:
+      - xxxxxx@gmail.com
+    subject: carp reminder
+"""
+
+smtp:
+  smtp service:
+    host: smtp.qq.com
+    user: xxxxxx@qq.com
+    pass: your_key
+    port: 587
+  content:
+    sender: xxxxxx@qq.com
+    receivers:
+      - xxxxxxx@gmail.com
+    from_where: carp <xxxxxx@qq.com>
+    to_where:
+      - xxxxxx@gmail.com
+    subject: carp reminder
