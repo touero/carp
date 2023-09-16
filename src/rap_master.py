@@ -1,5 +1,6 @@
 import traceback
 import json
+import uuid
 
 from abc import ABC
 
@@ -45,8 +46,10 @@ class RpaMaster(ABC):
         self.url = self.urls.get(self.task_type)
         create_robot = self.robots.get(self.task_type)
         robot = create_robot(default_config=self.config, url=self.url)
-        log_t(f'当前任务: 开始 {robot}')
-        log_t(f"default_config =\n {json.dumps(self.config, sort_keys=True, indent=4, separators=(',', ': '))}")
+        task_uuid = uuid.uuid4()
+        self.config['task_uuid'] = str(task_uuid)
+        log_t(f'当前任务: 开始 {robot}, task_uuid:[{task_uuid}]')
+        log_t(f"default_config =\n {json.dumps(self.config, sort_keys=False, indent=4, separators=(',', ': '))}")
         return robot
 
     def start_task(self):
