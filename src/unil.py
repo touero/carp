@@ -1,4 +1,5 @@
 import logging
+from email.mime.application import MIMEApplication
 from email.mime.image import MIMEImage
 from email.mime.multipart import MIMEMultipart
 
@@ -85,38 +86,48 @@ def write_to_excel(_list: List[list], path: str):
     log_t(f'[need_save_list]: {_list}')
 
 
-def send_email(smtp_config, msg=None, path=None):
+def send_email(smtp_config, msg: str = None, img: str = None, file: str = None):
     smtp_config = smtp_config['smtp']
-    smtp_service = smtp_config.get('smtp service')
-    content = smtp_config.get('content')
+    smtp_service = smtp_config['smtp service']
+    content = smtp_config['content']
 
-    host = smtp_service.get('host')
-    user = smtp_service.get('user')
-    pwd = smtp_service.get('pass')
-    port = smtp_service.get('port')
+    host = smtp_service['host']
+    user = smtp_service['user']
+    pwd = smtp_service['pass']
+    port = smtp_service['port']
 
-    sender = content.get('sender')
-    receivers = content.get('receivers')
-    from_where = content.get('from_where')
-    to_where = content.get('to_where')
-    subject = content.get('subject')
+    sender = content['sender']
+    receivers = content['receivers']
+    from_where = content['from_where']
+    to_where = content['to_where']
+    subject = content['subject']
 
-    if path is not None:
+    if img:
         with open('src/email_content.html', encoding='utf-8') as file:
             email_msg = file.read()
         msg_robot = MIMEMultipart('related')
         msg_alternative = MIMEMultipart('alternative')
         msg_robot.attach(msg_alternative)
         msg_alternative.attach(MIMEText(email_msg, 'html', 'utf-8'))
-        with open(path, 'rb') as file:
+        with open(img, 'rb') as file:
             message = file.read()
         image_part = MIMEImage(message, name='image.png')
         msg_robot.add_header('Content-ID', '<image1>')
         msg_robot.attach(image_part)
 
-    elif msg is not None:
-        msg_robot = MIMEText(msg, 'plain', 'utf-8')
+    elif msg:
+        msg_robot = MIMEText(f'{msg}, https://github.com/weiensong/carp', 'plain', 'utf-8')
 
+    elif file:
+        msg = "This is an email with attachments from carp, https://github.com/weiensong/carp"
+        msg_text = MIMEText(msg, 'plain')
+        msg_robot = MIMEMultipart()
+        file_name = file.split('/')[-1]
+        with open(file, 'rb') as f:
+            part = MIMEApplication(f.read(), Name=f'{file_name}')
+        part['Content-Disposition'] = f'attachment; filename={file_name}'
+        msg_robot.attach(msg_text)
+        msg_robot.attach(part)
     else:
         log_t('sending email failed')
         return
@@ -129,5 +140,5 @@ def send_email(smtp_config, msg=None, path=None):
     smtp.starttls()
     smtp.login(user, pwd)
     smtp.sendmail(sender, receivers, msg_robot.as_string())
-    result = path if path else msg
+    result = msg if msg else img if img else file
     log_t(f'[sending email success: {result}]')

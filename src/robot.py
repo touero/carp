@@ -25,12 +25,13 @@ class Robot(WebDriverRe):
         raise NotImplementedError
 
     def update_info_by_email(self, **kwargs):
-        path = kwargs.get('path', None)
-        msg = kwargs.get('msg', None)
-        if self.task.get('smtp_config', None) is not None:
+        img = kwargs.get('img')
+        msg = kwargs.get('msg')
+        file = kwargs.get('file')
+        if self.task.get('smtp_config'):
             log_t('[Update_info_by_email]')
             smtp_config = self.task['smtp_config']
-            send_email(smtp_config, msg, path)
+            send_email(smtp_config, msg, img, file)
         else:
             log_t('email: False')
 

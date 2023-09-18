@@ -32,7 +32,7 @@ class Railway_Robot(Robot):
                 self.wait_ele_xpath_safe('//div[@class="login-panel"]//div[@class="login-box"]')
                 self.wait_ele_xpath_safe('//img[@id="J-qrImg"]')
                 login_qrcode = self.find_ele_screenshot('//div[@class="login-panel"]//div[@class="login-box"]', f'login_qrcode.png')
-                self.update_info_by_email(path=login_qrcode)
+                self.update_info_by_email(img=login_qrcode)
                 self.wait_ele_xpath_safe('//a[@login-type="personal"]', 180)
                 log_t(f'等待扫码180s, 剩余等待次数: {count}')
             else:
