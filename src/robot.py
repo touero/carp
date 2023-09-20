@@ -17,8 +17,7 @@ class Robot(WebDriverRe):
         self.task_type = kwargs.get('task_type')
         self.task['url'] = self.url
         print(f'[start_url]: {self.url}')
-        self.driver.get(self.url)
-        self.driver.maximize_window()
+        self.start_get(self.url)
 
     @abstractmethod
     def run_task(self):
