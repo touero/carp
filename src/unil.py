@@ -86,22 +86,7 @@ def write_to_excel(_list: List[list], path: str):
     log_t(f'[need_save_list]: {_list}')
 
 
-def send_email(smtp_config, msg: str = None, img: str = None, file: str = None):
-    smtp_config = smtp_config['smtp']
-    smtp_service = smtp_config['smtp service']
-    content = smtp_config['content']
-
-    host = smtp_service['host']
-    user = smtp_service['user']
-    pwd = smtp_service['pass']
-    port = smtp_service['port']
-
-    sender = content['sender']
-    receivers = content['receivers']
-    from_where = content['from_where']
-    to_where = content['to_where']
-    subject = content['subject']
-
+def send_email(smtp_info, msg: str = None, img: str = None, file: str = None):
     if img:
         with open('src/email_content.html', encoding='utf-8') as file:
             email_msg = file.read()
@@ -132,13 +117,13 @@ def send_email(smtp_config, msg: str = None, img: str = None, file: str = None):
         log_t('sending email failed')
         return
 
-    msg_robot['From'] = Header(from_where)
-    msg_robot['To'] = Header(', '.join(to_where), 'utf-8')
-    msg_robot['Subject'] = Header(subject, 'utf-8')
+    msg_robot['From'] = Header(smtp_info.from_where)
+    msg_robot['To'] = Header(', '.join(smtp_info.to_where), 'utf-8')
+    msg_robot['Subject'] = Header(smtp_info.subject, 'utf-8')
 
-    smtp = smtplib.SMTP(host, port)
+    smtp = smtplib.SMTP(smtp_info.host, smtp_info.port)
     smtp.starttls()
-    smtp.login(user, pwd)
-    smtp.sendmail(sender, receivers, msg_robot.as_string())
+    smtp.login(smtp_info.user, smtp_info.pwd)
+    smtp.sendmail(smtp_info.sender, smtp_info.receivers, msg_robot.as_string())
     result = msg if msg else img if img else file
     log_t(f'[sending email success: {result}]')

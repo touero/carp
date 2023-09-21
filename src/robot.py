@@ -5,44 +5,37 @@ from typing import Optional
 
 from src.unil import log_t, send_email
 from src.webdriver_re import WebDriverRe
+from src.constants import SmtpInfo, DataBaseInfo
 
 
 class Robot(WebDriverRe):
 
     def __init__(self, **kwargs):
         super().__init__()
+        self.smtp_info: Optional[SmtpInfo] = None
         self.need_save_list = []
         self.task = kwargs.get('default_config')
         self.url = kwargs.get('url')
         self.task_type = kwargs.get('task_type')
         self.task['url'] = self.url
         print(f'[start_url]: {self.url}')
-        self.driver.get(self.url)
-        self.driver.maximize_window()
+        self.start_get(self.url)
+        if self.task.get('smtp_config'):
+            self.smtp_info = SmtpInfo(self.task['smtp_config'])
 
     @abstractmethod
     def run_task(self):
         raise NotImplementedError
 
     def update_info_by_email(self, **kwargs):
-        img = kwargs.get('img')
-        msg = kwargs.get('msg')
-        file = kwargs.get('file')
-        if self.task.get('smtp_config'):
+        if self.smtp_info:
+            img = kwargs.get('img')
+            msg = kwargs.get('msg')
+            file = kwargs.get('file')
             log_t('[Update_info_by_email]')
-            smtp_config = self.task['smtp_config']
-            send_email(smtp_config, msg, img, file)
+            send_email(self.smtp_info, msg, img, file)
         else:
             log_t('email: False')
-
-
-@dataclass
-class DataBaseInfo:
-    host: str
-    user: str
-    password: str
-    database: str
-    port: int = 3306
 
 
 class SqlMaster:

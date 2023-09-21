@@ -21,6 +21,13 @@ class WebDriverRe(DriverFunc):
     def __init__(self):
         super().__init__()
         self.driver = DriverFactory().driver
+    
+    def start_get(self, url: str):
+        self.driver_get(url)
+        self.driver.maximize_window()
+    
+    def driver_get(self, url: str):
+        self.driver.get(url)
 
     def kill_driver(self):
         self.driver.quit()
