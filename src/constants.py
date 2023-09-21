@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from enum import unique, IntEnum, Enum
 
 
@@ -31,7 +32,7 @@ class DataBaseInfo:
 
 
 @dataclass
-class StmpInfo:
+class SmtpInfo:
     host: str
     user: str
     pwd: str
@@ -43,7 +44,7 @@ class StmpInfo:
     to_where: list
     subject: str
 
-    def __init__(self, stmp_config: dict):
+    def __init__(self, smtp_config: dict):
         smtp_config = smtp_config['smtp']
         smtp_service = smtp_config['smtp service']
         content = smtp_config['content']

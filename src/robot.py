@@ -5,13 +5,14 @@ from typing import Optional
 
 from src.unil import log_t, send_email
 from src.webdriver_re import WebDriverRe
-from src.constants.py import SmtpInfo
+from src.constants import SmtpInfo, DataBaseInfo
 
 
 class Robot(WebDriverRe):
 
     def __init__(self, **kwargs):
         super().__init__()
+        self.smtp_info: Optional[SmtpInfo] = None
         self.need_save_list = []
         self.task = kwargs.get('default_config')
         self.url = kwargs.get('url')
@@ -20,22 +21,21 @@ class Robot(WebDriverRe):
         print(f'[start_url]: {self.url}')
         self.start_get(self.url)
         if self.task.get('smtp_config'):
-            smtp_info = SmtpInfo(self.task['smtp_config'])
+            self.smtp_info = SmtpInfo(self.task['smtp_config'])
 
     @abstractmethod
     def run_task(self):
         raise NotImplementedError
 
     def update_info_by_email(self, **kwargs):
-        if smtp_info:
+        if self.smtp_info:
             img = kwargs.get('img')
             msg = kwargs.get('msg')
             file = kwargs.get('file')
             log_t('[Update_info_by_email]')
-            send_email(smtp_info, msg, img, file)
+            send_email(self.smtp_info, msg, img, file)
         else:
             log_t('email: False')
-
 
 
 class SqlMaster:
