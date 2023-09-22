@@ -13,7 +13,6 @@ class DriverFactory:
             ChromiumPage(addr_driver_opts=CHROME_ADDRESS)
             self.options.add_experimental_option("debuggerAddress", CHROME_ADDRESS)
         else:
-            # self.options.add_argument('start-fullscreen')
             self.options.add_argument("disable-blink-features=AutomationControlled")
             self.options.add_experimental_option("excludeSwitches", ['enable-automation'])
             self.options.add_experimental_option('detach', DEBUG)

@@ -43,3 +43,4 @@ class DongFangCaiFu_Robot(Robot):
             self.need_save_list.append(row_in_excel)
 
         write_to_excel(self.need_save_list, './output/dongfangcaiwu_data.xlsx')
+        self.update_info_by_email(file='output/dongfangcaiwu_data.xlsx')
