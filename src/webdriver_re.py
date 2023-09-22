@@ -233,3 +233,9 @@ class WebDriverRe(DriverFunc):
         path = f'{SCREENSHOT_DIR}{now_time}_{name}'
         self.find_ele_xpath(xpath).screenshot(path)
         return path
+
+    def wait_ele_disappear_by_xpath(self, xpath: str, timeout: int = 5):
+        try:
+            WebDriverWait(self.driver, timeout).until(ec.invisibility_of_element_located((By.XPATH, xpath)))
+        except TimeoutException:
+            log_t(f'Message: wait id timeout: "method":"xpath","selector":"{xpath}"')

@@ -16,5 +16,7 @@ class DriverFactory:
             self.options.add_argument("disable-blink-features=AutomationControlled")
             self.options.add_experimental_option("excludeSwitches", ['enable-automation'])
             self.options.add_experimental_option('detach', DEBUG)
+            self.options.page_load_strategy = 'none'
+            
         self.driver = Chrome(options=self.options, service=self.service)
 

@@ -111,3 +111,6 @@ class DriverFunc(ABC):
     @abstractmethod
     def find_ele_screenshot(self, xpath: str, name: str) -> str: ...
 
+    @abstractmethod
+    def wait_ele_disappear_by_xpath(self, xpath: str, timeout: int = ...): ...
+
