@@ -1,5 +1,6 @@
 import random
 import time
+from abc import ABC
 from typing import List, Optional, Tuple
 
 from selenium.common import NoAlertPresentException
@@ -16,7 +17,7 @@ from src.setting import SCREENSHOT_DIR
 from src.unil import log_t, get_time_now
 
 
-class WebDriverRe:
+class WebDriverRe(ABC):
     def __init__(self):
         self.driver = DriverFactory().driver
     

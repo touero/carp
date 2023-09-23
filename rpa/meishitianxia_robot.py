@@ -4,7 +4,7 @@ from src.unil import write_tolocal_mysql as wtm, log_t
 from src.robot import Robot
 
 
-class MeiShiTianXia_Robot(Robot, ABC):
+class MeiShiTianXia_Robot(Robot):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
 
