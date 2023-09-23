@@ -3,7 +3,7 @@ import json
 
 from abc import ABC
 
-from src.constants import TaskType, TaskUrl
+from src.constants import TaskType, TaskUrl, TaskStatus
 from rpa.xiachufang_robot import XiaChuFang_Robot
 from rpa.xinshipu_robot import XinShiPu_Robot
 from rpa.meishitianxia_robot import MeiShiTianXia_Robot
@@ -50,15 +50,18 @@ class RpaMaster(ABC):
         return robot
 
     def start_task(self):
+        task_state: TaskStatus = TaskStatus.UNKNOWN
         try:
             self.robot = self.robot_factory
             self.robot.run_task()
-            task_state = 'Success'
+            self.robot.task_finish()
+            task_state = TaskStatus.SUCCESS
         except Exception as e:
-            task_state = 'Fail'
+            task_state = TaskStatus.FAIL
             log_t(e)
             log_t(traceback.print_exc())
             path = self.robot.screenshot_full_png(f'task_error.png')
             log_t(f'任务失败保存截图: {path}')
-        self.end_time = get_time_now()
-        log_t(f'### Task State: {task_state}, Task Cost {(self.end_time - self.start_time).seconds}s ###')
+        finally:
+            self.end_time = get_time_now()
+            log_t(f'### Task State: {task_state.value}, Task Cost {(self.end_time - self.start_time).seconds}s ###')

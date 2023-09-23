@@ -22,6 +22,13 @@ class TaskUrl(Enum):
     RAIL_WAT = 'https://kyfw.12306.cn/otn/resources/login.html'
 
 
+@unique
+class TaskStatus(Enum):
+    SUCCESS = 'Success'
+    FAIL = 'Fail'
+    UNKNOWN = 'unknown'
+
+
 @dataclass
 class DataBaseInfo:
     host: str

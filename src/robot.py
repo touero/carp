@@ -36,6 +36,10 @@ class Robot(WebDriverRe, ABC):
         else:
             log_t('email: False')
 
+    def task_finish(self):
+        self.kill_driver()
+        log_t('[kill driver success]')
+
 
 class SqlMaster:
     def __init__(self, db_info: Optional[DataBaseInfo] = None):

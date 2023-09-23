@@ -2,18 +2,21 @@
     some setting
 """
 
-# webdriver version
+# webdriver version.
 DRIVER_VERSION = 116
 
-# Whether to close webdriver if there is an abnormality
-DEBUG = False
+# Whether to close webdriver if got the exception.
+DETACH = False
 
-# Whether to run with Drission, need not webdriver
+# No interface mode.
+HEADLESS = False
+
+# Whether to run with Drission, need not webdriver.
 DRISSION = False
 
-# Drission chrome address
+# Drission chrome address.
 CHROME_ADDRESS = '127.0.0.1:9333'
 
-# screenshot dir
+# screenshot dir.
 SCREENSHOT_DIR = 'screenshot/'
 
