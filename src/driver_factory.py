@@ -19,4 +19,3 @@ class DriverFactory:
             self.options.page_load_strategy = 'none'
             
         self.driver = Chrome(options=self.options, service=self.service)
-
