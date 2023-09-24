@@ -1,6 +1,5 @@
 import pymysql
-from abc import abstractmethod
-from dataclasses import dataclass
+from abc import abstractmethod, ABC
 from typing import Optional
 
 from src.unil import log_t, send_email
@@ -8,7 +7,7 @@ from src.webdriver_re import WebDriverRe
 from src.constants import SmtpInfo, DataBaseInfo
 
 
-class Robot(WebDriverRe):
+class Robot(WebDriverRe, ABC):
 
     def __init__(self, **kwargs):
         super().__init__()
@@ -36,6 +35,10 @@ class Robot(WebDriverRe):
             send_email(self.smtp_info, msg, img, file)
         else:
             log_t('email: False')
+
+    def task_finish(self):
+        self.kill_driver()
+        log_t('[kill driver success]')
 
 
 class SqlMaster:

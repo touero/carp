@@ -2,7 +2,7 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver import ChromeOptions, Chrome
 from DrissionPage import ChromiumPage
 
-from src.setting import DRIVER_VERSION, DEBUG, DRISSION, CHROME_ADDRESS
+from src.setting import DRIVER_VERSION, DETACH, HEADLESS, DRISSION, CHROME_ADDRESS
 
 
 class DriverFactory:
@@ -14,9 +14,9 @@ class DriverFactory:
             self.options.add_experimental_option("debuggerAddress", CHROME_ADDRESS)
         else:
             self.options.add_argument("disable-blink-features=AutomationControlled")
+            self.options.add_argument('--headless') if HEADLESS else ...
             self.options.add_experimental_option("excludeSwitches", ['enable-automation'])
-            self.options.add_experimental_option('detach', DEBUG)
+            self.options.add_experimental_option('detach', DETACH)
             self.options.page_load_strategy = 'none'
             
         self.driver = Chrome(options=self.options, service=self.service)
-

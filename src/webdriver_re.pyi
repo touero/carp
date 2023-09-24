@@ -1,11 +1,12 @@
-from _typeshed import Incomplete
+from abc import ABC
+from selenium.webdriver import Chrome
 from selenium.webdriver.common.alert import Alert as Alert
 from selenium.webdriver.remote.webelement import WebElement as WebElement
 from typing import List, Optional, Tuple
 
 
-class WebDriverRe:
-    driver: Incomplete
+class WebDriverRe(ABC):
+    driver: Optional[Chrome]
 
     def __init__(self) -> None: ...
 
