@@ -9,7 +9,7 @@ from selenium.webdriver import ActionChains
 from selenium.webdriver.common.alert import Alert
 from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webelement import WebElement
-from selenium.webdriver.support import expected_conditions as ec, expected_conditions
+from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.support.wait import WebDriverWait, TimeoutException
 
 from src.driver_factory import DriverFactory
@@ -158,8 +158,7 @@ class WebDriverRe(ABC):
 
     def wait_frame_by_xpath(self, xpath: str, timeout: int = 5, must: bool = False):
         try:
-            WebDriverWait(self.driver, timeout).until(ec.visibility_of_element_located((By.XPATH, xpath)))
-            self.driver.switch_to.frame(By.XPATH, xpath)
+            WebDriverWait(self.driver, timeout).until(ec.frame_to_be_available_and_switch_to_it((By.XPATH, xpath)))
         except TimeoutException as e:
             log_t(f'Message: wait xpath timeout: "method":"xpath","selector":"{xpath}"')
             if must:
@@ -167,8 +166,7 @@ class WebDriverRe(ABC):
 
     def wait_frame_by_id(self, frame_id: str, timeout: int = 5, must: bool = False):
         try:
-            WebDriverWait(self.driver, timeout).until(ec.visibility_of_element_located((By.ID, frame_id)))
-            self.driver.switch_to.frame(By.ID, frame_id)
+            WebDriverWait(self.driver, timeout).until(ec.frame_to_be_available_and_switch_to_it((By.ID, frame_id)))
         except TimeoutException as e:
             log_t(f'Message: wait id timeout: "method":"xpath","selector":"{frame_id}"')
             if must:
@@ -195,7 +193,7 @@ class WebDriverRe(ABC):
 
     def wait_alert_handle(self, timeout: int = 5, must: bool = False, accept: bool = True):
         try:
-            WebDriverWait(self.driver, timeout).until(expected_conditions.alert_is_present())
+            WebDriverWait(self.driver, timeout).until(ec.alert_is_present())
         except TimeoutException or NoAlertPresentException as e:
             log_t(f'Message: wait timeout: alert')
             if must:
@@ -211,7 +209,7 @@ class WebDriverRe(ABC):
 
     def get_alert_text(self, timeout: int = 5, must: bool = False) -> Tuple[Optional[Alert], str]:
         try:
-            WebDriverWait(self.driver, timeout).until(expected_conditions.alert_is_present())
+            WebDriverWait(self.driver, timeout).until(ec.alert_is_present())
         except TimeoutException or NoAlertPresentException as e:
             log_t(f'Message: wait timeout: alert')
             if must:
