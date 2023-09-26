@@ -51,7 +51,7 @@ Recommend using Python's virtual environment
  - powershell, shell build a virtual environment
 
 ```shell
-$ python 3 -m venv venv
+$ python -m venv venv
 ```
  - activate virtual environment
  - - shell
