@@ -1,10 +1,10 @@
-import pymysql
 from abc import abstractmethod, ABC
 from typing import Optional
 
 from src.unil import log_t, send_email
 from src.webdriver_re import WebDriverRe
 from src.constants import SmtpInfo, DataBaseInfo
+from src.sql_master import SqlMaster
 
 
 class Robot(WebDriverRe, ABC):
@@ -12,15 +12,18 @@ class Robot(WebDriverRe, ABC):
     def __init__(self, **kwargs):
         super().__init__()
         self.smtp_info: Optional[SmtpInfo] = None
-        self.need_save_list = []
-        self.task = kwargs.get('default_config')
-        self.url = kwargs.get('url')
+        self.need_save_list: list = []
+        self.task: dict = kwargs.get('default_config')
+        self.url: str = kwargs.get('url')
         self.task_type = kwargs.get('task_type')
         self.task['url'] = self.url
         print(f'[start_url]: {self.url}')
         self.start_get(self.url)
         if self.task.get('smtp_config'):
             self.smtp_info = SmtpInfo(self.task['smtp_config'])
+        if self.task.get('is_mysql'):
+            dbinfo = DataBaseInfo(self.task['dbinfo'])
+            self.sql = SqlMaster(dbinfo)
 
     @abstractmethod
     def run_task(self):
@@ -39,37 +42,3 @@ class Robot(WebDriverRe, ABC):
     def task_finish(self):
         self.kill_driver()
         log_t('[kill driver success]')
-
-
-class SqlMaster:
-    def __init__(self, db_info: Optional[DataBaseInfo] = None):
-        self.conn = pymysql.connect(
-            host=db_info.host,
-            user=db_info.user,
-            password=db_info.password,
-            database=db_info.database,
-            port=db_info.port
-        )
-        self.cursor = self.conn.cursor()
-
-    def submit_sql_with_return(self, sql: str) -> tuple:
-        """
-        执行sql
-        :param sql: sql语句
-        :return: 元组，即有表的返回
-        """
-        self.cursor.execute(sql)
-        return self.cursor.fetchall()
-
-    def only_submit_sql(self, sql: str):
-        """
-        执行sql
-        :param sql: sql
-        :return: None，即几行受影响
-        """
-        self.cursor.execute(sql)
-        self.conn.commit()
-
-    def __del__(self):
-        self.conn.close()
-        self.cursor.close()

@@ -37,6 +37,13 @@ class DataBaseInfo:
     database: str
     port: int = 3306
 
+    def __init__(self, dbinfo: dict):
+        self.host = dbinfo['host']
+        self.user = dbinfo['user']
+        self.password = dbinfo['pwd']
+        self.database = dbinfo['database']
+        self.port = dbinfo['port']
+
 
 @dataclass
 class SmtpInfo:

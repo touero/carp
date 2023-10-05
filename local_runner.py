@@ -23,6 +23,14 @@ default_config = {
             'start_time': '17:40',
             'to_time': '18:47'
         },
+    'is_mysql': 1,
+    'dbinfo': {
+        'host': '127.0.0.1',
+        'user': 'username',
+        'pwd': 'password',
+        'database': 'connect db',
+        'port': 3306
+    }
 }
 email: bool = False
 parser = ArgumentParser()
