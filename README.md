@@ -88,10 +88,10 @@ $ deactivate
 As you can see, there are relatively few crawling parts. But, contribute to this under [Python PEP-8](https://peps.python.org/pep-0008/)  
 
 > If you want to increase your robot following: 
-- please creat ***_robot.py in dir of name is rpa.
+- please creating ***_robot.py in dir of name is rpa.
 - Adding task's type and task's url in constants.py.
 - Adding 1&2 in robots and urls in RpaMaster.
-- Over writer your \__str\__'s and run_task's func in your robot.
+- Over writing your \__str\__'s and run_task's func in your robot.
 - if you want to use email api [email=True] in local_runner and set your config/smtp.yaml
 - Fixing task_type in local_runner and run it.
 

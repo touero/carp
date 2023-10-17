@@ -13,7 +13,7 @@ task_type
     考虑安全问题，网站目前只支持手机扫描二维码登录，等待扫描二维码时间为60秒
 """
 default_config = {
-    "task_type": 6,
+    "task_type": 5,
     "12306_info": {
             'travel_person': '',
             'seat': 'F',
@@ -23,7 +23,7 @@ default_config = {
             'start_time': '17:40',
             'to_time': '18:47'
         },
-    'is_mysql': 1,
+    'is_mysql': 0,
     'dbinfo': {
         'host': '127.0.0.1',
         'user': 'username',
