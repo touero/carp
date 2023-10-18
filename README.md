@@ -17,6 +17,8 @@
 ## Repository Introduction
 
 This is an integration task that encapsulates selenium twice, which allows us to crawl different websites with a set of encapsulated code and perform different task types.  
+
+💕 If it's helpful to you or cloning it, please star it. This is maximum encouragement for open-source contributors💕
   
 > Now, it has some functions:
 >> 1. log 
@@ -26,7 +28,6 @@ This is an integration task that encapsulates selenium twice, which allows us to
 >> 5. exception screenshot
 >> 6. email api send to yourself
   
-💕 If it's helpful to you or cloning it, please star it. This is maximum encouragement for open-source contributors💕
 > Currently, this repository contains：
 >> 1. [下厨房](https://www.xiachufang.com/) 
 >> 2. [心食谱](https://www.xinshipu.com/) 
@@ -51,7 +52,7 @@ Recommend using Python's virtual environment
  - powershell, shell build a virtual environment
 
 ```shell
-$ python 3 -m venv venv
+$ python -m venv venv
 ```
  - activate virtual environment
  - - shell
