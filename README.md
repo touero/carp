@@ -23,10 +23,9 @@ This is an integration task that encapsulates selenium twice, which allows us to
 > Now, it has some functions:
 >> 1. log 
 >> 2. debug 
->> 3. can need not webdriver 
->> 4. just need to implement a func
->> 5. exception screenshot
->> 6. email api send to yourself
+>> 3. just need to implement a func
+>> 4. exception screenshot
+>> 5. email api send to yourself
   
 > Currently, this repository contains：
 >> 1. [下厨房](https://www.xiachufang.com/) 
