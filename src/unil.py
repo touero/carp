@@ -71,13 +71,15 @@ def write_tolocal_mysql(dc, table):
     conn.close()
 
 
-def write_to_excel(_list: List[list], path: str):
+def write_to_excel(_list: List[list], filename: str):
     """
-    将列表数据写入本Excel文件
+    将列表数据写入本Excel文件, 保存在output/
     :param _list: 列表list[list]
-    :param path: 存储路径
+    :param filename: 文件名
     :return:
     """
+    log_t(f'download dir: {filename}')
+    path = f'./output/{filename}'
     wb = openpyxl.load_workbook(path) if os.path.exists(path) else openpyxl.Workbook()
     sheet = wb.active
     for item in _list:

@@ -48,7 +48,7 @@ class ShuGuoWang_Robot(Robot):
                 else:
                     self.last_win()
                     number += 1
-        write_to_excel(self.need_save_list, './output/guoshuwang_data.xlsx')
+        write_to_excel(self.need_save_list, 'guoshuwang_data.xlsx')
 
     def last_win(self):
         self.close_window()
