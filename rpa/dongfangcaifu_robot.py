@@ -42,5 +42,5 @@ class DongFangCaiFu_Robot(Robot):
                             net_inflow_of_small_orders_proportion]
             self.need_save_list.append(row_in_excel)
 
-        write_to_excel(self.need_save_list, './output/dongfangcaiwu_data.xlsx')
+        write_to_excel(self.need_save_list, 'dongfangcaiwu_data.xlsx')
         self.update_info_by_email(file='output/dongfangcaiwu_data.xlsx')

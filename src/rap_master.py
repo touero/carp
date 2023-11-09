@@ -49,7 +49,7 @@ class RpaMaster(ABC):
     @property
     def robot_factory(self):
         self.url: str = self.urls.get(self.task_type)
-        robot: Robot = create_robot(default_config=self.config, url=self.url)
+        robot: Robot = self.robots.get(self.task_type)(default_config=self.config, url=self.url)
         task_uuid = uuid.uuid4()
         self.config['task_uuid'] = str(task_uuid)
         log_t(f'当前任务: 开始 {robot}, task_uuid:[{task_uuid}]')

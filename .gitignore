@@ -1,5 +1,4 @@
 log/
-output/
 **/__pycache__
 .gitignore
 screenshot/
