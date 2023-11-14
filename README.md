@@ -41,7 +41,7 @@ This is an integration task that encapsulates selenium twice, which allows us to
 This project uses [Python](https://www.python.org/) [Git](https://git-scm.com/) [Chrome](https://www.google.com/chrome/). Go check them out if you don't have them locally installed.
 
 ```shell
-$ git clone https://github.com/weiensong/carp.git
+git clone https://github.com/weiensong/carp.git
 ```
 
 ## Usage
@@ -51,20 +51,20 @@ Recommend using Python's virtual environment
  - powershell, shell build a virtual environment
 
 ```shell
-$ python -m venv venv
+python -m venv venv
 ```
  - activate virtual environment
  - - shell
 ```shell
-$ source ./venv/bin/activate 
+source ./venv/bin/activate 
 ```
 - - powershell
 ```powershell
-> .\venv\Scripts\activate 
+.\venv\Scripts\activate 
 ```
  - install packagers
 ```shell
-$ pip install -r requriements.txt 
+pip install -r requriements.txt 
 ```
 
 
@@ -73,17 +73,17 @@ $ pip install -r requriements.txt
  - if you want to use it please build a new yaml
 
 ```shell
-$ python ./local_runner.py -y smtp.yaml
+python ./local_runner.py -y smtp.yaml
 ```
 
  - quiting from virtual environment
  - - shell
 ```shell
-$ deactivate 
+deactivate 
 ```
  - - powershell
 ```powershell
-> .\Scripts\deactivate.bat 
+.\Scripts\deactivate.bat 
 ```
 As you can see, there are relatively few crawling parts. But, contribute to this under [Python PEP-8](https://peps.python.org/pep-0008/)  
 
@@ -97,7 +97,7 @@ As you can see, there are relatively few crawling parts. But, contribute to this
 
 Real running instructions if using email api example:
 ```shell
-$ python local_runner.py -y config/smtp_weiensong.yaml
+python local_runner.py -y config/smtp_weiensong.yaml
 ```
 
 ## Related Repository
