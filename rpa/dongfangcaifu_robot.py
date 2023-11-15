@@ -20,19 +20,19 @@ class DongFangCaiFu_Robot(Robot):
         for row in rows:
             self.scroll_to_element_safe(row)
 
-            date = row.find_element(By.XPATH, './td[1]').text
-            closing_price = row.find_element(By.XPATH, './td[2]').text
-            fluctuation_range = row.find_element(By.XPATH, './td[3]').text
-            main_net_inflow_net_amount = row.find_element(By.XPATH, './td[4]').text
-            main_net_inflow_net_proportion = row.find_element(By.XPATH, './td[5]').text
-            great_large_single_net_inflow_amount = row.find_element(By.XPATH, './td[6]').text
-            great_large_single_net_inflow_proportion = row.find_element(By.XPATH, './td[7]').text
-            large_order_net_inflow_amount = row.find_element(By.XPATH, './td[8]').text
-            large_order_net_inflow_proportion = row.find_element(By.XPATH, './td[9]').text
-            net_inflow_of_intermediate_orders_amount = row.find_element(By.XPATH, './td[10]').text
-            net_inflow_of_intermediate_orders_proportion = row.find_element(By.XPATH, './td[11]').text
-            net_inflow_of_small_orders_amount = row.find_element(By.XPATH, './td[12]').text
-            net_inflow_of_small_orders_proportion = row.find_element(By.XPATH, './td[13]').text
+            date = row.find_element('./td[1]').text
+            closing_price = row.find_element('./td[2]').text
+            fluctuation_range = row.find_element('./td[3]').text
+            main_net_inflow_net_amount = row.find_element('./td[4]').text
+            main_net_inflow_net_proportion = row.find_element('./td[5]').text
+            great_large_single_net_inflow_amount = row.find_element('./td[6]').text
+            great_large_single_net_inflow_proportion = row.find_element('./td[7]').text
+            large_order_net_inflow_amount = row.find_element('./td[8]').text
+            large_order_net_inflow_proportion = row.find_element('./td[9]').text
+            net_inflow_of_intermediate_orders_amount = row.find_element('./td[10]').text
+            net_inflow_of_intermediate_orders_proportion = row.find_element('./td[11]').text
+            net_inflow_of_small_orders_amount = row.find_element('./td[12]').text
+            net_inflow_of_small_orders_proportion = row.find_element('./td[13]').text
 
             row_in_excel = [date, closing_price, fluctuation_range, main_net_inflow_net_amount,
                             main_net_inflow_net_proportion, great_large_single_net_inflow_amount,

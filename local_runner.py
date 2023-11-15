@@ -32,6 +32,9 @@ default_config = {
         'port': 3306
     }
 }
+with open('src/monkey_patching.py', 'r') as file:
+    code = file.read()
+exec(code)
 email: bool = False
 parser = ArgumentParser()
 parser.add_argument('--smtp_config', '-y', default='config/smtp.yaml', help='smtp config')
@@ -40,6 +43,5 @@ if __name__ == '__main__':
         smtp_args = parser.parse_args()
         smtp_config = yaml.load(open(smtp_args.smtp_config, encoding='utf8'), yaml.FullLoader)
         default_config['smtp_config'] = smtp_config
-
     RpaMaster(default_config=default_config).start_task()
 
