@@ -18,8 +18,6 @@ from src.unil import log_t, get_time_now
 
 
 class WebDriverRe(ABC):
-    _slots_ = 'driver'
-
     def __init__(self):
         self.driver = DriverFactory().driver
     

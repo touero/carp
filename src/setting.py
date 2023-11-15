@@ -12,7 +12,7 @@ DETACH = False
 HEADLESS = False
 
 # Whether to run with Drission, need not webdriver.
-DRISSION = True
+DRISSION = False
 
 # Drission chrome address.
 CHROME_ADDRESS = '127.0.0.1:9333'
