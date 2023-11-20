@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="https://www.python.org/" ><img src="https://img.shields.io/badge/python_-%3E%3D3.8-blue" alt=""></a> 
-  <a href="https://www.gnu.org/licenses/gpl-3.0.html" ><img src="https://img.shields.io/badge/license_-GPL3.0-blue" alt=""> 
+  <a href="https://www.gnu.org/licenses/gpl-3.0.html" ><img src="https://img.shields.io/badge/license_-GPL3.0-blue" alt=""></a> 
   <a href="https://www.python.org/" ><img src="https://img.shields.io/badge/-python-grey?style=plastic&logo=python" alt=""/></a> 
   <a href="https://www.selenium.dev/"><img src="https://img.shields.io/badge/-selenium-grey?style=plastic&logo=selenium" alt=""/></a> 
   <a href="https://git-scm.com/"><img src="https://img.shields.io/badge/git-grey?style=plastic&logo=git" alt=""/></a> 
@@ -23,10 +23,9 @@ This is an integration task that encapsulates selenium twice, which allows us to
 > Now, it has some functions:
 >> 1. log 
 >> 2. debug 
->> 3. can need not webdriver 
->> 4. just need to implement a func
->> 5. exception screenshot
->> 6. email api send to yourself
+>> 3. just need to implement a func
+>> 4. exception screenshot
+>> 5. email api send to yourself
   
 > Currently, this repository contains：
 >> 1. [下厨房](https://www.xiachufang.com/) 
@@ -42,7 +41,7 @@ This is an integration task that encapsulates selenium twice, which allows us to
 This project uses [Python](https://www.python.org/) [Git](https://git-scm.com/) [Chrome](https://www.google.com/chrome/). Go check them out if you don't have them locally installed.
 
 ```shell
-$ git clone https://github.com/weiensong/carp.git
+git clone https://github.com/weiensong/carp.git
 ```
 
 ## Usage
@@ -52,20 +51,20 @@ Recommend using Python's virtual environment
  - powershell, shell build a virtual environment
 
 ```shell
-$ python -m venv venv
+python -m venv venv
 ```
  - activate virtual environment
  - - shell
 ```shell
-$ source ./venv/bin/activate 
+source ./venv/bin/activate 
 ```
 - - powershell
 ```powershell
-> .\venv\Scripts\activate 
+.\venv\Scripts\activate 
 ```
  - install packagers
 ```shell
-$ pip install -r requriements.txt 
+pip install -r requriements.txt 
 ```
 
 
@@ -74,17 +73,17 @@ $ pip install -r requriements.txt
  - if you want to use it please build a new yaml
 
 ```shell
-$ python ./local_runner.py -y smtp.yaml
+python ./local_runner.py -y smtp.yaml
 ```
 
  - quiting from virtual environment
  - - shell
 ```shell
-$ deactivate 
+deactivate 
 ```
  - - powershell
 ```powershell
-> .\Scripts\deactivate.bat 
+.\Scripts\deactivate.bat 
 ```
 As you can see, there are relatively few crawling parts. But, contribute to this under [Python PEP-8](https://peps.python.org/pep-0008/)  
 
@@ -98,7 +97,7 @@ As you can see, there are relatively few crawling parts. But, contribute to this
 
 Real running instructions if using email api example:
 ```shell
-$ python local_runner.py -y config/smtp_weiensong.yaml
+python local_runner.py -y config/smtp_weiensong.yaml
 ```
 
 ## Related Repository
