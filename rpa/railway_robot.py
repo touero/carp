@@ -1,5 +1,5 @@
 from src.robot import Robot
-from src.unil import *
+from src.unil import log
 
 
 class Railway_Robot(Robot):
@@ -34,17 +34,17 @@ class Railway_Robot(Robot):
                 login_qrcode = self.find_ele_screenshot('//div[@class="login-panel"]//div[@class="login-box"]', f'login_qrcode.png')
                 self.update_info_by_email(img=login_qrcode)
                 self.wait_ele_xpath_safe('//a[@login-type="personal"]', 180)
-                log_t(f'等待扫码180s, 剩余等待次数: {count}')
+                log(f'等待扫码180s, 剩余等待次数: {count}')
             else:
                 break
 
         try:
             if self.wait_ele_xpath_safe('//li[@class="nav-item nav-item-w1"]', timeout=60):
-                log_t('登录成功')
+                log('登录成功')
         except TimeoutError as e:
-            log_t(f'login timeout: {e}')
+            log(f'login timeout: {e}')
         except Exception as e:
-            log_t(f'login false:{e}')
+            log(f'login false:{e}')
 
     def check_time(self):
         self.wait_click_xpath('//*[@id="J-xinxichaxun"]/a')
@@ -66,7 +66,7 @@ class Railway_Robot(Robot):
             raise '查询起售日期的起售时间失败'
 
     def book(self):
-        log_t('开始订票')
+        log('开始订票')
         self.find_ele_click_xpath('//li[@class="nav-item nav-item-w1"]')
         self.wait_ele_click_xpath_safe('//*[@id="fromStationText"]')
         self.send_keys_by_xpath('//*[@id="fromStationText"]', self.info['start_station'])
@@ -77,7 +77,7 @@ class Railway_Robot(Robot):
         self.click_to_last_window_xpath('//*[@id="search_one"]')
         # todo 检查起售时间才能继续
         if self.find_ele_xpath_safe('//*[@id="no_filter_ticket_6"]/p'):
-            log_t('出发日时间不允许')
+            log('出发日时间不允许')
             self.close_window()
             return
         table = '/html/body/div[2]/div[8]/div[8]/table/tbody/tr'
@@ -99,7 +99,7 @@ class Railway_Robot(Robot):
                           'to_time': to_time,
                           'is_have': is_have,
                           }
-            log_t(got_travel)
+            log(got_travel)
             self.travel_list.append(got_travel)
             if start_station == self.info['start_station'] and to_station == self.info['to_station'] and \
                     start_time == self.info['start_time'] and to_time == self.info['to_time'] and is_have != '候补':
@@ -116,7 +116,7 @@ class Railway_Robot(Robot):
                         choice.find_element('./input').click()
                         break
                 #  todo 请检查，可能出现乘车人不存在的情况目前想到any这一系列方法
-                log_t('请检查，可能出现乘车人不存在的情况')
+                log('请检查，可能出现乘车人不存在的情况')
                 self.find_ele_click_xpath('//a[text()="提交订单"]')
                 site = f'//*[@id="erdeng1"]/ul/li/a[@id="1{self.info["seat"]}"]'
                 self.wait_click_xpath(site)
@@ -126,5 +126,5 @@ class Railway_Robot(Robot):
                     if '抱歉' in hint:
                         raise Exception(f'订票失败，{hint}')
                     else:
-                        log_t('成功, 若当日已经购票且时间冲突,12306则会在查询页面显示为订票失败')
+                        log('成功, 若当日已经购票且时间冲突,12306则会在查询页面显示为订票失败')
                 break

@@ -1,7 +1,5 @@
-from selenium.webdriver.common.by import By
-
 from src.robot import Robot
-from src.unil import *
+from src.unil import write_to_excel
 
 
 class DongFangCaiFu_Robot(Robot):

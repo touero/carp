@@ -1,7 +1,7 @@
 from abc import abstractmethod, ABC
 from typing import Optional
 
-from src.unil import log_t, send_email
+from src.unil import log, send_email
 from src.webdriver_re import WebDriverRe
 from src.constants import SmtpInfo, DataBaseInfo
 from src.sql_master import SqlMaster
@@ -34,11 +34,11 @@ class Robot(WebDriverRe, ABC):
             img = kwargs.get('img')
             msg = kwargs.get('msg')
             file = kwargs.get('file')
-            log_t('[Update_info_by_email]')
+            log('[Update_info_by_email]')
             send_email(self.smtp_info, msg, img, file)
         else:
-            log_t('email: False')
+            log('email: False')
 
     def task_finish(self):
         self.kill_driver()
-        log_t('[kill driver success]')
+        log('[kill driver success]')

@@ -1,5 +1,5 @@
 from abc import ABC
-from src.unil import write_tolocal_mysql as wtm, log_t
+from src.unil import write_tolocal_mysql as wtm, log
 
 from src.robot import Robot
 
@@ -41,4 +41,4 @@ class MeiShiTianXia_Robot(Robot):
                                   'home_cook_url': home_cook_url_list[i]}
                 wtm(home_cook_dict, 'mstx')
             except Exception as e:
-                log_t(e)
+                log(e)
