@@ -14,7 +14,7 @@ from selenium.webdriver.support.wait import WebDriverWait, TimeoutException
 
 from src.driver_factory import DriverFactory
 from src.setting import SCREENSHOT_DIR
-from src.unil import log_t, get_time_now
+from src.unil import log, get_time_now
 
 
 class WebDriverRe(ABC):
@@ -36,7 +36,7 @@ class WebDriverRe(ABC):
             WebDriverWait(self.driver, timeout).until(ec.visibility_of_element_located((By.XPATH, xpath)))
             self.driver.find_element(By.XPATH, xpath).click()
         except TimeoutException:
-            log_t(f'Message: wait xpath timeout: "method":"xpath","selector":"{xpath}"')
+            log(f'Message: wait xpath timeout: "method":"xpath","selector":"{xpath}"')
 
     def wait_ele_xpath_safe(self, xpath: str, timeout: int = 5) -> bool:
         try:
@@ -44,7 +44,7 @@ class WebDriverRe(ABC):
             if self.driver.find_element(By.XPATH, xpath):
                 return True
         except TimeoutException:
-            log_t(f'Message: wait xpath timeout: "method":"xpath","selector":"{xpath}"')
+            log(f'Message: wait xpath timeout: "method":"xpath","selector":"{xpath}"')
             return False
 
     def wait_click_xpath(self, xpath: str, timeout: int = 5):
@@ -73,7 +73,7 @@ class WebDriverRe(ABC):
         try:
             text = self.driver.find_element(By.XPATH, xpath).text
         except Exception as e:
-            log_t(e)
+            log(e)
         return text
 
     def input_clear_xpath(self, xpath: str):
@@ -92,7 +92,7 @@ class WebDriverRe(ABC):
             if ele:
                 return True
         except NoSuchElementException:
-            log_t(f'Message: no such element: "method":"xpath","selector":"{xpath}"')
+            log(f'Message: no such element: "method":"xpath","selector":"{xpath}"')
             return False
 
     def find_ele_xpath(self, xpath: str):
@@ -116,7 +116,7 @@ class WebDriverRe(ABC):
         try:
             return WebDriverWait(self.driver, timeout).until(ec.presence_of_all_elements_located((By.XPATH, xpath)))
         except TimeoutException:
-            log_t(f'Message: wait xpath timeout: "method":"xpath","selector":"{xpath}"')
+            log(f'Message: wait xpath timeout: "method":"xpath","selector":"{xpath}"')
             return []
 
     def scroll_to_element_safe(self, ele: WebElement):
@@ -129,11 +129,11 @@ class WebDriverRe(ABC):
             ele = self.wait_ele_by_xpath(ele) if isinstance(ele, str) else ele
             self.driver.execute_script(script, ele)
         except Exception as e:
-            log_t(e)
+            log(e)
 
     def slide_to_right(self):
         if not self.wait_ele_xpath_safe('//*[@class="handler animate" and last() ]'):
-            log_t('未发现滑块跳过')
+            log('未发现滑块跳过')
             return
         for _ in range(3):
             try:
@@ -160,7 +160,7 @@ class WebDriverRe(ABC):
         try:
             WebDriverWait(self.driver, timeout).until(ec.frame_to_be_available_and_switch_to_it((By.XPATH, xpath)))
         except TimeoutException as e:
-            log_t(f'Message: wait xpath timeout: "method":"xpath","selector":"{xpath}"')
+            log(f'Message: wait xpath timeout: "method":"xpath","selector":"{xpath}"')
             if must:
                 raise e
 
@@ -168,7 +168,7 @@ class WebDriverRe(ABC):
         try:
             WebDriverWait(self.driver, timeout).until(ec.frame_to_be_available_and_switch_to_it((By.ID, frame_id)))
         except TimeoutException as e:
-            log_t(f'Message: wait id timeout: "method":"xpath","selector":"{frame_id}"')
+            log(f'Message: wait id timeout: "method":"xpath","selector":"{frame_id}"')
             if must:
                 raise e
 
@@ -195,13 +195,13 @@ class WebDriverRe(ABC):
         try:
             WebDriverWait(self.driver, timeout).until(ec.alert_is_present())
         except TimeoutException or NoAlertPresentException as e:
-            log_t(f'Message: wait timeout: alert')
+            log(f'Message: wait timeout: alert')
             if must:
                 raise e
             else:
                 return
         alert = self.driver.switch_to.alert
-        log_t(alert.text)
+        log(alert.text)
         if accept:
             alert.accept()
         else:
@@ -211,7 +211,7 @@ class WebDriverRe(ABC):
         try:
             WebDriverWait(self.driver, timeout).until(ec.alert_is_present())
         except TimeoutException or NoAlertPresentException as e:
-            log_t(f'Message: wait timeout: alert')
+            log(f'Message: wait timeout: alert')
             if must:
                 raise e
             else:
@@ -235,4 +235,4 @@ class WebDriverRe(ABC):
         try:
             WebDriverWait(self.driver, timeout).until(ec.invisibility_of_element_located((By.XPATH, xpath)))
         except TimeoutException:
-            log_t(f'Message: wait id timeout: "method":"xpath","selector":"{xpath}"')
+            log(f'Message: wait id timeout: "method":"xpath","selector":"{xpath}"')

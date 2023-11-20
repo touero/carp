@@ -1,42 +1,62 @@
 import logging
-from email.mime.application import MIMEApplication
-from email.mime.image import MIMEImage
-from email.mime.multipart import MIMEMultipart
-
 import openpyxl
 import pytz
 import os
 import pymysql
+import time
+import smtplib
+
+from email.mime.application import MIMEApplication
+from email.mime.image import MIMEImage
+from email.mime.multipart import MIMEMultipart
 
 from typing import List
-import smtplib
 from email.mime.text import MIMEText
 from email.header import Header
-
 from datetime import datetime
+from functools import wraps
 
 
-def log_t(args):
-    """
-    日志模块，等级为debug
-    :param args: 仅一个参数
-    :return:
-    """
-    if not args:
-        return
-    logger = logging.getLogger('rpa')
-    logger.setLevel(logging.DEBUG)
-    console_handler = logging.StreamHandler()
-    file_handler = logging.FileHandler(filename='log/rpa.log',
-                                       encoding='UTF-8')
-    logger.addHandler(console_handler)
-    logger.addHandler(file_handler)
-    formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-    console_handler.setFormatter(formatter)
+def _log_re(log_level=logging.INFO):
+    logger = logging.getLogger('Carp')
+    logger.setLevel(level=log_level)
+
+    file_handler = logging.FileHandler(filename='log/carp.log', encoding='UTF-8')
+    file_handler.setLevel(log_level)
+
+    formatter = logging.Formatter('%(name)s - %(levelname)s - %(asctime)s - %(message)s')
     file_handler.setFormatter(formatter)
-    logger.debug(f"{args}")
-    logger.removeHandler(file_handler)
-    logger.removeHandler(console_handler)
+
+    stream_handler = logging.StreamHandler()
+    stream_handler.setLevel(log_level)
+    stream_handler.setFormatter(formatter)
+
+    if logger.handlers:
+        logger.handlers.clear()
+
+    logger.handlers = [file_handler, stream_handler]
+
+    g_log = logger
+    return g_log
+
+
+def log(*args, **kwargs):
+    msg = ', '.join(args)
+    log_temp = kwargs.get('log_level', None)
+    if log_temp is not None:
+        if log_temp == 'info':
+            log_level = logging.INFO
+        elif log_temp == 'debug':
+            log_level = logging.DEBUG
+        elif log_temp == 'warning':
+            log_level = logging.WARNING
+        elif log_temp == 'error':
+            log_level = logging.ERROR
+        else:
+            log_level = logging.INFO
+        _log_re(log_level=log_level).info(f'==> {msg}')
+    else:
+        _log_re().info(f'==> {msg}')
 
 
 def get_time_now() -> datetime:
@@ -54,6 +74,21 @@ def get_time_now_str(args: datetime) -> str:
     :return: str
     """
     return args.strftime('%Y-%m-%d %H:%M:%S')
+
+
+def calculate_time(func):
+    @wraps(func)
+    def wrapper(self, *args, **kwargs):
+        start_time = time.perf_counter()
+        try:
+            result = func(self, *args, **kwargs)
+        finally:
+            end_time = time.perf_counter()
+            execution_time = round((end_time - start_time), 2)
+            log(f'Task State: {self.task_state.value} {self.robot}: {self.task_uuid} Task Cost {execution_time}s')
+        return result
+
+    return wrapper
 
 
 # 将字典数据写入本地MySQL，传入字典与表即可
@@ -78,14 +113,14 @@ def write_to_excel(_list: List[list], filename: str):
     :param filename: 文件名
     :return:
     """
-    log_t(f'download dir: {filename}')
+    log(f'download dir: {filename}')
     path = f'./output/{filename}'
     wb = openpyxl.load_workbook(path) if os.path.exists(path) else openpyxl.Workbook()
     sheet = wb.active
     for item in _list:
         sheet.append(item)
     wb.save(path)
-    log_t(f'[need_save_list]: {_list}')
+    log(f'[need_save_list]: {_list}')
 
 
 def send_email(smtp_info, msg: str = None, img: str = None, file: str = None):
@@ -116,7 +151,7 @@ def send_email(smtp_info, msg: str = None, img: str = None, file: str = None):
         msg_robot.attach(msg_text)
         msg_robot.attach(part)
     else:
-        log_t('sending email failed')
+        log('sending email failed')
         return
 
     msg_robot['From'] = Header(smtp_info.from_where)
@@ -128,4 +163,4 @@ def send_email(smtp_info, msg: str = None, img: str = None, file: str = None):
     smtp.login(smtp_info.user, smtp_info.pwd)
     smtp.sendmail(smtp_info.sender, smtp_info.receivers, msg_robot.as_string())
     result = msg if msg else img if img else file
-    log_t(f'[sending email success: {result}]')
+    log(f'[sending email success: {result}]')

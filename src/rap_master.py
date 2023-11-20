@@ -3,7 +3,6 @@ import json
 import uuid
 
 from abc import ABC
-from datetime import datetime
 
 from src.constants import TaskType, TaskUrl, TaskStatus
 from src.robot import Robot
@@ -14,17 +13,17 @@ from rpa.shuguowang_robot import ShuGuoWang_Robot
 from rpa.dongfangcaifu_robot import DongFangCaiFu_Robot
 from rpa.railway_robot import Railway_Robot
 
-from src.unil import get_time_now, log_t
+from src.unil import log, calculate_time
 
 
 class RpaMaster(ABC):
     _slots_ = ('start_time', 'end_time', 'url', 'robot', 'config', 'task_type')
 
     def __init__(self, **kwargs):
-        self.start_time: datetime = get_time_now()
-        self.end_time = None
         self.url = None
         self.robot = None
+        self.task_uuid = None
+        self.task_state: TaskStatus = TaskStatus.UNKNOWN
         self.config: dict = kwargs.get('default_config')
         self.task_type: int = self.config.get('task_type')
 
@@ -50,25 +49,22 @@ class RpaMaster(ABC):
     def robot_factory(self):
         self.url: str = self.urls.get(self.task_type)
         robot: Robot = self.robots.get(self.task_type)(default_config=self.config, url=self.url)
-        task_uuid = uuid.uuid4()
-        self.config['task_uuid'] = str(task_uuid)
-        log_t(f'当前任务: 开始 {robot}, task_uuid:[{task_uuid}]')
-        log_t(f"default_config =\n {json.dumps(self.config, sort_keys=False, indent=4, separators=(',', ': '))}")
+        self.task_uuid = str(uuid.uuid4())
+        self.config['task_uuid'] = self.task_uuid
+        log(f'当前任务: 开始 {robot}, task_uuid:[{self.task_uuid}]')
+        log(f"default_config =\n {json.dumps(self.config, sort_keys=False, indent=4, separators=(',', ': '))}")
         return robot
 
+    @calculate_time
     def start_task(self):
-        task_state: TaskStatus = TaskStatus.UNKNOWN
         try:
             self.robot = self.robot_factory
             self.robot.run_task()
             self.robot.task_finish()
-            task_state = TaskStatus.SUCCESS
+            self.task_state = TaskStatus.SUCCESS
         except Exception as e:
-            task_state = TaskStatus.FAIL
-            log_t(e)
-            log_t(traceback.print_exc())
+            self.task_state = TaskStatus.FAIL
+            log(f'{str(e)}')
+            log(traceback.format_exc())
             path = self.robot.screenshot_full_png(f'task_error.png')
-            log_t(f'任务失败保存截图: {path}')
-        finally:
-            self.end_time: datetime = get_time_now()
-            log_t(f'### Task State: {task_state.value}, Task Cost {(self.end_time - self.start_time).seconds}s ###')
+            log(f'任务失败保存截图: {path}')

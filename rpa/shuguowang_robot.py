@@ -1,4 +1,4 @@
-from src.unil import log_t, write_to_excel
+from src.unil import log, write_to_excel
 from src.robot import Robot
 
 
@@ -21,7 +21,7 @@ class ShuGuoWang_Robot(Robot):
                 self.close_window()
                 self.switch_last_window()
                 self.need_save_list.append(data)
-                log_t(data)
+                log(data)
             else:
                 self.close_window()
                 self.switch_last_window()
@@ -40,7 +40,7 @@ class ShuGuoWang_Robot(Robot):
                     if self.get_xigua_xianggu():
                         data = self.get_xigua_xianggu().split("\n")
                         self.need_save_list.append(data)
-                        log_t(data)
+                        log(data)
                         self.last_win()
                     else:
                         self.last_win()
