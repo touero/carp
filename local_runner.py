@@ -1,7 +1,12 @@
+import signal
+import sys
+
 import yaml
 
 from argparse import ArgumentParser
 from src.rap_master import RpaMaster
+from src.unil import log
+
 """
 task_type
     [1]:下厨房 [2]:心食谱 [3]:美食天下 [4]:蔬果网 [5]:东方财务 [6]:12306
@@ -15,14 +20,14 @@ task_type
 default_config = {
     "task_type": 5,
     "12306_info": {
-            'travel_person': '',
-            'seat': 'F',
-            'start_station': '',
-            'to_station': '',
-            'travel_date': '2023-02-31',
-            'start_time': '17:40',
-            'to_time': '18:47'
-        },
+        'travel_person': '',
+        'seat': 'F',
+        'start_station': '',
+        'to_station': '',
+        'travel_date': '2023-02-31',
+        'start_time': '17:40',
+        'to_time': '18:47'
+    },
     'is_mysql': 0,
     'dbinfo': {
         'host': '127.0.0.1',
@@ -32,16 +37,29 @@ default_config = {
         'port': 3306
     }
 }
-with open('src/monkey_patching.py', 'r') as file:
-    code = file.read()
-exec(code)
-email: bool = False
-parser = ArgumentParser()
-parser.add_argument('--smtp_config', '-y', default='config/smtp.yaml', help='smtp config')
-if __name__ == '__main__':
+
+
+def email_prepare():
+    email: bool = False
     if email:
         smtp_args = parser.parse_args()
         smtp_config = yaml.load(open(smtp_args.smtp_config, encoding='utf8'), yaml.FullLoader)
         default_config['smtp_config'] = smtp_config
-    RpaMaster(default_config=default_config).start_task()
 
+
+def handler(signum, frame):
+    signal_name = signal.Signals(signum).name
+    message = f"Received signal {signal_name} ({signum}). Cleaning up and exiting."
+    log(message)
+    sys.exit()
+
+
+if __name__ == '__main__':
+    parser = ArgumentParser()
+    parser.add_argument('--smtp_config', '-y', default='config/smtp.yaml', help='smtp config')
+    signal.signal(signal.SIGINT, handler)
+    with open('src/monkey_patching.py', 'r') as file:
+        code = file.read()
+    exec(code)
+    email_prepare()
+    RpaMaster(default_config=default_config).start_task()

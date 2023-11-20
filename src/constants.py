@@ -26,7 +26,8 @@ class TaskUrl(Enum):
 class TaskStatus(Enum):
     SUCCESS = 'Success'
     FAIL = 'Fail'
-    UNKNOWN = 'unknown'
+    UNKNOWN = 'Unknown'
+    INTERRUPT = 'Interrupt'
 
 
 @dataclass
