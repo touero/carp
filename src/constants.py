@@ -1,5 +1,7 @@
+import platform
 from dataclasses import dataclass
 from enum import unique, IntEnum, Enum
+
 
 
 @unique
@@ -27,6 +29,22 @@ class TaskStatus(Enum):
     SUCCESS = 'Success'
     FAIL = 'Fail'
     UNKNOWN = 'unknown'
+
+
+@unique
+class MachineType(Enum):
+    Mac = "Darwin"
+    Windows = "Windows"
+    Linux = "Linux"
+
+    @staticmethod
+    def get_machine() -> str:
+        system_info = platform.system()
+        print(f'machine_type: {system_info}')
+        for machine_type in MachineType:
+            if system_info == machine_type.value:
+                return machine_type.name.lower()
+        return ''
 
 
 @dataclass
