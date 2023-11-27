@@ -1,5 +1,8 @@
+import platform
 from dataclasses import dataclass
 from enum import unique, IntEnum, Enum
+
+from src.setting import DRIVER_VERSION
 
 
 @unique
@@ -26,9 +29,30 @@ class TaskUrl(Enum):
 class TaskStatus(Enum):
     SUCCESS = 'Success'
     FAIL = 'Fail'
-    UNKNOWN = 'Unknown'
-    INTERRUPT = 'Interrupt'
+    UNKNOWN = 'unknown'
 
+
+@unique
+class MachineType(Enum):
+    Mac = "Darwin"
+    Windows = "Windows"
+    Linux = "Linux"
+
+    @staticmethod
+    def get_driver_path() -> str:
+        system_info = platform.system()
+        print(f'machine_type: {system_info}')
+        machine_type: str = ''
+        stuff: str = ''
+        if system_info == MachineType.Windows.value:
+            stuff = '.exe'
+            machine_type = MachineType.Windows.name.lower()
+        elif system_info == MachineType.Mac.value:
+            machine_type = MachineType.Mac.name.lower()
+        elif system_info == MachineType.Linux.value:
+            machine_type = MachineType.Linux.name.lower()
+        driver_path = f'./webdriver/chromedriver_{machine_type}_{DRIVER_VERSION}{stuff}'
+        return driver_path
 
 @dataclass
 class DataBaseInfo:
