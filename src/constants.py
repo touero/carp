@@ -5,6 +5,7 @@ from enum import unique, IntEnum, Enum
 from src.setting import DRIVER_VERSION
 
 
+
 @unique
 class TaskType(IntEnum):
     XIA_CHU_FANG = 1  # 下厨房
@@ -52,7 +53,7 @@ class MachineType(Enum):
         elif system_info == MachineType.Linux.value:
             machine_type = MachineType.Linux.name.lower()
         driver_path = f'./webdriver/chromedriver_{machine_type}_{DRIVER_VERSION}{stuff}'
-        return driver_path
+
 
 @dataclass
 class DataBaseInfo:

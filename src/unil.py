@@ -54,9 +54,9 @@ def log(*args, **kwargs):
             log_level = logging.ERROR
         else:
             log_level = logging.INFO
-        _log_re(log_level=log_level).info(msg)
+        _log_re(log_level=log_level).info(f'==> {msg}')
     else:
-        _log_re().info(msg)
+        _log_re().info(f'==> {msg}')
 
 
 def get_time_now() -> datetime:

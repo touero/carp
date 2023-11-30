@@ -2,6 +2,7 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver import ChromeOptions, Chrome
 from DrissionPage import ChromiumPage
 
+
 from src.setting import DETACH, HEADLESS, DRISSION, CHROME_ADDRESS
 from src.constants import MachineType
 
