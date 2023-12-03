@@ -24,7 +24,7 @@ def _log_re(log_level=logging.INFO):
     file_handler = logging.FileHandler(filename='log/carp.log', encoding='UTF-8')
     file_handler.setLevel(log_level)
 
-    formatter = logging.Formatter('%(name)s - %(levelname)s - %(asctime)s - %(message)s')
+    formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s ==> %(message)s')
     file_handler.setFormatter(formatter)
 
     stream_handler = logging.StreamHandler()
@@ -82,6 +82,8 @@ def calculate_time(func):
         start_time = time.perf_counter()
         try:
             result = func(self, *args, **kwargs)
+        except KeyboardInterrupt:
+            self.task_state.value = 'Interrupt'
         finally:
             end_time = time.perf_counter()
             execution_time = round((end_time - start_time), 2)
