@@ -11,7 +11,7 @@
 </p>
 
 <p align="center">
-    <img src=.img/carp.png height="200" width="200" alt="">
+    <img src=.github/carp.png height="200" width="200" alt="">
 </p>
 
 ## Repository Introduction
@@ -23,7 +23,7 @@ This is an integration task that encapsulates selenium twice, which allows us to
 > Now, it has some functions:
 >> 1. log 
 >> 2. debug 
->> 3. just need to implement a func
+>> 3. just need to implement 2 functions
 >> 4. exception screenshot
 >> 5. email api send to yourself
   
@@ -37,67 +37,52 @@ This is an integration task that encapsulates selenium twice, which allows us to
 > Plus: The above URLs are not necessarily the URLs of the corresponding tasks.
 
 ## Install
-
 This project uses [Python](https://www.python.org/) [Git](https://git-scm.com/) [Chrome](https://www.google.com/chrome/). Go check them out if you don't have them locally installed.
-
 ```shell
-git clone https://github.com/weiensong/carp.git
+git clone https://github.com/touero/carp.git
 ```
 
 ## Usage
-
 Recommend using Python's virtual environment
-
- - powershell, shell build a virtual environment
-
 ```shell
 python -m venv venv
 ```
- - activate virtual environment
- - - shell
+Activate virtual environment
 ```shell
-source ./venv/bin/activate 
+source ./venv/bin/activate # Unix 
+
+.\venv\Scripts\activate # windows 
 ```
-- - powershell
-```powershell
-.\venv\Scripts\activate 
-```
- - install packagers
+Install packagers
 ```shell
 pip install -r requriements.txt 
 ```
-
-
- - default_config is used to configure tasks in local_runner.py
+ - default_config is used to configure tasks in run.py
  - default email config is in config/smtp.yaml
  - if you want to use it please build a new yaml
 
 ```shell
-python ./local_runner.py -y smtp.yaml
+python run.py
 ```
-
- - quiting from virtual environment
- - - shell
+Quiting from virtual environment
 ```shell
-deactivate 
-```
- - - powershell
-```powershell
-.\Scripts\deactivate.bat 
+deactivate # Unix 
+
+.\Scripts\deactivate.bat # Windows 
 ```
 As you can see, there are relatively few crawling parts. But, contribute to this under [Python PEP-8](https://peps.python.org/pep-0008/)  
 
 > If you want to increase your robot following: 
-- please creating ***_robot.py in dir of name is rpa.
+- please creating ***_robot.py in package of name is robots.
 - Adding task's type and task's url in constants.py.
-- Adding 1&2 in robots and urls in RpaMaster.
+- Adding 1&2 in robots and urls in RobotMaster.
 - Over writing your \__str\__'s and run_task's func in your robot.
 - if you want to use email api [email=True] in local_runner and set your config/smtp.yaml
 - Fixing task_type in local_runner and run it.
 
 Real running instructions if using email api example:
 ```shell
-python local_runner.py -y config/smtp_weiensong.yaml
+python run.py -y config/smtp.yaml
 ```
 
 ## Related Repository
@@ -117,9 +102,7 @@ Currently, there is only Chrome driver, if you have a feat with other driver ple
 
 ## Maintainers
 
-[@weiensong](https://github.com/weiensong)
-
-
+[@touero](https://github.com/touero)
 
 ## Contributing
 
@@ -135,13 +118,13 @@ Standard Python follows the [Python PEP-8](https://peps.python.org/pep-0008/) Co
 
 This project exists thanks to all the people who contribute.  
   
-<a href="https://github.com/weiensong/carp/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=weiensong/carp"  alt=""/>
+<a href="https://github.com/touero/carp/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=touero/carp"  alt=""/>
 </a>
 
 
 
 ## License
 
-[GNU General Public License v3.0](https://github.com/weiensong/carp/blob/master/LICENSE) © weiensong
+[GNU General Public License v3.0](https://github.com/touero/carp/blob/master/LICENSE) 
 
