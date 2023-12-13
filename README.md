@@ -18,8 +18,6 @@
 
 This is an integration task that encapsulates selenium twice, which allows us to crawl different websites with a set of encapsulated code and perform different task types.  
 
-💕 If it's helpful to you or cloning it, please star it. This is maximum encouragement for open-source contributors💕
-  
 > Now, it has some functions:
 >> 1. log 
 >> 2. debug 
@@ -57,19 +55,21 @@ Install packagers
 ```shell
 pip install -r requriements.txt 
 ```
- - default_config is used to configure tasks in run.py
- - default email config is in config/smtp.yaml
- - if you want to use it please build a new yaml
-
-```shell
-python run.py
-```
 Quiting from virtual environment
 ```shell
 deactivate # Unix 
 
 .\Scripts\deactivate.bat # Windows 
 ```
+
+### Run
+ - default_config is used to configure tasks in run.py
+ - default email config is in config/smtp.yaml
+ - if you want to use it please build a new yaml
+```shell
+python run.py
+```
+
 As you can see, there are relatively few crawling parts. But, contribute to this under [Python PEP-8](https://peps.python.org/pep-0008/)  
 
 > If you want to increase your robot following: 
