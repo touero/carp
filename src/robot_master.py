@@ -57,7 +57,10 @@ class RobotMaster(ABC):
             self.task_state = TaskStatus.SUCCESS
         except Exception as e:
             self.task_state = TaskStatus.FAIL
-            log(f'{str(e)}')
+            log(str(e))
             log(traceback.format_exc())
-            path = self.robot.screenshot_full_png(f'task_error.png')
-            log(f'任务失败保存截图: {path}')
+            try:
+                path = self.robot.screenshot_full_png(f'task_error.png')
+                log(f'任务失败保存截图: {path}')
+            except Exception as e:
+                log(str(e))
