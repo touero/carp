@@ -4,8 +4,8 @@ import sys
 import yaml
 
 from argparse import ArgumentParser
-from src.rap_master import RpaMaster
-from src.unil import log
+from src.robot_master import RobotMaster
+from src.tools import log
 
 """
 task_type
@@ -62,4 +62,4 @@ if __name__ == '__main__':
         code = file.read()
     exec(code)
     email_prepare()
-    RpaMaster(default_config=default_config).start_task()
+    RobotMaster(default_config=default_config).start_task()

@@ -1,7 +1,7 @@
 from abc import ABC
-from src.unil import write_tolocal_mysql as wtm, log
+from src.tools import write_tolocal_mysql as wtm, log
 
-from src.robot import Robot
+from .robot import Robot
 
 
 class MeiShiTianXia_Robot(Robot):

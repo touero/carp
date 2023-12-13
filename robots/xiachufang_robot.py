@@ -1,6 +1,6 @@
 from selenium.common.exceptions import TimeoutException
-from src.unil import write_tolocal_mysql as wtm
-from src.robot import Robot
+from src.tools import write_tolocal_mysql as wtm
+from .robot import Robot
 
 
 class XiaChuFang_Robot(Robot):

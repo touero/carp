@@ -1,5 +1,4 @@
-from src.robot import Robot
-from src.unil import log
+from .robot import Robot, log
 
 
 class Railway_Robot(Robot):

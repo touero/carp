@@ -1,5 +1,5 @@
-from src.unil import log, write_to_excel
-from src.robot import Robot
+from src.tools import log, write_to_excel
+from .robot import Robot
 
 
 class ShuGuoWang_Robot(Robot):

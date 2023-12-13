@@ -5,18 +5,11 @@ import uuid
 from abc import ABC
 
 from src.constants import TaskType, TaskUrl, TaskStatus
-from src.robot import Robot
-from rpa.xiachufang_robot import XiaChuFang_Robot
-from rpa.xinshipu_robot import XinShiPu_Robot
-from rpa.meishitianxia_robot import MeiShiTianXia_Robot
-from rpa.shuguowang_robot import ShuGuoWang_Robot
-from rpa.dongfangcaifu_robot import DongFangCaiFu_Robot
-from rpa.railway_robot import Railway_Robot
-
-from src.unil import log, calculate_time
+from robots import *
+from src.tools import log, calculate_time
 
 
-class RpaMaster(ABC):
+class RobotMaster(ABC):
     _slots_ = ('start_time', 'end_time', 'url', 'robot', 'config', 'task_type')
 
     def __init__(self, **kwargs):
@@ -48,12 +41,12 @@ class RpaMaster(ABC):
     @property
     def robot_factory(self):
         self.url: str = self.urls.get(self.task_type)
-        robot: Robot = self.robots.get(self.task_type)(default_config=self.config, url=self.url)
+        created_robot: Robot = self.robots.get(self.task_type)(default_config=self.config, url=self.url)
         self.task_uuid = str(uuid.uuid4())
         self.config['task_uuid'] = self.task_uuid
-        log(f'当前任务: 开始 {robot}, task_uuid:[{self.task_uuid}]')
+        log(f'当前任务: 开始 {created_robot}, task_uuid:[{self.task_uuid}]')
         log(f"default_config =\n {json.dumps(self.config, sort_keys=False, indent=4, separators=(',', ': '))}")
-        return robot
+        return created_robot
 
     @calculate_time
     def start_task(self):

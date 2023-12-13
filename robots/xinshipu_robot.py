@@ -1,6 +1,6 @@
-from src.unil import write_tolocal_mysql as wtm
+from src.tools import write_tolocal_mysql as wtm
 
-from src.robot import Robot
+from .robot import Robot
 
 
 class XinShiPu_Robot(Robot):
