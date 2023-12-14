@@ -24,7 +24,7 @@ def _log_re(log_level=logging.INFO):
     file_handler = logging.FileHandler(filename='log/carp.log', encoding='UTF-8')
     file_handler.setLevel(log_level)
 
-    formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s ==> %(message)s')
+    formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s %(message)s')
     file_handler.setFormatter(formatter)
 
     stream_handler = logging.StreamHandler()
@@ -166,3 +166,9 @@ def send_email(smtp_info, msg: str = None, img: str = None, file: str = None):
     smtp.sendmail(smtp_info.sender, smtp_info.receivers, msg_robot.as_string())
     result = msg if msg else img if img else file
     log(f'[sending email success: {result}]')
+
+
+def load_patch_code(path: str = 'src/monkey_patching.py'):
+    with open(path, 'r') as file:
+        code = file.read()
+    return code

@@ -5,7 +5,7 @@ import yaml
 
 from argparse import ArgumentParser
 from src.robot_master import RobotMaster
-from src.tools import log
+from src.tools import log, load_patch_code
 
 """
 task_type
@@ -58,8 +58,6 @@ if __name__ == '__main__':
     parser = ArgumentParser()
     parser.add_argument('--smtp_config', '-y', default='config/smtp.yaml', help='smtp config')
     signal.signal(signal.SIGINT, handler)
-    with open('src/monkey_patching.py', 'r') as file:
-        code = file.read()
-    exec(code)
+    exec(load_patch_code())
     email_prepare()
     RobotMaster(default_config=default_config).start_task()
