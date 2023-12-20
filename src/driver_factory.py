@@ -1,10 +1,11 @@
+from src.exceptions import DriverVersionException
+from src.setting import DETACH, HEADLESS, DRISSION, CHROME_ADDRESS
+from src.constants import MachineType
+
+from selenium.common import SessionNotCreatedException
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver import ChromeOptions, Chrome
 from DrissionPage import ChromiumPage
-
-
-from src.setting import DETACH, HEADLESS, DRISSION, CHROME_ADDRESS
-from src.constants import MachineType
 
 
 class DriverFactory:
@@ -21,5 +22,8 @@ class DriverFactory:
             self.options.add_experimental_option("excludeSwitches", ['enable-automation'])
             self.options.add_experimental_option('detach', DETACH)
             self.options.page_load_strategy = 'none'
-            
-        self.driver = Chrome(options=self.options, service=self.service)
+        try:
+            self.driver = Chrome(options=self.options, service=self.service)
+        except SessionNotCreatedException as e:
+            if 'version of ChromeDriver only supports' in e.msg:
+                raise DriverVersionException
