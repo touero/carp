@@ -17,9 +17,18 @@ class DriverFactory:
             ChromiumPage(addr_driver_opts=CHROME_ADDRESS)
             self.options.add_experimental_option("debuggerAddress", CHROME_ADDRESS)
         else:
-            self.options.add_argument("disable-blink-features=AutomationControlled")
+            self.options.add_argument('disable-blink-features=AutomationControlled')
+            self.options.add_argument('--disable-client-side-phishing-detection')
+            self.options.add_argument('--start-maximized')
+            self.options.add_argument('--disable-features=Translate')
+            self.options.add_argument('--no-default-browser-check')
+            self.options.add_argument('--no-first-run')
+            self.options.add_argument('--ash-no-nudges')
+            self.options.add_argument('--disable-background-networking')
+            self.options.add_argument('--disable-notifications')
+            self.options.add_argument('--pageLoadStrategy=none')
             self.options.add_argument('--headless') if HEADLESS else ...
-            self.options.add_experimental_option("excludeSwitches", ['enable-automation'])
+            self.options.add_experimental_option('excludeSwitches', ['enable-automation'])
             self.options.add_experimental_option('detach', DETACH)
             self.options.page_load_strategy = 'none'
         try:
