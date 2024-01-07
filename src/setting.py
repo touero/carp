@@ -3,7 +3,7 @@
 """
 
 # webdriver version.
-DRIVER_VERSION = 115
+DRIVER_VERSION = 120
 
 # Whether to close webdriver if got the exception.
 DETACH = False
