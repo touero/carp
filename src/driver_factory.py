@@ -1,7 +1,7 @@
 from src.exceptions import DriverVersionException
 from src.setting import DETACH, HEADLESS, DRISSION, CHROME_ADDRESS
-from src.constants import MachineType
 
+from webdriver_manager.chrome import ChromeDriverManager
 from selenium.common import SessionNotCreatedException
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver import ChromeOptions, Chrome
@@ -11,8 +11,7 @@ from DrissionPage import ChromiumPage
 class DriverFactory:
     def __init__(self):
         self.options = ChromeOptions()
-        executable_path = MachineType.get_driver_path()
-        self.service = Service(executable_path=executable_path)
+        self.service = Service(executable_path=ChromeDriverManager().install())
         if DRISSION:
             ChromiumPage(addr_driver_opts=CHROME_ADDRESS)
             self.options.add_experimental_option("debuggerAddress", CHROME_ADDRESS)
