@@ -82,14 +82,13 @@ def calculate_time(func):
         start_time = time.perf_counter()
         try:
             result = func(self, *args, **kwargs)
+            return result
         except KeyboardInterrupt:
             self.task_state.value = 'Interrupt'
         finally:
             end_time = time.perf_counter()
             execution_time = round((end_time - start_time), 2)
             log(f'Task State: {self.task_state.value} {self.robot}: {self.task_uuid} Task Cost {execution_time}s')
-        return result
-
     return wrapper
 
 

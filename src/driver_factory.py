@@ -33,5 +33,5 @@ class DriverFactory:
         try:
             self.driver = Chrome(options=self.options, service=self.service)
         except SessionNotCreatedException as e:
-            if 'version of ChromeDriver only supports' in e.msg:
+            if 'version of ChromeDriver only supports' in str(e):
                 raise DriverVersionException
