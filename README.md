@@ -21,9 +21,10 @@ This is an integration task that encapsulates selenium twice, which allows us to
 > Now, it has some functions:
 >> 1. log 
 >> 2. debug 
->> 3. just need to implement 2 functions
->> 4. exception screenshot
->> 5. email api send to yourself
+>> 3. not need download webdriver
+>> 4. just need to implement 2 functions
+>> 5. exception screenshot
+>> 6. email api send to yourself
   
 > Currently, this repository contains：
 >> 1. [下厨房](https://www.xiachufang.com/) 
@@ -41,54 +42,12 @@ git clone https://github.com/touero/carp.git
 ```
 
 ## Usage
-Recommend using Python's virtual environment
-```shell
-python -m venv venv
-```
-Activate virtual environment
-```shell
-source ./venv/bin/activate # Unix 
 
-.\venv\Scripts\activate # windows 
-```
-Install packagers
-```shell
-pip install -r requriements.txt 
-```
-Quiting from virtual environment
-```shell
-deactivate # Unix 
-
-.\Scripts\deactivate.bat # Windows 
-```
-
-### Run
- - default_config is used to configure tasks in run.py
- - default email config is in config/smtp.yaml
- - if you want to use it please build a new yaml
-```shell
-python run.py
-```
-
-As you can see, there are relatively few crawling parts. But, contribute to this under [Python PEP-8](https://peps.python.org/pep-0008/)  
-
-> If you want to increase your robot following: 
-- please creating ***_robot.py in package of name is robots.
-- Adding task's type and task's url in constants.py.
-- Adding 1&2 in robots and urls in RobotMaster.
-- Over writing your \__str\__'s and run_task's func in your robot.
-- if you want to use email api [email=True] in local_runner and set your config/smtp.yaml
-- Fixing task_type in local_runner and run it.
-
-Real running instructions if using email api example:
-```shell
-python run.py -y config/smtp.yaml
-```
-
+Please check [carp wiki](https://github.com/touero/carp/wiki)
 ## Related Repository
 
-- [Python](https://github.com/TheAlgorithms/Python) — All Algorithms implemented in Python.
-- [Selenium](https://github.com/SeleniumHQ/selenium) — A browser automation framework and ecosystem.
+- [cpython](https://github.com/python/cpython) — All Algorithms implemented in Python.
+- [selenium](https://github.com/SeleniumHQ/selenium) — A browser automation framework and ecosystem.
 
 ## Related Driver Download
 
@@ -98,15 +57,13 @@ python run.py -y config/smtp.yaml
 
 - [FireFox](https://github.com/mozilla/geckodriver/releases)
 
-Currently, there is only Chrome driver, if you have a feat with other driver please submit PRs
-
 ## Maintainers
 
 [@touero](https://github.com/touero)
 
 ## Contributing
 
-How I wish I could add more content in this repo !
+How I wish I could add more content in this repo!
 
 Feel free to dive in! [Open an issue](https://github.com/weiensong/scrapySelenium/issues) or submit PRs.
 
