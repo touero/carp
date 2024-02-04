@@ -46,7 +46,7 @@ git clone https://github.com/touero/carp.git
 Please check [carp wiki](https://github.com/touero/carp/wiki)
 ## Related Repository
 
-- [cpython](https://github.com/python/cpython) — All Algorithms implemented in Python.
+- [cpython](https://github.com/python/cpython) — The Python programming language.
 - [selenium](https://github.com/SeleniumHQ/selenium) — A browser automation framework and ecosystem.
 
 ## Related Driver Download
