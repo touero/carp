@@ -58,7 +58,7 @@ class WebDriverRe(ABC):
         self.driver.find_element(By.XPATH, xpath).clear()
         self.driver.find_element(By.XPATH, xpath).send_keys(keys)
 
-    def find_elements_by_xpath(self, xpath: str) -> list:
+    def find_elements_by_xpath(self, xpath: str) -> List[WebElement]:
         if self.driver.find_elements(By.XPATH, xpath):
             return self.driver.find_elements(By.XPATH, xpath)
         return []
